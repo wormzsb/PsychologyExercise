@@ -58,6 +58,15 @@
     <Compile Include="Forms\ExpSettingForm.Designer.cs">
       <DependentUpon>ExpSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TabPages\Task1TabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskSettingForm.Designer.cs">
+      <DependentUpon>TaskSettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TesterInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExpSettingForm.resx">
       <DependentUpon>ExpSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaskSettingForm.resx">
+      <DependentUpon>TaskSettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TesterInfo.resx">
       <DependentUpon>TesterInfo.cs</DependentUpon>
@@ -98,6 +110,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
