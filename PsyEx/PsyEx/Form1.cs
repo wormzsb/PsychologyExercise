@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PsyEx
@@ -34,12 +27,24 @@ namespace PsyEx
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Run(new MainForm());
+    
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //退出按钮
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //菜单退出
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
