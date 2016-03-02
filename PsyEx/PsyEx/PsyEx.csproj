@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexts\Exercise.cs" />
+    <Compile Include="Contexts\DefaultSettingConfig1.cs" />
+    <Compile Include="Contexts\DefaultSettingConfig2.cs" />
+    <Compile Include="Contexts\DefaultSettingConfig3.cs" />
+    <Compile Include="Contexts\DefaultSettingConfig5.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
