@@ -58,6 +58,11 @@
     <Compile Include="Forms\TesterInfo.Designer.cs">
       <DependentUpon>TesterInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapper\SettingConfig2.cs" />
+    <Compile Include="Mapper\SettingConfig3.cs" />
+    <Compile Include="Mapper\SettingConfig5.cs" />
+    <Compile Include="Mapper\SettingConfig4.cs" />
+    <Compile Include="Mapper\SettingConfig1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -88,6 +93,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Context\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
