@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PsyEx.Contexts
 {
-    class Exercise
+    public class Exercise
     {
         public static string EXERCISE_1_NAME = "目标跟踪能力测试";
         public static string EXERCISE_2_NAME = "操作力保持及时间知觉能力测试";

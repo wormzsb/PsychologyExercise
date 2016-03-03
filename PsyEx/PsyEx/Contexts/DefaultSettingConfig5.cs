@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PsyEx.Contexts
 {
-    class DefaultSettingConfig5
+    public class DefaultSettingConfig5
     {
         public static int pointTime = 1;//注视点时间
         public static int viewTime = 10;//呈现时间

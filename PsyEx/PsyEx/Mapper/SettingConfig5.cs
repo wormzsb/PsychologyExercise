@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PsyEx.Mapper
 {
-    class SettingConfig5
+    public class SettingConfig5
     {
         private int pointTime;//注视点时间
         private int viewTime;//呈现时间

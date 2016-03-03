@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PsyEx.Mapper
 {
-    class SettingConfig3
+    public class SettingConfig3
     {
         private bool mainTest;//主任务
 

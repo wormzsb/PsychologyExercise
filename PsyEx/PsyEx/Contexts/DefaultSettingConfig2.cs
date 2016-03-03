@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PsyEx.Contexts
 {
-    class DefaultSettingConfig2
+    public class DefaultSettingConfig2
     {
         public static bool mainTest = true;//主任务
 

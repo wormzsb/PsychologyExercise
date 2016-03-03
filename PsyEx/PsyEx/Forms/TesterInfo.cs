@@ -16,5 +16,20 @@ namespace PsyEx.Forms
         {
             InitializeComponent();
         }
+
+        private void TesterInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

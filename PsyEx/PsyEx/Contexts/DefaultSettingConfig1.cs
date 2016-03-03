@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PsyEx.Contexts
 {
-    class DefaultSettingConfig1
+    public class DefaultSettingConfig1
     {
         public static string backgroundColor = "灰黑色";//背景颜色
         public static int testTime = 60;//测试时间

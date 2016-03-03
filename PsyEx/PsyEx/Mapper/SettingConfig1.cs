@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PsyEx.Mapper
 {
-    class SettingConfig1
+    public class SettingConfig1
     {
         private string backgroundColor;//背景颜色
         private int testTime;//测试时间
