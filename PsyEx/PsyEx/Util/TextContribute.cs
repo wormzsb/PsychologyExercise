@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PsyEx.Util
 {
-    class TextContribute
+    public class TextContribute
     {
         //拼接主窗口打印内容
         public static List<string> printMainInfo(bool userFlag,bool exFlag,bool hwFlag,List<string> exName)

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using PsyEx.Mapper;
+using PsyEx.Util;
 
 namespace PsyEx.Forms
 {
@@ -27,54 +29,40 @@ namespace PsyEx.Forms
             return true;
         }
 
-        private bool SaveFile(string FileName)
-        {
-            //保存为文件
-            FileStream fs = new FileStream(FileName, FileMode.Create);
-            StreamWriter sw = new StreamWriter(fs);
-            try
-            {
-                //待补全
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-                sw.Close();
-                fs.Close();
-                return false;
-            }
-            finally
-            {
-                sw.Close();
-                fs.Close();
-            }
-            return true;
-        }
 
+        //载入，如果userFLag为true，读入MainForm的用户数据
         private void TesterInfo_Load(object sender, EventArgs e)
         {
+            if (MainForm.userFlag)
+            {
+                textBox1.Text = MainForm.tester.Id;
+                textBox4.Text = MainForm.tester.Name;
+                textBox5.Text = MainForm.tester.Sex;
+                textBox3.Text = MainForm.tester.Age.ToString();
+                textBox2.Text = MainForm.tester.Count.ToString();
+
+            }
 
         }
 
+        //存储被试信息
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-
+            saveFileDialog1.Filter = "设置文件(*.set)|*.set";
         }
 
+        //保存被试按钮
         private void button1_Click(object sender, EventArgs e)
         {
-            //另存被试信息
-           if (CheckData())
+            if (CheckData())
             {
-                SaveFileDialog File_out = new SaveFileDialog();
-                File_out.Filter = "设置文件(*.set)|*.set";
-                if (File_out.ShowDialog() == DialogResult.OK)
-                    if (!SaveFile(File_out.FileName))
-                        MessageBox.Show("保存失败", "提示");
-                    else
-                        MessageBox.Show("保存成功", "提示");
+                saveFileDialog1.ShowDialog();
             }
-            
+            else
+            {
+                MessageBox.Show("提示","被试信息不完整");
+            }
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -152,9 +140,12 @@ namespace PsyEx.Forms
                 {
                     Directory.CreateDirectory(sPath);
                 }
-                if (SaveFile(sPath + "//"))//路径待补全
-                    MessageBox.Show("被试信息保存完毕", "提示");
+                if (DoFile.doFileOutput(sPath, null, null))
+                {
+
+                }
                 this.Close();
+                
             }
         }
     }
