@@ -21,132 +21,158 @@ namespace PsyEx.Forms
             InitializeComponent();
         }
 
-
-        private bool CheckData()
-        {
-            //检查数据读取是否完整
-            //待补全
-            return true;
-        }
-
-
         //载入，如果userFLag为true，读入MainForm的用户数据
         private void TesterInfo_Load(object sender, EventArgs e)
         {
             if (MainForm.userFlag)
             {
                 textBox1.Text = MainForm.tester.Id;
-                textBox4.Text = MainForm.tester.Name;
-                textBox5.Text = MainForm.tester.Sex;
-                textBox3.Text = MainForm.tester.Age.ToString();
-                textBox2.Text = MainForm.tester.Count.ToString();
+                textBox2.Text = MainForm.tester.Name;
+                textBox3.Text = MainForm.tester.Sex;
+                textBox4.Text = MainForm.tester.Age.ToString();
+                textBox5.Text = MainForm.tester.Count.ToString();
 
             }
 
         }
 
-        //存储被试信息
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        //检查被试数据读取是否完整
+        private bool CheckTesterData()
         {
-            saveFileDialog1.Filter = "设置文件(*.set)|*.set";
+            if (DoForm.isEmpty(textBox1.Text))
+            {
+                MessageBox.Show("被试编号没有设置", "提示");
+                return false;
+            }
+            else
+            {
+                MainForm.tester.Id = textBox1.Text;
+            }
+
+            if (DoForm.isEmpty(textBox2.Text))
+            {
+                MessageBox.Show("被试姓名没有设置", "提示");
+                return false;
+            }
+            else
+            {
+                MainForm.tester.Name = textBox2.Text;
+            }
+
+            if (DoForm.isEmpty(textBox3.Text))
+            {
+                MessageBox.Show("被试性别没有设置", "提示");
+                return false;
+            }
+            else
+            {
+                MainForm.tester.Sex = textBox3.Text;
+            }
+
+            if (DoForm.isEmpty(textBox4.Text))
+            {
+                MessageBox.Show("被试年龄没有设置", "提示");
+                return false;
+            }
+            else
+            {
+                MainForm.tester.Age = DoForm.toInt(textBox4.Text);
+            }
+
+            if (DoForm.isEmpty(textBox5.Text))
+            {
+                MessageBox.Show("被试测试次数没有设置", "提示");
+                return false;
+            }
+            else
+            {
+                MainForm.tester.Count = DoForm.toInt(textBox5.Text);
+            }
+            return true;
+        }
+
+        private bool SaveData(string directory, string FileName)
+        {
+            if (CheckTesterData())
+            { 
+                List<string> SaveList = new List<string>();
+                SaveList.Add("ID\t" + MainForm.tester.Id);
+                SaveList.Add("Name\t" + MainForm.tester.Name);
+                SaveList.Add("Sex\t" + MainForm.tester.Sex);
+                SaveList.Add("Age\t" + MainForm.tester.Age.ToString());
+                SaveList.Add("Count\t" + MainForm.tester.Count.ToString());
+
+                if (DoForm.isEmpty(FileName))
+                {
+                    FileName = MainForm.tester.Id + "_" + MainForm.tester.Name + ".set";
+                }
+             
+                if (DoFile.doFileOutput(directory, FileName, SaveList))
+                {
+                    MessageBox.Show("保存成功", "提示");
+                    return true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("被试信息不完整", "提示");
+            }
+            return false;
         }
 
         //保存被试按钮
         private void button1_Click(object sender, EventArgs e)
         {
-            if (CheckData())
+            saveFileDialog1.InitialDirectory = DoForm.MakeDirectoy("TesterInfo");
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                saveFileDialog1.ShowDialog();
+                string localFilePath = saveFileDialog1.FileName, FilePath, FileName;
+                FilePath = localFilePath.Substring(0,localFilePath.LastIndexOf("\\"));
+                FileName = localFilePath.Substring(localFilePath.LastIndexOf("\\") + 1);
+                SaveData(FilePath, FileName);
             }
-            else
-            {
-                MessageBox.Show("提示","被试信息不完整");
-            }
-
+                
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            //编号
-            var Input=0;
-            if (!int.TryParse(this.Text, out Input))
-                MessageBox.Show("编号必须为数字", "错误");
-            //待补全
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-            //姓名
-            //待补全
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            //年龄
-            var Input = 0;
-            if (!int.TryParse(this.Text, out Input))
-                MessageBox.Show("编号必须为数字", "错误");
-            //待补全
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            //第N次
-            var Input = 0;
-            if (!int.TryParse(this.Text, out Input))
-                MessageBox.Show("编号必须为数字", "错误");
-            //待补全
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-            //性别
-            //待补全
-        }
-
+        //打开被试信息
         private void button3_Click(object sender, EventArgs e)
         {
-            //打开被试信息
-            OpenFileDialog File_in = new OpenFileDialog();
-            File_in.Filter = "设置文件(*.set)|*.set";
-            if(File_in.ShowDialog() == DialogResult.OK)
+            openFileDialog1.InitialDirectory = DoForm.MakeDirectoy("TesterInfo");
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                FileStream fs = new FileStream(File_in.FileName, FileMode.Open, FileAccess.Read);
-                StreamReader sr = new StreamReader(fs);
-                try
-                {
-                    //待补全
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
-                finally
-                {
-                    sr.Close();
-                    fs.Close();
-                }
+                Dictionary<string, string> DataList = new Dictionary<String, String>();
+                DataList = DoFile.doFileInput(openFileDialog1.FileName)[0];
+                string str;
+                DataList.TryGetValue("ID", out str);
+                textBox1.Text = str;
+                DataList.TryGetValue("Name", out str);
+                textBox2.Text = str;
+                DataList.TryGetValue("Sex", out str);
+                textBox3.Text = str;
+                DataList.TryGetValue("Age", out str);
+                textBox4.Text = str;
+                DataList.TryGetValue("Count", out str);
+                textBox5.Text = str;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //确认键
-            if (CheckData())
+            if (SaveData(DoForm.MakeDirectoy("TesterInfo"),""))
             {
-                string sPath= System.IO.Directory.GetCurrentDirectory()+"//TesterInfo";
-                if (!Directory.Exists(sPath))
-                {
-                    Directory.CreateDirectory(sPath);
-                }
-                if (DoFile.doFileOutput(sPath, null, null))
-                {
-
-                }
                 this.Close();
-                
             }
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DoForm.isNum(e);
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DoForm.isNum(e);
         }
     }
 }
