@@ -43,7 +43,8 @@ namespace PsyEx
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            ExpSettingForm expSetting = new ExpSettingForm();
+            expSetting.ShowDialog();
         }
 
         //退出按钮

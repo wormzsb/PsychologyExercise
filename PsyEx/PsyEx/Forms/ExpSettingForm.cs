@@ -21,5 +21,12 @@ namespace PsyEx.Forms
         {
 
         }
+
+        //配置参数
+        private void button5_Click(object sender, EventArgs e)
+        {
+            TaskSettingForm taskConfigForm = new TaskSettingForm();
+            taskConfigForm.ShowDialog();
+        }
     }
 }
