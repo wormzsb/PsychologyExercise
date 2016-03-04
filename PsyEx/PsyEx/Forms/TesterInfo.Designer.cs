@@ -159,12 +159,16 @@
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "设置文件(*.set)|*.set";
+            this.saveFileDialog1.Filter = "被试设置文件(*.tester)|*.tester";
+            this.saveFileDialog1.Title = "保存被试信息";
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "设置文件(*.set)|*.set";
+            this.openFileDialog1.Filter = "被试设置文件(*.tester)|*.tester";
+            this.openFileDialog1.Title = "打开被试文件";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // TesterInfo
             // 

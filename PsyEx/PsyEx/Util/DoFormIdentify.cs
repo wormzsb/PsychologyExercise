@@ -13,7 +13,7 @@ using PsyEx.Forms;
 
 namespace PsyEx.Util
 {
-    public class DoForm
+    public class DoFormIdentify
     {
         //判断空值
         public static bool isEmpty(string str)

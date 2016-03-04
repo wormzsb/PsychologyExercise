@@ -88,7 +88,7 @@
     <Compile Include="Mapper\Tester.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util\DoForm.cs" />
+    <Compile Include="Util\DoFormIdentify.cs" />
     <Compile Include="Util\DoFile.cs" />
     <Compile Include="Util\TextContribute.cs" />
     <EmbeddedResource Include="Form1.resx">

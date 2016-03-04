@@ -39,55 +39,36 @@ namespace PsyEx.Forms
         //检查被试数据读取是否完整
         private bool CheckTesterData()
         {
-            if (DoForm.isEmpty(textBox1.Text))
+            if (DoFormIdentify.isEmpty(textBox1.Text))
             {
                 MessageBox.Show("被试编号没有设置", "提示");
                 return false;
             }
-            else
-            {
-                MainForm.tester.Id = textBox1.Text;
-            }
 
-            if (DoForm.isEmpty(textBox2.Text))
+            if (DoFormIdentify.isEmpty(textBox2.Text))
             {
                 MessageBox.Show("被试姓名没有设置", "提示");
                 return false;
             }
-            else
-            {
-                MainForm.tester.Name = textBox2.Text;
-            }
 
-            if (DoForm.isEmpty(textBox3.Text))
+            if (DoFormIdentify.isEmpty(textBox3.Text))
             {
                 MessageBox.Show("被试性别没有设置", "提示");
                 return false;
             }
-            else
-            {
-                MainForm.tester.Sex = textBox3.Text;
-            }
 
-            if (DoForm.isEmpty(textBox4.Text))
+            if (DoFormIdentify.isEmpty(textBox4.Text))
             {
                 MessageBox.Show("被试年龄没有设置", "提示");
                 return false;
             }
-            else
-            {
-                MainForm.tester.Age = DoForm.toInt(textBox4.Text);
-            }
 
-            if (DoForm.isEmpty(textBox5.Text))
+            if (DoFormIdentify.isEmpty(textBox5.Text))
             {
                 MessageBox.Show("被试测试次数没有设置", "提示");
                 return false;
             }
-            else
-            {
-                MainForm.tester.Count = DoForm.toInt(textBox5.Text);
-            }
+
             return true;
         }
 
@@ -96,26 +77,26 @@ namespace PsyEx.Forms
             if (CheckTesterData())
             { 
                 List<string> SaveList = new List<string>();
-                SaveList.Add("ID\t" + MainForm.tester.Id);
-                SaveList.Add("Name\t" + MainForm.tester.Name);
-                SaveList.Add("Sex\t" + MainForm.tester.Sex);
-                SaveList.Add("Age\t" + MainForm.tester.Age.ToString());
-                SaveList.Add("Count\t" + MainForm.tester.Count.ToString());
+                SaveList.Add("ID=" + textBox1.Text);
+                SaveList.Add("Name=" + textBox2.Text);
+                SaveList.Add("Sex=" + textBox3.Text);
+                SaveList.Add("Age=" + textBox4.Text);
+                SaveList.Add("Count=" + textBox5.Text);
 
-                if (DoForm.isEmpty(FileName))
+                if (DoFormIdentify.isEmpty(FileName))
                 {
-                    FileName = MainForm.tester.Id + "_" + MainForm.tester.Name + ".set";
+                    FileName = textBox1.Text + "_" + textBox2.Text+"_autosave" + ".tester";
                 }
              
                 if (DoFile.doFileOutput(directory, FileName, SaveList))
                 {
-                    MessageBox.Show("保存成功", "提示");
+
                     return true;
                 }
             }
             else
             {
-                MessageBox.Show("被试信息不完整", "提示");
+                //MessageBox.Show("被试信息不完整", "提示");
             }
             return false;
         }
@@ -123,21 +104,19 @@ namespace PsyEx.Forms
         //保存被试按钮
         private void button1_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.InitialDirectory = DoForm.MakeDirectoy("TesterInfo");
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string localFilePath = saveFileDialog1.FileName, FilePath, FileName;
-                FilePath = localFilePath.Substring(0,localFilePath.LastIndexOf("\\"));
-                FileName = localFilePath.Substring(localFilePath.LastIndexOf("\\") + 1);
-                SaveData(FilePath, FileName);
+            if (CheckTesterData()) {
+                saveFileDialog1.InitialDirectory = DoFormIdentify.MakeDirectoy("TesterInfo");
+                saveFileDialog1.FileName = "";
+                saveFileDialog1.ShowDialog();
             }
+        
                 
         }
 
         //打开被试信息
         private void button3_Click(object sender, EventArgs e)
         {
-            openFileDialog1.InitialDirectory = DoForm.MakeDirectoy("TesterInfo");
+            openFileDialog1.InitialDirectory = DoFormIdentify.MakeDirectoy("TesterInfo");
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 Dictionary<string, string> DataList = new Dictionary<String, String>();
@@ -159,20 +138,49 @@ namespace PsyEx.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             //确认键
-            if (SaveData(DoForm.MakeDirectoy("TesterInfo"),""))
+            if (SaveData(DoFormIdentify.MakeDirectoy("TesterInfo"),""))
             {
+                MainForm.userFlag = true;
+                MainForm.tester.Id = textBox1.Text;
+                MainForm.tester.Name = textBox2.Text;
+                MainForm.tester.Sex = textBox3.Text;
+                MainForm.tester.Age = DoFormIdentify.toInt(textBox4.Text);
+                MainForm.tester.Count = DoFormIdentify.toInt(textBox5.Text);
                 this.Close();
             }
         }
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
-            DoForm.isNum(e);
+            DoFormIdentify.isNum(e);
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
-            DoForm.isNum(e);
+            DoFormIdentify.isNum(e);
+        }
+
+        //保存文件
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            string localFilePath = saveFileDialog1.FileName, FilePath, FileName;
+            FilePath = localFilePath.Substring(0, localFilePath.LastIndexOf("\\"));
+            FileName = localFilePath.Substring(localFilePath.LastIndexOf("\\") + 1);
+            if(SaveData(FilePath, FileName))
+            {
+                MessageBox.Show("保存成功", "提示");
+            }
+            else
+            {
+                MessageBox.Show("保存发生错误", "提示");
+            }
+
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

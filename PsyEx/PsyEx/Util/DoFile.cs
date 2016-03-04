@@ -19,7 +19,15 @@ namespace PsyEx.Util
 
             try
             {
-                fs = new FileStream(path + "\\" + fileName, FileMode.Append, FileAccess.Write);
+                if(File.Exists(path + "\\" + fileName))
+                {
+                    fs = new FileStream(path + "\\" + fileName, FileMode.Truncate, FileAccess.Write);
+                }
+                else
+                {
+                    fs = new FileStream(path + "\\" + fileName, FileMode.Append, FileAccess.Write);
+                }
+
                 sw = new StreamWriter(fs, Encoding.UTF8);
                 foreach (string item in textList)
                 {
