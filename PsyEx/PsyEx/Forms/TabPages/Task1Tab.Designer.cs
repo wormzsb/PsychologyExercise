@@ -140,7 +140,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(254, 111);
+            this.label26.Location = new System.Drawing.Point(266, 113);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(17, 12);
             this.label26.TabIndex = 36;
@@ -163,7 +163,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(41, 111);
+            this.label27.Location = new System.Drawing.Point(41, 114);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(53, 12);
             this.label27.TabIndex = 33;
@@ -181,7 +181,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(254, 45);
+            this.label23.Location = new System.Drawing.Point(266, 48);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(35, 12);
             this.label23.TabIndex = 31;
@@ -204,7 +204,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(29, 45);
+            this.label24.Location = new System.Drawing.Point(29, 48);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(65, 12);
             this.label24.TabIndex = 28;
@@ -244,7 +244,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(123, 143);
+            this.textBox3.Location = new System.Drawing.Point(123, 140);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(82, 21);
             this.textBox3.TabIndex = 15;
@@ -261,7 +261,7 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(185, 170);
+            this.radioButton5.Location = new System.Drawing.Point(185, 174);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(77, 16);
             this.radioButton5.TabIndex = 13;
@@ -272,7 +272,7 @@
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(123, 170);
+            this.radioButton6.Location = new System.Drawing.Point(123, 174);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(47, 16);
             this.radioButton6.TabIndex = 12;
@@ -283,7 +283,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 172);
+            this.label8.Location = new System.Drawing.Point(29, 174);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 12);
             this.label8.TabIndex = 11;
@@ -292,7 +292,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(185, 111);
+            this.radioButton3.Location = new System.Drawing.Point(185, 107);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(35, 16);
             this.radioButton3.TabIndex = 10;
@@ -303,7 +303,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(123, 111);
+            this.radioButton4.Location = new System.Drawing.Point(123, 107);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(35, 16);
             this.radioButton4.TabIndex = 9;
@@ -314,7 +314,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 113);
+            this.label7.Location = new System.Drawing.Point(29, 109);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 12);
             this.label7.TabIndex = 8;
@@ -323,7 +323,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(185, 86);
+            this.radioButton2.Location = new System.Drawing.Point(185, 73);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(59, 16);
             this.radioButton2.TabIndex = 7;
@@ -334,7 +334,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(123, 86);
+            this.radioButton1.Location = new System.Drawing.Point(123, 73);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(59, 16);
             this.radioButton1.TabIndex = 6;
@@ -345,16 +345,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 88);
+            this.label6.Location = new System.Drawing.Point(29, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 5;
-            this.label6.Text = "背景屏幕";
+            this.label6.Text = "运动方向";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(123, 45);
+            this.comboBox2.Location = new System.Drawing.Point(123, 33);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 20);
             this.comboBox2.TabIndex = 4;
@@ -362,7 +362,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 45);
+            this.label5.Location = new System.Drawing.Point(29, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 3;
@@ -386,7 +386,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 133);
+            this.textBox2.Location = new System.Drawing.Point(123, 150);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(82, 21);
             this.textBox2.TabIndex = 7;
@@ -394,7 +394,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(211, 88);
+            this.label4.Location = new System.Drawing.Point(227, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 12);
             this.label4.TabIndex = 6;
@@ -402,7 +402,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 88);
+            this.textBox1.Location = new System.Drawing.Point(123, 98);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(82, 21);
             this.textBox1.TabIndex = 5;
@@ -410,7 +410,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 133);
+            this.label3.Location = new System.Drawing.Point(53, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 4;
@@ -419,7 +419,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 88);
+            this.label2.Location = new System.Drawing.Point(29, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 3;
@@ -428,7 +428,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 32);
+            this.label1.Location = new System.Drawing.Point(29, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 2;
@@ -437,7 +437,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 29);
+            this.comboBox1.Location = new System.Drawing.Point(123, 41);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 1;
@@ -475,7 +475,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(189, 169);
+            this.label21.Location = new System.Drawing.Point(166, 188);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(17, 12);
             this.label21.TabIndex = 28;
@@ -484,7 +484,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(189, 136);
+            this.label20.Location = new System.Drawing.Point(166, 150);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(17, 12);
             this.label20.TabIndex = 27;
@@ -492,14 +492,14 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(212, 166);
+            this.textBox9.Location = new System.Drawing.Point(191, 184);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(57, 21);
             this.textBox9.TabIndex = 26;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(122, 166);
+            this.textBox8.Location = new System.Drawing.Point(100, 184);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(57, 21);
             this.textBox8.TabIndex = 25;
@@ -507,7 +507,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(269, 169);
+            this.label19.Location = new System.Drawing.Point(254, 187);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(59, 12);
             this.label19.TabIndex = 24;
@@ -516,7 +516,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(275, 133);
+            this.label18.Location = new System.Drawing.Point(254, 150);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(47, 12);
             this.label18.TabIndex = 23;
@@ -524,14 +524,14 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(121, 133);
+            this.textBox7.Location = new System.Drawing.Point(100, 147);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(57, 21);
             this.textBox7.TabIndex = 22;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(212, 133);
+            this.textBox6.Location = new System.Drawing.Point(191, 147);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(57, 21);
             this.textBox6.TabIndex = 21;
@@ -539,7 +539,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(51, 169);
+            this.label17.Location = new System.Drawing.Point(29, 187);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 12);
             this.label17.TabIndex = 20;
@@ -548,7 +548,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(63, 133);
+            this.label16.Location = new System.Drawing.Point(41, 150);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 12);
             this.label16.TabIndex = 19;
@@ -557,7 +557,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(275, 101);
+            this.label14.Location = new System.Drawing.Point(254, 105);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 12);
             this.label14.TabIndex = 18;
@@ -565,7 +565,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(212, 98);
+            this.textBox5.Location = new System.Drawing.Point(191, 102);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(57, 21);
             this.textBox5.TabIndex = 17;
@@ -573,7 +573,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(140, 101);
+            this.label15.Location = new System.Drawing.Point(106, 105);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 12);
             this.label15.TabIndex = 16;
@@ -582,7 +582,7 @@
             // radioButton9
             // 
             this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(69, 99);
+            this.radioButton9.Location = new System.Drawing.Point(47, 103);
             this.radioButton9.Name = "radioButton9";
             this.radioButton9.Size = new System.Drawing.Size(47, 16);
             this.radioButton9.TabIndex = 15;
@@ -593,7 +593,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(275, 74);
+            this.label12.Location = new System.Drawing.Point(254, 70);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 12);
             this.label12.TabIndex = 14;
@@ -601,7 +601,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(212, 71);
+            this.textBox4.Location = new System.Drawing.Point(191, 67);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(57, 21);
             this.textBox4.TabIndex = 13;
@@ -609,7 +609,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(140, 74);
+            this.label13.Location = new System.Drawing.Point(130, 70);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(29, 12);
             this.label13.TabIndex = 12;
@@ -618,7 +618,7 @@
             // radioButton10
             // 
             this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(69, 72);
+            this.radioButton10.Location = new System.Drawing.Point(47, 68);
             this.radioButton10.Name = "radioButton10";
             this.radioButton10.Size = new System.Drawing.Size(47, 16);
             this.radioButton10.TabIndex = 11;
@@ -629,7 +629,7 @@
             // radioButton7
             // 
             this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(131, 32);
+            this.radioButton7.Location = new System.Drawing.Point(212, 32);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(47, 16);
             this.radioButton7.TabIndex = 10;
@@ -640,7 +640,7 @@
             // radioButton8
             // 
             this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(69, 32);
+            this.radioButton8.Location = new System.Drawing.Point(132, 32);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(47, 16);
             this.radioButton8.TabIndex = 9;
@@ -651,7 +651,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(10, 32);
+            this.label11.Location = new System.Drawing.Point(41, 34);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 8;

@@ -64,6 +64,12 @@
     <Compile Include="Forms\ExpSettingForm.Designer.cs">
       <DependentUpon>ExpSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TabPages\Task2Tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TabPages\Task2Tab.Designer.cs">
+      <DependentUpon>Task2Tab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TabPages\Task1Tab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExpSettingForm.resx">
       <DependentUpon>ExpSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TabPages\Task2Tab.resx">
+      <DependentUpon>Task2Tab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TabPages\Task1Tab.resx">
       <DependentUpon>Task1Tab.cs</DependentUpon>

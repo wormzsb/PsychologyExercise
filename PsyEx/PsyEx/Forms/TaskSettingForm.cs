@@ -20,7 +20,9 @@ namespace PsyEx.Forms
 
         private void TaskSettingForm_Load(object sender, EventArgs e)
         {
-            this.tabControl1.Controls.Add(new Task1Tab());
+            TabPage tp = new TabPage();
+            tp.Controls.Add(new Task1Tab());
+            this.tabControl1.TabPages.Add(tp);
         }
     }
 }
