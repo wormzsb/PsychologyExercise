@@ -5,6 +5,7 @@
         private string exId;//实验id
         private string exName;//实验名
         private int sortId;//排序序号
+        private bool setFlag;//设置状态
         private SettingConfig1 config1;
         private SettingConfig2 config2;
         private SettingConfig3 config3;
@@ -47,6 +48,19 @@
             set
             {
                 sortId = value;
+            }
+        }
+
+        public bool SetFlag
+        {
+            get
+            {
+                return setFlag;
+            }
+
+            set
+            {
+                setFlag = value;
             }
         }
 

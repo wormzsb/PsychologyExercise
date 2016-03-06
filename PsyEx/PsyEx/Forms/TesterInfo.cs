@@ -117,22 +117,7 @@ namespace PsyEx.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             openFileDialog1.InitialDirectory = DoFormIdentify.MakeDirectoy("TesterInfo");
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                Dictionary<string, string> DataList = new Dictionary<String, String>();
-                DataList = DoFile.doFileInput(openFileDialog1.FileName)[0];
-                string str;
-                DataList.TryGetValue("ID", out str);
-                textBox1.Text = str;
-                DataList.TryGetValue("Name", out str);
-                textBox2.Text = str;
-                DataList.TryGetValue("Sex", out str);
-                textBox3.Text = str;
-                DataList.TryGetValue("Age", out str);
-                textBox4.Text = str;
-                DataList.TryGetValue("Count", out str);
-                textBox5.Text = str;
-            }
+            openFileDialog1.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -180,7 +165,19 @@ namespace PsyEx.Forms
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-
+            Dictionary<string, string> DataList = new Dictionary<String, String>();
+            DataList = DoFile.doFileInput(openFileDialog1.FileName)[0];
+            string str;
+            DataList.TryGetValue("ID", out str);
+            textBox1.Text = str;
+            DataList.TryGetValue("Name", out str);
+            textBox2.Text = str;
+            DataList.TryGetValue("Sex", out str);
+            textBox3.Text = str;
+            DataList.TryGetValue("Age", out str);
+            textBox4.Text = str;
+            DataList.TryGetValue("Count", out str);
+            textBox5.Text = str;
         }
     }
 }

@@ -66,8 +66,8 @@ namespace PsyEx.Util
                 {
                     string str, key, value;
                     str = sr.ReadLine();
-                    key = str.Substring(0, str.IndexOf(" "));
-                    value = str.Substring(str.LastIndexOf(" ") + 1);
+                    key = str.Substring(0, str.IndexOf("="));
+                    value = str.Substring(str.IndexOf("=") + 1);
                     data.Add(key, value);
                 }
                 DataList.Add(data);
