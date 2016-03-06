@@ -64,6 +64,24 @@
     <Compile Include="Forms\ExpSettingForm.Designer.cs">
       <DependentUpon>ExpSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TabPages\Task5Tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TabPages\Task5Tab.Designer.cs">
+      <DependentUpon>Task5Tab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TabPages\Task4Tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TabPages\Task4Tab.Designer.cs">
+      <DependentUpon>Task4Tab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TabPages\Task3Tab .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TabPages\Task3Tab .Designer.cs">
+      <DependentUpon>Task3Tab .cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TabPages\Task2Tab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,6 +123,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExpSettingForm.resx">
       <DependentUpon>ExpSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TabPages\Task5Tab.resx">
+      <DependentUpon>Task5Tab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TabPages\Task4Tab.resx">
+      <DependentUpon>Task4Tab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TabPages\Task3Tab .resx">
+      <DependentUpon>Task3Tab .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TabPages\Task2Tab.resx">
       <DependentUpon>Task2Tab.cs</DependentUpon>
