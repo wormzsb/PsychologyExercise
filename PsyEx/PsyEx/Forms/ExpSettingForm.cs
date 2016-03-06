@@ -13,6 +13,12 @@ namespace PsyEx.Forms
 {
     public partial class ExpSettingForm : Form
     {
+
+        //实验配置窗口的记录map
+        public static Dictionary<int, ExConfig> expConfigMap = new Dictionary<int, ExConfig>();
+
+        //计数
+        public int sortNum = 0;
         
         public ExpSettingForm()
         {
