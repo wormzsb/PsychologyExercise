@@ -239,6 +239,15 @@ namespace PsyEx.Forms
                         break;
                 }
             }
+
+            this.Dispose();
+        }
+        
+
+        //取消
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
