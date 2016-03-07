@@ -62,6 +62,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -101,8 +103,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -214,6 +215,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.radioButton7);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.radioButton8);
@@ -480,6 +482,22 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "次任务设置";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(129, 418);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(63, 21);
+            this.textBox20.TabIndex = 68;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(42, 422);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(53, 12);
+            this.label41.TabIndex = 66;
+            this.label41.Text = "循环次数";
             // 
             // label39
             // 
@@ -808,21 +826,12 @@
             this.checkBox2.Text = "主任务";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // label41
+            // panel1
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(42, 422);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(53, 12);
-            this.label41.TabIndex = 66;
-            this.label41.Text = "循环次数";
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(129, 418);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(63, 21);
-            this.textBox20.TabIndex = 68;
+            this.panel1.Location = new System.Drawing.Point(74, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 29;
             // 
             // Task2Tab
             // 
@@ -926,5 +935,6 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.Panel panel1;
     }
 }
