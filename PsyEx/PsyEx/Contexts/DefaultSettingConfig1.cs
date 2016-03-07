@@ -21,6 +21,7 @@ namespace PsyEx.Contexts
         public static int ctrlDirection = 0;//控制方向0正向1反向
         public static int speedMode = 0;//速度模式0匀速1匀加速
         public static double speed = 100;//起始速度
+        public static double fSpeed = 50;//加速模式起始速度
         public static double minSpeed = 50;//最小速度
         public static double maxSpeed = 150;//最大速度
         public static double minASpeed = 2;//最小加速度

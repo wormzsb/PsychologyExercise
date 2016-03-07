@@ -147,7 +147,47 @@ namespace PsyEx.Forms
                         config1.BackgroundColor = task1.comboBox1.Text;
                         config1.TestTime = DoFormIdentify.toInt(task1.textBox1.Text);
                         config1.TestNum = DoFormIdentify.toInt(task1.textBox2.Text);
+                        config1.Particle = task1.comboBox2.Text;
+                        if (task1.radioButton4.Checked)
+                        {
+                            config1.Pause = false;
+                        }
+                        else
+                        {
+                            config1.Pause = true;
+                        }
+                        config1.PauseRate = DoFormIdentify.toInt(task1.textBox3.Text);
 
+                        config1.MinGTASpeed = DoFormIdentify.toDouble(task1.textBox10.Text);
+                        config1.MaxGTASpeed = DoFormIdentify.toDouble(task1.textBox11.Text);
+                        config1.MinAngle = DoFormIdentify.toDouble(task1.textBox12.Text);
+                        config1.MaxAngel = DoFormIdentify.toDouble(task1.textBox13.Text);
+
+                        if (task1.radioButton6.Checked)
+                        {
+                            config1.MoveMode = 0;
+                        }
+                        else
+                        {
+                            config1.MoveMode = 1;
+                        }
+
+                        if (task1.radioButton10.Checked)
+                        {
+                            config1.SpeedMode = 0;
+                            config1.Speed = DoFormIdentify.toDouble(task1.textBox4.Text);
+                        }
+                        else
+                        {
+                            config1.SpeedMode = 1;
+                            config1.Speed = DoFormIdentify.toDouble(task1.textBox5.Text);
+                        }
+
+                        config1.MinSpeed = DoFormIdentify.toDouble(task1.textBox7.Text);
+                        config1.MaxSpeed = DoFormIdentify.toDouble(task1.textBox6.Text);
+
+                        config1.MinASpeed = DoFormIdentify.toDouble(task1.textBox8.Text);
+                        config1.MaxASpeed = DoFormIdentify.toDouble(task1.textBox9.Text);
 
                         ex.SetFlag = true;
                         ex.Config1 = config1;

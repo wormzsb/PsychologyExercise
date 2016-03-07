@@ -33,6 +33,14 @@ namespace PsyEx.Util
             return i;
         }
 
+        //转化为double
+        public static double toDouble(string str)
+        {
+            double i = 0.0;
+            double.TryParse(str, out i);
+            return i;
+        }
+
         //限定输入必须为数字
         public static void isNum(KeyPressEventArgs e)
         {
