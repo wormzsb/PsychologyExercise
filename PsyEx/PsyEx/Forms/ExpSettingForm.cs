@@ -70,25 +70,29 @@ namespace PsyEx.Forms
             return true;
         }
         
-        private static void tojson(Dictionary<int, ExConfig> setting)
+        private string JsonOutput(List<ExConfig> setting)
         {
             DataContractJsonSerializer json = new DataContractJsonSerializer(setting.GetType());
-
             string szJson = "";
 
             //序列化
-
             using (MemoryStream stream = new MemoryStream())
             {
-
                 json.WriteObject(stream, setting);
-
                 szJson = Encoding.UTF8.GetString(stream.ToArray());
-
             }
+            return szJson;
+        }
+
+        private bool savedata(bool autosave)
+        {
+            string directory, filename;
+            directory = DoFormIdentify.MakeDirectoy("TaskSetting");
+            filename = MainForm.tester.Id + "_" + MainForm.tester.Name + "_" + "autosave.json";
+            //DoFile.doFileOutput(directory, "aaa.txt", output);
             List<string> output = new List<string>();
-            output.Add(szJson);
-            DoFile.doFileOutput("d:","aaa.txt",output);
+            //output.Add(szJson);
+            return true;
         }
 
         //向listbox2添加任务
@@ -109,7 +113,7 @@ namespace PsyEx.Forms
             expConfigMap.Add(setting.SortId, setting);
         }
 
-        //从listbox2删除任务
+        //从listbox2删除任务 未考虑两位数
         private void RemoveItem(object obj, int index)
         {
             string SelectedItem = obj.ToString();
@@ -160,6 +164,15 @@ namespace PsyEx.Forms
             }
         }
 
+        //执行清理
+        private void clear()
+        {            
+            sortNum = 0;
+            expConfigMap.Clear();
+            this.Dispose();
+        }
+
+
         private void button7_Click(object sender, EventArgs e)
         {
 
@@ -188,13 +201,20 @@ namespace PsyEx.Forms
                 {
                     MainForm.exConfigList.Add(i.Value);
                 }
-                tojson(expConfigMap);
+                //tojson(expConfigMap);
+                clear();
+                this.Dispose();
                 this.Close();
             }
             else
             {
                 MessageBox.Show("任务尚未进行设置", "提示");
             }                
+        }
+
+        private void ExpSettingForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            clear();
         }
     }
 }

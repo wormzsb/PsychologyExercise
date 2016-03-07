@@ -21,6 +21,11 @@ namespace PsyEx.Forms
             InitializeComponent();
         }
 
+        ~TesterInfo()
+        {
+            Dispose();
+        }
+
         //载入，如果userFLag为true，读入MainForm的用户数据
         private void TesterInfo_Load(object sender, EventArgs e)
         {
@@ -131,6 +136,7 @@ namespace PsyEx.Forms
                 MainForm.tester.Sex = textBox3.Text;
                 MainForm.tester.Age = DoFormIdentify.toInt(textBox4.Text);
                 MainForm.tester.Count = DoFormIdentify.toInt(textBox5.Text);
+                this.Dispose();
                 this.Close();
             }
         }
@@ -178,6 +184,11 @@ namespace PsyEx.Forms
             textBox4.Text = str;
             DataList.TryGetValue("Count", out str);
             textBox5.Text = str;
+        }
+
+        private void TesterInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

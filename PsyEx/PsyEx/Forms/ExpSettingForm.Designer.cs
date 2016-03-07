@@ -145,6 +145,7 @@
             this.Name = "ExpSettingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "实验设置";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExpSettingForm_FormClosed);
             this.Load += new System.EventHandler(this.ExpSettingForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

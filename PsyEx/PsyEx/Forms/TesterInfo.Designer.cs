@@ -194,6 +194,7 @@
             this.Name = "TesterInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "被试管理";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TesterInfo_FormClosed);
             this.Load += new System.EventHandler(this.TesterInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
