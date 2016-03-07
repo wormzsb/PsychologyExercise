@@ -40,12 +40,12 @@ namespace PsyEx.Util
             }
             finally
             {
+                sw.BaseStream.Flush();
+                fs.Flush();
                 sw.Close();
                 fs.Close();
                 
             }
-            sw.BaseStream.Flush();
-            fs.Flush();            
 
             return flag;
         }
@@ -78,11 +78,11 @@ namespace PsyEx.Util
             }
             finally
             {
+                sr.BaseStream.Flush();
+                fs.Flush();
                 sr.Close();
                 fs.Close();                
             }
-            sr.BaseStream.Flush();
-            fs.Flush();
 
             return DataList;
         }
