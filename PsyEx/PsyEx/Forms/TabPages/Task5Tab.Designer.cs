@@ -130,6 +130,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "Task5Tab";
             this.Size = new System.Drawing.Size(668, 515);
+            this.Load += new System.EventHandler(this.Task5Tab_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

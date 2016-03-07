@@ -143,8 +143,8 @@ namespace PsyEx.Forms
                 listBox2.Items[i] = newstr;
             }
             //移除map
-            expConfigMap.Remove(index);
-            for(int i=index+1; i<=sortNum; i++)
+            expConfigMap.Remove(index+1);
+            for(int i=index+2; i<=sortNum; i++)
             {
                 ExConfig t = new ExConfig();
                 expConfigMap.TryGetValue(i, out t);

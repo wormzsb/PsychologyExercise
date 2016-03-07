@@ -20,5 +20,20 @@ namespace PsyEx.Forms.TabPages
         {
             InitializeComponent();
         }
+
+        private void Task5Tab_Load(object sender, EventArgs e)
+        {
+            if (defaultFlag)
+            {
+
+            }
+            else
+            {
+                this.textBox14.Text = Exercise.EXERCISE_5_NAME;
+                this.textBox4.Text = DefaultSettingConfig5.pointTime.ToString();
+                this.textBox9.Text = DefaultSettingConfig5.viewTime.ToString();
+                this.textBox17.Text = DefaultSettingConfig5.lastTime.ToString();
+            }
+        }
     }
 }
