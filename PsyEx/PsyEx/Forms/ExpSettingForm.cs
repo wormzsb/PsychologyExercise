@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using PsyEx.Mapper;
 
@@ -42,7 +43,12 @@ namespace PsyEx.Forms
                     if (item.SetFlag)
                     {
                         ChangeSetState(listBox2.Items[listBox2.Items.Count]);    
-                    }                         
+                    }
+                    expConfigMap.Add(item.SortId, item);
+                    if (item.SortId>=sortNum)
+                    {
+                        sortNum = item.SortId;
+                    }            
                 }
             }
         }
@@ -50,46 +56,34 @@ namespace PsyEx.Forms
         //检查设置情况
         private bool CheckSetState()
         {
-            foreach(var i in MainForm.exConfigList)
+            foreach(var i in expConfigMap)
             {
-                if (i.SetFlag==false)
-                {
+                if (i.Value.SetFlag==false)
+                {                    
                     return false;
                 }
             }
+            MainForm.exFlag = true;
             return true;
         }
         
-
-        //生成实验列表
-        private void MakeList()
-        {
-            foreach (object obj in listBox2.Items)
-            {
-                string str = obj.ToString();
-                if (str[str.IndexOf("[") + 1] == '未')
-                {
-                    string taskname;
-                    int taskno;
-                    bool setflag = false;
-                    //未写入exID
-                    taskname = str.Substring(0, str.IndexOf("["));
-                    taskno = str[str.IndexOf("(") + 1] - '0';
-                    ExConfig setting = new ExConfig();
-                    setting.ExName = taskname;
-                    setting.SetFlag = setflag;
-                    setting.SortId = taskno;
-                    MainForm.exConfigList.Add(setting);
-                }
-            }
-        }
 
         //向listbox2添加任务
         private void AddItem(object obj)
         {
             string SelectedItem = obj.ToString();
+            sortNum++;
+
             //标记实验序号
-            listBox2.Items.Add(SelectedItem + "[未设置]" + "(" + (listBox2.Items.Count + 1) + ")");
+            listBox2.Items.Add(SelectedItem + "[未设置]" + "(" + sortNum + ")");
+
+            ExConfig setting = new ExConfig();
+            setting.SortId = sortNum;
+            setting.SetFlag = false;
+            setting.ExName = SelectedItem;
+            DateTime dt = DateTime.Now;
+            setting.ExId = sortNum.ToString() + "_" + dt.ToFileTime().ToString();
+            expConfigMap.Add(setting.SortId, setting);
         }
 
         //从listbox2删除任务
@@ -104,7 +98,18 @@ namespace PsyEx.Forms
                 string newstr;
                 newstr = str.Replace((char)(i + 2 + '0'), (char)(i + 1 + '0'));
                 listBox2.Items[i] = newstr;
-            }            
+            }
+            //移除map
+            expConfigMap.Remove(index);
+            for(int i=index+1; i<=sortNum; i++)
+            {
+                ExConfig t = new ExConfig();
+                expConfigMap.TryGetValue(i, out t);
+                expConfigMap.Remove(i);
+                t.SortId--;
+                expConfigMap.Add(t.SortId, t);
+            }
+            sortNum--;
         }
 
         //调整设置标记
@@ -140,7 +145,6 @@ namespace PsyEx.Forms
         //配置参数按钮
         private void button5_Click(object sender, EventArgs e)
         {
-            MakeList();
             TaskSettingForm taskConfigForm = new TaskSettingForm();
             taskConfigForm.ShowDialog();
 
@@ -149,14 +153,18 @@ namespace PsyEx.Forms
             {
                 listBox2.Items[i] = ChangeSetState(listBox2.Items[i]);        
             }
-            MainForm.exFlag = true;
+            
         }
 
         //确认按钮
         private void button6_Click(object sender, EventArgs e)
         {
-            if (MainForm.exFlag)
+            if (CheckSetState())
             {
+                foreach(var i in expConfigMap)
+                {
+                    MainForm.exConfigList.Add(i.Value);
+                }
                 this.Close();
             }
             else
