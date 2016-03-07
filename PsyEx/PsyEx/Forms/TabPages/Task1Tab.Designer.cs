@@ -5,7 +5,7 @@
         /// <summary> 
         /// 必需的设计器变量。
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary> 
         /// 清理所有正在使用的资源。
@@ -26,7 +26,7 @@
         /// 设计器支持所需的方法 - 不要修改
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -437,6 +437,10 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "灰黑色",
+            "蓝黑色",
+            "飞跃星空"});
             this.comboBox1.Location = new System.Drawing.Point(123, 41);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
@@ -670,6 +674,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Task1Tab";
             this.Size = new System.Drawing.Size(668, 515);
+            this.Load += new System.EventHandler(this.Task1Tab_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -685,63 +690,63 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox textBox14;
+        public System.Windows.Forms.Label label28;
+        public System.Windows.Forms.GroupBox groupBox4;
+        public System.Windows.Forms.Label label25;
+        public System.Windows.Forms.Label label26;
+        public System.Windows.Forms.TextBox textBox12;
+        public System.Windows.Forms.TextBox textBox13;
+        public System.Windows.Forms.Label label27;
+        public System.Windows.Forms.Label label22;
+        public System.Windows.Forms.Label label23;
+        public System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.TextBox textBox11;
+        public System.Windows.Forms.Label label24;
+        public System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.RadioButton radioButton5;
+        public System.Windows.Forms.RadioButton radioButton6;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.RadioButton radioButton3;
+        public System.Windows.Forms.RadioButton radioButton4;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.RadioButton radioButton2;
+        public System.Windows.Forms.RadioButton radioButton1;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Label label21;
+        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox textBox8;
+        public System.Windows.Forms.Label label19;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.RadioButton radioButton9;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.RadioButton radioButton10;
+        public System.Windows.Forms.RadioButton radioButton7;
+        public System.Windows.Forms.RadioButton radioButton8;
+        public System.Windows.Forms.Label label11;
     }
 }

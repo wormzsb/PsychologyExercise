@@ -64,7 +64,7 @@
             }
         }
 
-        internal SettingConfig1 Config1
+        public SettingConfig1 Config1
         {
             get
             {
@@ -77,7 +77,7 @@
             }
         }
 
-        internal SettingConfig2 Config2
+        public SettingConfig2 Config2
         {
             get
             {
@@ -90,7 +90,7 @@
             }
         }
 
-        internal SettingConfig3 Config3
+        public SettingConfig3 Config3
         {
             get
             {
@@ -103,7 +103,7 @@
             }
         }
 
-        internal SettingConfig4 Config4
+        public SettingConfig4 Config4
         {
             get
             {
@@ -116,7 +116,7 @@
             }
         }
 
-        internal SettingConfig5 Config5
+        public SettingConfig5 Config5
         {
             get
             {
