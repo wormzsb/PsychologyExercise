@@ -62,7 +62,7 @@ namespace PsyEx.Forms
             foreach(var i in expConfigMap)
             {
                 if (i.Value.SetFlag==false)
-                {                    
+                {
                     return false;
                 }
             }
@@ -70,6 +70,7 @@ namespace PsyEx.Forms
             return true;
         }
         
+        //转化为json
         private string JsonOutput(List<ExConfig> setting)
         {
             DataContractJsonSerializer json = new DataContractJsonSerializer(setting.GetType());
@@ -84,15 +85,30 @@ namespace PsyEx.Forms
             return szJson;
         }
 
-        private bool savedata(bool autosave)
+        //保存数据
+        private bool savedata(string directory, string filename)
         {
-            string directory, filename;
-            directory = DoFormIdentify.MakeDirectoy("TaskSetting");
-            filename = MainForm.tester.Id + "_" + MainForm.tester.Name + "_" + "autosave.json";
-            //DoFile.doFileOutput(directory, "aaa.txt", output);
-            List<string> output = new List<string>();
-            //output.Add(szJson);
-            return true;
+            if (CheckSetState())
+            {
+                List<ExConfig> savedata = new List<ExConfig>();
+                foreach (var item in expConfigMap)
+                {
+                    savedata.Add(item.Value);
+                }
+                List<string> json_save = new List<string>();
+                json_save.Add(JsonOutput(savedata));
+
+                if (DoFormIdentify.isEmpty(filename))
+                {
+                    filename = MainForm.tester.Id + "_" + MainForm.tester.Name + "_autosave" + ".json";
+                }
+
+                if (DoFile.doFileOutput(directory, filename, json_save))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         //向listbox2添加任务
@@ -185,9 +201,12 @@ namespace PsyEx.Forms
             taskConfigForm.ShowDialog();
 
             //更新设置标记
-            for(int i=0; i<listBox2.Items.Count; i++)
+            foreach(var i in expConfigMap)
             {
-                listBox2.Items[i] = ChangeSetState(listBox2.Items[i]);        
+                if (i.Value.SetFlag)
+                {
+                    listBox2.Items[i.Key-1] = ChangeSetState(listBox2.Items[i.Key-1]);
+                }
             }
             
         }
@@ -215,6 +234,39 @@ namespace PsyEx.Forms
         private void ExpSettingForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             clear();
+        }
+
+        //另存为按钮
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (CheckSetState())
+            {
+                saveFileDialog1.InitialDirectory = DoFormIdentify.MakeDirectoy("TaskSetting");
+                saveFileDialog1.FileName = "";
+                saveFileDialog1.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("任务尚未进行设置", "提示");
+            }
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+            string localFilePath = saveFileDialog1.FileName, FilePath, FileName;
+            FilePath = localFilePath.Substring(0, localFilePath.LastIndexOf("\\"));
+            FileName = localFilePath.Substring(localFilePath.LastIndexOf("\\") + 1);
+            if(savedata(FilePath,FileName))
+            {
+                MessageBox.Show("保存成功", "提示");
+            }
+            else
+            {
+                MessageBox.Show("保存失败", "提示");
+            }
+
+
         }
     }
 }

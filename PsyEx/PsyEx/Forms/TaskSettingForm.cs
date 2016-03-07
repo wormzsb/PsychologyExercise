@@ -66,11 +66,33 @@ namespace PsyEx.Forms
 
                     case "2":
                         TabPage tp2 = new TabPage();
+                        Task2Tab task2 = new Task2Tab();
+                        if (ex.SetFlag)
+                        {
+                            task2.config = new SettingConfig2();
+                            task2.config = ex.Config2;
+                            task2.defaultFlag = false;
+                        }
+                        else
+                        {
+                            task2.config = new SettingConfig2();
+                            task2.defaultFlag = true;
+                        }
+
                         tp2.Controls.Add(new Task2Tab());
                         tabPages.Add(tp2);
                         tp2.Text = "实验2";
                         this.tabControl1.Controls.Add(tp2);
-
+                        if (ex.SetFlag)
+                        {
+                            task2.config = new SettingConfig2();
+                            task2.config = ex.Config2;
+                        }
+                        else
+                        {
+                            task2.config = new SettingConfig2();
+                            task2.defaultFlag = true;
+                        }
 
                         break;
 

@@ -111,6 +111,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "另存为";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -131,9 +132,15 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "配置文件|*.json";
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "配置文件|*.json";
             // 
             // ExpSettingForm
             // 
