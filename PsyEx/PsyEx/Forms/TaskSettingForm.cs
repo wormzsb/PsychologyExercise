@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PsyEx.Forms.TabPages;
 using PsyEx.Mapper;
 using PsyEx.Contexts;
+using PsyEx.Util;
 
 namespace PsyEx.Forms
 {
@@ -105,6 +106,52 @@ namespace PsyEx.Forms
                 }
             }
 
+        }
+
+        //提交
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ExpSettingForm.expConfigMap.Count(); i++)
+            {
+                ExConfig ex = ExpSettingForm.expConfigMap[i+1];
+                TabPage tp = tabPages[i];
+
+                switch (ex.ExId.Substring(0, 1))
+                {
+                    case "1":
+                        Task1Tab task1 = (Task1Tab)tp.Controls[0];
+                        SettingConfig1 config1 = new SettingConfig1();
+                        config1.BackgroundColor = task1.comboBox1.Text;
+                        config1.TestTime = DoFormIdentify.toInt(task1.textBox1.Text);
+                        config1.TestNum = DoFormIdentify.toInt(task1.textBox2.Text);
+
+
+                        ex.SetFlag = true;
+                        ex.Config1 = config1;
+                        break;
+
+                    case "2":
+
+
+
+                        break;
+
+                    case "3":
+
+                        break;
+
+                    case "4":
+
+
+                        break;
+
+                    case "5":
+
+
+                        break;
+                }
+            }
         }
     }
 }
