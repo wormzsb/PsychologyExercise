@@ -43,7 +43,7 @@ namespace PsyEx.Forms.TabPages
                 radioButton1.Checked = (DefaultSettingConfig2.direction == 1 ? true : false);
                 radioButton10.Checked = (DefaultSettingConfig2.speedMode == 0 ? true : false);
                 textBox4.Text = DefaultSettingConfig2.speed.ToString();
-                textBox5.Text = DefaultSettingConfig2.speed.ToString();
+                textBox5.Text = DefaultSettingConfig2.fspeed.ToString();
                 textBox7.Text = DefaultSettingConfig2.minSpeed.ToString();
                 textBox6.Text = DefaultSettingConfig2.maxSpeed.ToString();
                 textBox8.Text = DefaultSettingConfig2.minASpeed.ToString();
