@@ -437,6 +437,8 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "灰黑色"});
             this.comboBox1.Location = new System.Drawing.Point(123, 41);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
@@ -670,6 +672,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Task1Tab";
             this.Size = new System.Drawing.Size(668, 515);
+            this.Load += new System.EventHandler(this.Task1Tab_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
