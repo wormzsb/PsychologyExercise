@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,9 +7,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
 using PsyEx.Mapper;
+using System.Runtime.Serialization.Json;
+using System.Runtime.Serialization;
+using PsyEx.Util;
 
 namespace PsyEx.Forms
 {
@@ -67,6 +70,26 @@ namespace PsyEx.Forms
             return true;
         }
         
+        private static void tojson(Dictionary<int, ExConfig> setting)
+        {
+            DataContractJsonSerializer json = new DataContractJsonSerializer(setting.GetType());
+
+            string szJson = "";
+
+            //序列化
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+
+                json.WriteObject(stream, setting);
+
+                szJson = Encoding.UTF8.GetString(stream.ToArray());
+
+            }
+            List<string> output = new List<string>();
+            output.Add(szJson);
+            DoFile.doFileOutput("d:","aaa.txt",output);
+        }
 
         //向listbox2添加任务
         private void AddItem(object obj)
@@ -82,7 +105,7 @@ namespace PsyEx.Forms
             setting.SetFlag = false;
             setting.ExName = SelectedItem;
             DateTime dt = DateTime.Now;
-            setting.ExId = sortNum.ToString() + "_" + dt.ToFileTime().ToString();
+            setting.ExId = SelectedItem[SelectedItem.IndexOf("-") - 1] + "_" + dt.ToFileTime().ToString();
             expConfigMap.Add(setting.SortId, setting);
         }
 
@@ -165,6 +188,7 @@ namespace PsyEx.Forms
                 {
                     MainForm.exConfigList.Add(i.Value);
                 }
+                tojson(expConfigMap);
                 this.Close();
             }
             else
