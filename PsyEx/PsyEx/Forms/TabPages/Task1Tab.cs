@@ -28,18 +28,22 @@ namespace PsyEx.Forms.TabPages
             {
                 //加载默认设置
                 this.textBox14.Text = Exercise.EXERCISE_1_NAME;
-                this.comboBox1.SelectedIndex = 0;
+                this.comboBox1.Text = DefaultSettingConfig1.backgroundColor;
                 this.textBox1.Text = DefaultSettingConfig1.testTime.ToString();
                 this.textBox2.Text = DefaultSettingConfig1.testNum.ToString();
+                this.comboBox2.Text = DefaultSettingConfig1.particle;
+                
 
 
-            }else
+            }
+            else
             {
                 //加载config
                 this.textBox14.Text = Exercise.EXERCISE_1_NAME;
                 this.comboBox1.Text = config.BackgroundColor;
                 this.textBox1.Text = config.TestTime.ToString();
                 this.textBox2.Text = config.TestNum.ToString();
+                
             }
         }
     }
