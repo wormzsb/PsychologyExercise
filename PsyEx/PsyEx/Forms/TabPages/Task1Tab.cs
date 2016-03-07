@@ -24,7 +24,7 @@ namespace PsyEx.Forms.TabPages
 
         private void Task1Tab_Load(object sender, EventArgs e)
         {
-            if (defaultFlag)
+            if (defaultFlag == false)
             {
                 //加载默认设置
                 this.textBox14.Text = Exercise.EXERCISE_1_NAME;
