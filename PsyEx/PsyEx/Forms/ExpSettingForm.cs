@@ -45,7 +45,7 @@ namespace PsyEx.Forms
                     listBox2.Items.Add(item.ExName + "[未设置](" + item.SortId + ")");
                     if (item.SetFlag)
                     {
-                        ChangeSetState(listBox2.Items[listBox2.Items.Count]);    
+                        ChangeSetState(listBox2.Items[listBox2.Items.Count-1]);    
                     }
                     expConfigMap.Add(item.SortId, item);
                     if (item.SortId>=sortNum)
@@ -220,10 +220,18 @@ namespace PsyEx.Forms
                 {
                     MainForm.exConfigList.Add(i.Value);
                 }
-                //tojson(expConfigMap);
-                clear();
-                this.Dispose();
-                this.Close();
+                if (savedata(DoFormIdentify.MakeDirectoy("TaskSetting"),""))
+                {
+                    MessageBox.Show("保存成功", "提示");
+                    clear();
+                    this.Dispose();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("保存失败", "提示");
+                    return;
+                }
             }
             else
             {
