@@ -99,5 +99,109 @@ namespace PsyEx.Forms.TabPages
                 textBox20.Text = config.Loop.ToString();
             }
         }
+
+        //匀速和加速
+        private void radioButton10_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton10.Checked)
+            {
+                label13.Enabled = label12.Enabled = textBox4.Enabled = true;
+                label16.Enabled = label18.Enabled = label20.Enabled = textBox6.Enabled = textBox7.Enabled = false;
+                label14.Enabled = label15.Enabled = textBox5.Enabled = false;
+                label17.Enabled = label19.Enabled = label21.Enabled = textBox8.Enabled = textBox9.Enabled = false;
+            }
+            else
+            {
+                label13.Enabled = label12.Enabled = textBox4.Enabled = false;
+                label16.Enabled = label18.Enabled = label20.Enabled = textBox6.Enabled = textBox7.Enabled = true;
+                label14.Enabled = label15.Enabled = textBox5.Enabled = true;
+                label17.Enabled = label19.Enabled = label21.Enabled = textBox8.Enabled = textBox9.Enabled = true;
+            }
+        }
+
+        //禁用每组待估时间
+        private void ChangeAbleState2(bool state)
+        {
+            label7.Enabled = textBox2.Enabled = label8.Enabled = state;
+        }
+
+        private void ChangeAbleState3(bool state)
+        {
+            label9.Enabled = textBox3.Enabled = label10.Enabled = state;
+        }
+
+        private void ChangeAbleState4(bool state)
+        {
+            label22.Enabled = textBox10.Enabled = label23.Enabled = state;
+        }
+
+        private void ChangeAbleState5(bool state)
+        {
+            label24.Enabled = textBox11.Enabled = label25.Enabled = state;
+        }
+
+        private void ChangeAbleState6(bool state)
+        {
+            label26.Enabled = textBox12.Enabled = label27.Enabled = state;
+        }
+
+        private void ChangeAbleState7(bool state)
+        {
+            label29.Enabled = textBox13.Enabled = label30.Enabled = state;
+        }
+
+        private void ChangeAbleState8(bool state)
+        {
+            label31.Enabled = textBox15.Enabled = label32.Enabled = state;
+        }
+
+        private void ChangeAbleState9(bool state)
+        {
+            label33.Enabled = textBox16.Enabled = label34.Enabled = state;
+        }
+
+        private void ChangeAbleState10(bool state)
+        {
+            label35.Enabled = textBox17.Enabled = label36.Enabled = state;
+        }
+
+        private void ChangeAbleState11(bool state)
+        {
+            label37.Enabled = textBox18.Enabled = label38.Enabled = state;
+        }
+
+        private void ChangeAbleState12(bool state)
+        {
+            label39.Enabled = textBox19.Enabled = label40.Enabled = state;
+        }
+
+        private void comboBox3_TextChanged(object sender, EventArgs e)
+        {
+            List<Action<bool>> changeablestate = new List<Action<bool>>();
+            changeablestate.Add(ChangeAbleState2);
+            changeablestate.Add(ChangeAbleState3);
+            changeablestate.Add(ChangeAbleState4);
+            changeablestate.Add(ChangeAbleState5);
+            changeablestate.Add(ChangeAbleState6);
+            changeablestate.Add(ChangeAbleState7);
+            changeablestate.Add(ChangeAbleState8);
+            changeablestate.Add(ChangeAbleState9);
+            changeablestate.Add(ChangeAbleState10);
+            changeablestate.Add(ChangeAbleState11);
+            changeablestate.Add(ChangeAbleState12);
+
+            int ablecount;
+            int.TryParse(comboBox3.Text, out ablecount);
+            ablecount--;
+            for (int i = 0; i < ablecount; i++)
+            {
+                changeablestate[i](true);
+            }
+            for (int i = ablecount; i < 11; i++)
+            {
+                changeablestate[i](false);
+            }            
+        }
+
     }
 }

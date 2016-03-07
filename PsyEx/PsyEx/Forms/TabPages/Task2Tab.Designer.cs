@@ -40,10 +40,14 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.label21 = new System.Windows.Forms.Label();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -52,14 +56,12 @@
             this.label18 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.label13 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -104,14 +106,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox14
@@ -250,14 +250,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "主任务设置";
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Location = new System.Drawing.Point(122, 71);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 30);
-            this.panel1.TabIndex = 29;
+            this.panel2.Controls.Add(this.radioButton7);
+            this.panel2.Controls.Add(this.radioButton8);
+            this.panel2.Location = new System.Drawing.Point(122, 280);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 39);
+            this.panel2.TabIndex = 30;
             // 
             // radioButton7
             // 
@@ -270,15 +270,6 @@
             this.radioButton7.Text = "反向";
             this.radioButton7.UseVisualStyleBackColor = true;
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(192, 241);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(17, 12);
-            this.label21.TabIndex = 28;
-            this.label21.Text = "—";
-            // 
             // radioButton8
             // 
             this.radioButton8.AutoSize = true;
@@ -289,6 +280,56 @@
             this.radioButton8.TabStop = true;
             this.radioButton8.Text = "正向";
             this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.radioButton10);
+            this.panel3.Controls.Add(this.radioButton9);
+            this.panel3.Location = new System.Drawing.Point(57, 113);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(57, 75);
+            this.panel3.TabIndex = 30;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(3, 8);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(47, 16);
+            this.radioButton10.TabIndex = 11;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "匀速";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton10_CheckedChanged);
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(3, 43);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(47, 16);
+            this.radioButton9.TabIndex = 15;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "变速";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Location = new System.Drawing.Point(122, 71);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 30);
+            this.panel1.TabIndex = 29;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(192, 241);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(17, 12);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "—";
             // 
             // label11
             // 
@@ -354,17 +395,6 @@
             this.textBox7.Size = new System.Drawing.Size(57, 21);
             this.textBox7.TabIndex = 22;
             // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(3, 8);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(47, 16);
-            this.radioButton10.TabIndex = 11;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "匀速";
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -416,17 +446,6 @@
             this.label14.Size = new System.Drawing.Size(47, 12);
             this.label14.TabIndex = 18;
             this.label14.Text = "像素/秒";
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(3, 43);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(47, 16);
-            this.radioButton9.TabIndex = 15;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "变速";
-            this.radioButton9.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
@@ -825,6 +844,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(63, 20);
             this.comboBox3.TabIndex = 5;
+            this.comboBox3.TextChanged += new System.EventHandler(this.comboBox3_TextChanged);
             // 
             // checkBox2
             // 
@@ -835,24 +855,6 @@
             this.checkBox2.TabIndex = 21;
             this.checkBox2.Text = "主任务";
             this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.radioButton7);
-            this.panel2.Controls.Add(this.radioButton8);
-            this.panel2.Location = new System.Drawing.Point(122, 280);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 39);
-            this.panel2.TabIndex = 30;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.radioButton10);
-            this.panel3.Controls.Add(this.radioButton9);
-            this.panel3.Location = new System.Drawing.Point(57, 113);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(57, 75);
-            this.panel3.TabIndex = 30;
             // 
             // Task2Tab
             // 
@@ -872,14 +874,14 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
