@@ -108,10 +108,35 @@ namespace PsyEx.Forms
 
                     case "4":
                         TabPage tp4 = new TabPage();
+                        Task4Tab task4 = new Task4Tab();
+                        if (ex.SetFlag)
+                        {
+                            task4.config = new SettingConfig4();
+                            task4.config = ex.Config4;
+                            task4.defaultFlag = false;
+                        }
+                        else
+                        {
+                            task4.config = new SettingConfig4();
+                            task4.defaultFlag = true;
+                        }
+
                         tp4.Controls.Add(new Task4Tab());
                         tabPages.Add(tp4);
                         tp4.Text = "实验4";
                         this.tabControl1.Controls.Add(tp4);
+                        if (ex.SetFlag)
+                        {
+                            task4.config = new SettingConfig4();
+                            task4.config = ex.Config4;
+                        }
+                        else
+                        {
+                            task4.config = new SettingConfig4();
+                            task4.defaultFlag = true;
+                        }
+
+                        break;
 
 
                         break;

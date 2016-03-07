@@ -14,6 +14,7 @@ namespace PsyEx.Contexts
         public static int direction = 1;//运动方向0顺时针1逆时针
         public static int speedMode = 0;//速度模式0匀速1匀加速
         public static double speed = 100;//起始速度
+        public static double fspeed = 50;//加速度起始速度
         public static double minSpeed = 50;//最小速度
         public static double maxSpeed = 150;//最大速度
         public static double minASpeed = 2;//最小加速度
