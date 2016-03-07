@@ -50,17 +50,6 @@ namespace PsyEx.Forms
                         tp1.Text = "实验1";
                         this.tabControl1.Controls.Add(tp1);
 
-                        if (ex.SetFlag)
-                        {
-                            task1.config = new SettingConfig1();
-                            task1.config = ex.Config1;
-                        }
-                        else
-                        {
-                            task1.config = new SettingConfig1();
-                            task1.defaultFlag = true;
-                        }
-
 
                         break;
 
@@ -83,16 +72,6 @@ namespace PsyEx.Forms
                         tabPages.Add(tp2);
                         tp2.Text = "实验2";
                         this.tabControl1.Controls.Add(tp2);
-                        if (ex.SetFlag)
-                        {
-                            task2.config = new SettingConfig2();
-                            task2.config = ex.Config2;
-                        }
-                        else
-                        {
-                            task2.config = new SettingConfig2();
-                            task2.defaultFlag = true;
-                        }
 
                         break;
 
@@ -125,29 +104,31 @@ namespace PsyEx.Forms
                         tabPages.Add(tp4);
                         tp4.Text = "实验4";
                         this.tabControl1.Controls.Add(tp4);
-                        if (ex.SetFlag)
-                        {
-                            task4.config = new SettingConfig4();
-                            task4.config = ex.Config4;
-                        }
-                        else
-                        {
-                            task4.config = new SettingConfig4();
-                            task4.defaultFlag = true;
-                        }
 
                         break;
 
-
-                        break;
 
                     case "5":
 
                         TabPage tp5 = new TabPage();
-                        tp5.Controls.Add(new Task5Tab());
+                        Task5Tab task5 = new Task5Tab();
+                        if (ex.SetFlag)
+                        {
+                            task5.config = new SettingConfig5();
+                            task5.config = ex.Config5;
+                            task5.defaultFlag = false;
+                        }
+                        else
+                        {
+                            task5.config = new SettingConfig5();
+                            task5.defaultFlag = true;
+                        }
+
+                        tp5.Controls.Add(task5);
                         tabPages.Add(tp5);
                         tp5.Text = "实验5";
                         this.tabControl1.Controls.Add(tp5);
+
 
                         break;
                 }
