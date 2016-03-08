@@ -95,12 +95,12 @@ namespace PsyEx.Mapper
         {
             get
             {
-                return Fspeed;
+                return fspeed;
             }
 
             set
             {
-                Fspeed = value;
+                fspeed = value;
             }
         }
 

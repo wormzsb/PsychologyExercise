@@ -45,7 +45,7 @@ namespace PsyEx.Forms
                     listBox2.Items.Add(item.ExName + "[未设置](" + item.SortId + ")");
                     if (item.SetFlag)
                     {
-                        ChangeSetState(listBox2.Items[listBox2.Items.Count-1]);    
+                        listBox2.Items[listBox2.Items.Count - 1] = ChangeSetState(listBox2.Items[listBox2.Items.Count - 1]);    
                     }
                     expConfigMap.Add(item.SortId, item);
                     if (item.SortId>=sortNum)
