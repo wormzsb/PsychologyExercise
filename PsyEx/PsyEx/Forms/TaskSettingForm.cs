@@ -264,7 +264,112 @@ namespace PsyEx.Forms
                         break;
 
                     case "3":
+                        Task3Tab task3 = (Task3Tab)tp.Controls[0];
+                        SettingConfig3 config3 = new SettingConfig3();
 
+                        config3.MainTest = task3.checkBox2.Checked;
+                        config3.MoveTrail = task3.comboBox2.Text;
+                        config3.BackgroundColor = task3.comboBox1.Text;
+
+                        if (task3.radioButton2.Checked)
+                        {
+                            config3.Direction = 1;
+                        }
+                        else
+                        {
+                            config3.Direction = 0;
+                        }
+
+                        if (task3.radioButton10.Checked)
+                        {
+                            config3.SpeedMode = 0;
+                            config3.Speed = DoFormIdentify.toDouble(task3.textBox4.Text);
+                        }
+                        else
+                        {
+                            config3.SpeedMode = 1;
+                            config3.Speed = DoFormIdentify.toDouble(task3.textBox5.Text);
+                        }
+
+                        config3.MinSpeed = DoFormIdentify.toDouble(task3.textBox7.Text);
+                        config3.MaxSpeed = DoFormIdentify.toDouble(task3.textBox6.Text);
+                        config3.MinASpeed = DoFormIdentify.toDouble(task3.textBox8.Text);
+                        config3.MaxASpeed = DoFormIdentify.toDouble(task3.textBox9.Text);
+
+                        if (task3.checkBox1.Checked)
+                        {
+                            config3.Feedback = true;
+                        }
+                        else
+                        {
+                            config3.Feedback = false;
+                        }
+
+                        if (task3.radioButton8.Checked)
+                        {
+                            config3.CtrlDirection = 0;
+                        }
+                        else
+                        {
+                            config3.CtrlDirection = 1;
+                        }
+
+                        if (task3.radioButton3.Checked)
+                        {
+                            config3.SecTestMode = 0;
+                        }
+                        else
+                        {
+                            config3.SecTestMode = 1;
+                        }
+
+                        if (task3.checkBox3.Checked)
+                        {
+                            config3.LeftUp = true;
+                        }
+                        else
+                        {
+                            config3.LeftUp = false;
+                        }
+
+                        if (task3.checkBox4.Checked)
+                        {
+                            config3.LeftDown = true;
+                        }
+                        else
+                        {
+                            config3.LeftDown = false;
+                        }
+
+                        if (task3.checkBox5.Checked)
+                        {
+                            config3.RightUp = true;
+                        }
+                        else
+                        {
+                            config3.RightUp = false;
+                        }
+
+                        if (task3.checkBox6.Checked)
+                        {
+                            config3.RightDown = true;
+                        }
+                        else
+                        {
+                            config3.RightDown = false;
+                        }
+
+                        config3.Plane = DoFormIdentify.toInt(task3.textBox1.Text);
+                        config3.Copter = DoFormIdentify.toInt(task3.textBox2.Text);
+                        config3.ViewTime = DoFormIdentify.toInt(task3.textBox3.Text);
+
+                        config3.WaitTime = DoFormIdentify.toInt(task3.textBox10.Text);
+                        config3.MinTimeSpace = DoFormIdentify.toInt(task3.textBox11.Text);
+                        config3.MaxTimeSpace = DoFormIdentify.toInt(task3.textBox12.Text);
+                        config3.TestNum = DoFormIdentify.toInt(task3.textBox13.Text);
+
+                        ex.SetFlag = true;
+                        ex.Config3 = config3;
                         break;
 
                     case "4":

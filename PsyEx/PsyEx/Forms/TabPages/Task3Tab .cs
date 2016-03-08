@@ -62,7 +62,129 @@ namespace PsyEx.Forms.TabPages
             }
             else
             {
+                this.textBox14.Text = Exercise.EXERCISE_3_NAME;
+                this.comboBox1.Text = config.BackgroundColor;
+                this.comboBox2.Text = config.MoveTrail;
 
+                if(config.Direction == 0)
+                {
+                    this.radioButton2.Checked = true;
+                }
+                else
+                {
+                    this.radioButton1.Checked = true;
+                }
+
+                //speed
+                this.textBox4.Text = config.Speed.ToString();
+                this.textBox5.Text = config.Speed.ToString();
+                this.textBox7.Text = config.MinSpeed.ToString();
+                this.textBox6.Text = config.MaxSpeed.ToString();
+                this.textBox8.Text = config.MinASpeed.ToString();
+                this.textBox9.Text = config.MaxASpeed.ToString();
+
+                if(config.SpeedMode == 0)
+                {
+                    this.textBox5.Enabled = false;
+                    this.textBox7.Enabled = false;
+                    this.textBox6.Enabled = false;
+                    this.textBox8.Enabled = false;
+                    this.textBox9.Enabled = false;
+                    this.label14.Enabled = false;
+                    this.label15.Enabled = false;
+                    this.label16.Enabled = false;
+                    this.label17.Enabled = false;
+                    this.label18.Enabled = false;
+                    this.label19.Enabled = false;
+                }
+                else
+                {
+                    this.radioButton9.Checked = true;
+                    this.textBox4.Enabled = false;
+                    this.label13.Enabled = false;
+                    this.label12.Enabled = false;
+                }
+
+                if (config.Feedback)
+                {
+                    this.checkBox1.Checked = true;
+                }
+                else
+                {
+                    this.checkBox1.Checked = false;
+                }
+
+                if (config.CtrlDirection == 0)
+                {
+                    this.radioButton8.Checked = true;
+                }
+                else
+                {
+                    this.radioButton7.Checked = true;
+                }
+
+                if (config.SecTestMode == 0)
+                {
+                    this.radioButton3.Checked = true;
+                }
+                else
+                {
+                    this.radioButton4.Checked = true;
+                }
+
+                if (config.LeftUp)
+                {
+                    this.checkBox3.Checked = true;
+                }
+                else
+                {
+                    this.checkBox3.Checked = false;
+                }
+
+                if (config.LeftDown)
+                {
+                    this.checkBox4.Checked = true;
+                }
+                else
+                {
+                    this.checkBox4.Checked = false;
+                }
+
+                if (config.RightUp)
+                {
+                    this.checkBox5.Checked = true;
+                }
+                else
+                {
+                    this.checkBox5.Checked = false;
+                }
+
+                if (config.RightDown)
+                {
+                    this.checkBox6.Checked = true;
+                }
+                else
+                {
+                    this.checkBox6.Checked = false;
+                }
+
+                if (config.MainTest)
+                {
+                    this.checkBox2.Checked = true;
+                }
+                else
+                {
+                    this.checkBox2.Checked = false;
+                }
+
+                this.textBox1.Text = config.Plane.ToString();
+                this.textBox2.Text = config.Copter.ToString();
+                this.textBox3.Text = config.ViewTime.ToString();
+
+                this.textBox10.Text = config.WaitTime.ToString();
+                this.textBox11.Text = config.MinTimeSpace.ToString();
+                this.textBox12.Text = config.MaxTimeSpace.ToString();
+                this.textBox13.Text = config.TestNum.ToString();
             }
         }
     }
