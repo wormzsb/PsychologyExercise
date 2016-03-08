@@ -609,9 +609,9 @@
             this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox6.Location = new System.Drawing.Point(133, 173);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(36, 16);
+            this.checkBox6.Size = new System.Drawing.Size(48, 16);
             this.checkBox6.TabIndex = 14;
-            this.checkBox6.Text = "右";
+            this.checkBox6.Text = "右下";
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // checkBox5
@@ -621,9 +621,9 @@
             this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox5.Location = new System.Drawing.Point(133, 136);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(36, 16);
+            this.checkBox5.Size = new System.Drawing.Size(48, 16);
             this.checkBox5.TabIndex = 13;
-            this.checkBox5.Text = "左";
+            this.checkBox5.Text = "右上";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // checkBox4
@@ -633,9 +633,9 @@
             this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox4.Location = new System.Drawing.Point(35, 173);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(36, 16);
+            this.checkBox4.Size = new System.Drawing.Size(48, 16);
             this.checkBox4.TabIndex = 12;
-            this.checkBox4.Text = "下";
+            this.checkBox4.Text = "左下";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox3
@@ -645,9 +645,9 @@
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3.Location = new System.Drawing.Point(35, 136);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(36, 16);
+            this.checkBox3.Size = new System.Drawing.Size(48, 16);
             this.checkBox3.TabIndex = 11;
-            this.checkBox3.Text = "上";
+            this.checkBox3.Text = "左上";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // label3
