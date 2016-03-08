@@ -215,8 +215,15 @@ namespace PsyEx.Forms
                         break;
 
                     case "5":
+                        Task5Tab task5 = (Task5Tab)tp.Controls[0];
+                        SettingConfig5 config5 = new SettingConfig5();
 
+                        config5.PointTime = DoFormIdentify.toInt(task5.textBox4.Text);
+                        config5.ViewTime = DoFormIdentify.toInt(task5.textBox9.Text);
+                        config5.LastTime = DoFormIdentify.toInt(task5.textBox17.Text);
 
+                        ex.SetFlag = true;
+                        ex.Config5 = config5;
                         break;
                 }
             }

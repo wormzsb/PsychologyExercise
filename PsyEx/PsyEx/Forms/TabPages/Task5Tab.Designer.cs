@@ -5,7 +5,7 @@
         /// <summary> 
         /// 必需的设计器变量。
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public  System.ComponentModel.IContainer components = null;
 
         /// <summary> 
         /// 清理所有正在使用的资源。
@@ -26,7 +26,7 @@
         /// 设计器支持所需的方法 - 不要修改
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
-        private void InitializeComponent()
+        public  void InitializeComponent()
         {
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -140,14 +140,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        public  System.Windows.Forms.TextBox textBox14;
+        public  System.Windows.Forms.Label label28;
+        public  System.Windows.Forms.GroupBox groupBox2;
+        public  System.Windows.Forms.TextBox textBox17;
+        public  System.Windows.Forms.TextBox textBox9;
+        public  System.Windows.Forms.TextBox textBox4;
+        public  System.Windows.Forms.Label label11;
+        public  System.Windows.Forms.Label label6;
+        public  System.Windows.Forms.Label label5;
     }
 }
