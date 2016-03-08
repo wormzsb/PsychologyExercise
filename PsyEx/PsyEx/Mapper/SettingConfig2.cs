@@ -14,6 +14,7 @@ namespace PsyEx.Mapper
         private int direction;//运动方向
         private int speedMode;//速度模式0匀速1匀加速
         private double speed;//起始速度
+        private double fspeed;//加速度起始速度
         private double minSpeed;//最小速度
         private double maxSpeed;//最大速度
         private double minASpeed;//最小加速度
@@ -87,6 +88,19 @@ namespace PsyEx.Mapper
             set
             {
                 speed = value;
+            }
+        }
+
+        public double Fspeed
+        {
+            get
+            {
+                return Fspeed;
+            }
+
+            set
+            {
+                Fspeed = value;
             }
         }
 

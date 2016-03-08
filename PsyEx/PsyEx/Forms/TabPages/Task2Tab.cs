@@ -75,7 +75,7 @@ namespace PsyEx.Forms.TabPages
                 radioButton1.Checked = (config.Direction == 1 ? true : false);
                 radioButton10.Checked = (config.SpeedMode == 0 ? true : false);
                 textBox4.Text = config.Speed.ToString();
-                textBox5.Text = config.Speed.ToString();
+                textBox5.Text = config.Fspeed.ToString();
                 textBox7.Text = config.MinSpeed.ToString();
                 textBox6.Text = config.MaxSpeed.ToString();
                 textBox8.Text = config.MinASpeed.ToString();

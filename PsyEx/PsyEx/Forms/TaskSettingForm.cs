@@ -229,9 +229,38 @@ namespace PsyEx.Forms
                         break;
 
                     case "2":
+                        Task2Tab task2 = (Task2Tab)tp.Controls[0];
+                        SettingConfig2 config2 = new SettingConfig2();
+                        config2.MainTest = task2.checkBox2.Checked;
+                        config2.MoveTrail = task2.comboBox2.Text;
+                        config2.Direction = (task2.radioButton1.Checked == true ? 1 : 0);
+                        config2.SpeedMode = (task2.radioButton10.Checked == true ? 0 : 1);
+                        config2.Speed = DoFormIdentify.toDouble(task2.textBox4.Text);
+                        config2.Fspeed = DoFormIdentify.toDouble(task2.textBox5.Text);
+                        config2.MinSpeed = DoFormIdentify.toDouble(task2.textBox7.Text);
+                        config2.MaxSpeed = DoFormIdentify.toDouble(task2.textBox6.Text);
+                        config2.MinASpeed = DoFormIdentify.toDouble(task2.textBox8.Text);
+                        config2.MaxASpeed = DoFormIdentify.toDouble(task2.textBox9.Text);
+                        config2.CtrlDirection = (task2.radioButton8.Checked == true ? 0 : 1);
+                        config2.BackgroundColor = task2.comboBox1.Text;
+                        config2.Feedback = task2.checkBox1.Checked;
+                        config2.EstimateNum = DoFormIdentify.toInt(task2.comboBox3.Text);
+                        config2.Estimate1 = DoFormIdentify.toDouble(task2.textBox1.Text);
+                        config2.Estimate2 = DoFormIdentify.toDouble(task2.textBox2.Text);
+                        config2.Estimate3 = DoFormIdentify.toDouble(task2.textBox3.Text);
+                        config2.Estimate4 = DoFormIdentify.toDouble(task2.textBox10.Text);
+                        config2.Estimate5 = DoFormIdentify.toDouble(task2.textBox11.Text);
+                        config2.Estimate6 = DoFormIdentify.toDouble(task2.textBox12.Text);
+                        config2.Estimate7 = DoFormIdentify.toDouble(task2.textBox13.Text);
+                        config2.Estimate8 = DoFormIdentify.toDouble(task2.textBox15.Text);
+                        config2.Estimate9 = DoFormIdentify.toDouble(task2.textBox16.Text);
+                        config2.Estimate10 = DoFormIdentify.toDouble(task2.textBox17.Text);
+                        config2.Estimate11 = DoFormIdentify.toDouble(task2.textBox18.Text);
+                        config2.Estimate12 = DoFormIdentify.toDouble(task2.textBox19.Text);
+                        config2.Loop = DoFormIdentify.toInt(task2.textBox20.Text);
 
-
-
+                        ex.SetFlag = true;
+                        ex.Config2 = config2;
                         break;
 
                     case "3":
@@ -239,7 +268,32 @@ namespace PsyEx.Forms
                         break;
 
                     case "4":
+                        Task4Tab task4 = (Task4Tab)tp.Controls[0];
+                        SettingConfig4 config4 = new SettingConfig4();
+                        config4.BallColorR = DoFormIdentify.toInt(task4.textBox4.Text);
+                        config4.BallColorG = DoFormIdentify.toInt(task4.textBox5.Text);
+                        config4.BallColorB = DoFormIdentify.toInt(task4.textBox6.Text);
+                        config4.BackgroundColorR = DoFormIdentify.toInt(task4.textBox9.Text);
+                        config4.BackgroundColorG = DoFormIdentify.toInt(task4.textBox8.Text);
+                        config4.BackgroundColorB = DoFormIdentify.toInt(task4.textBox7.Text);
+                        config4.ShelterColorR = DoFormIdentify.toInt(task4.textBox17.Text);
+                        config4.ShelterColorR = DoFormIdentify.toInt(task4.textBox16.Text);
+                        config4.ShelterColorR = DoFormIdentify.toInt(task4.textBox15.Text);
+                        config4.BallRadius = DoFormIdentify.toInt(task4.textBox3.Text);
+                        config4.ShelterRadius = DoFormIdentify.toInt(task4.textBox2.Text);
+                        config4.BallCenterDis = DoFormIdentify.toInt(task4.textBox1.Text);
+                        config4.Speed1 = DoFormIdentify.toInt(task4.textBox20.Text);
+                        config4.Speed2 = DoFormIdentify.toInt(task4.textBox19.Text);
+                        config4.Speed3 = DoFormIdentify.toInt(task4.textBox18.Text);
+                        config4.Left = task4.checkBox2.Checked;
+                        config4.Right = task4.checkBox1.Checked;
+                        config4.Up = task4.checkBox8.Checked;
+                        config4.Down = task4.checkBox7.Checked;
+                        config4.RepeatNum = DoFormIdentify.toInt(task4.textBox10.Text);
+                        config4.TimeInterval = DoFormIdentify.toInt(task4.textBox11.Text);
 
+                        ex.SetFlag = true;
+                        ex.Config4 = config4;
 
                         break;
 
