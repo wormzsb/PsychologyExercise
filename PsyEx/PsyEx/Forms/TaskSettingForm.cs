@@ -77,11 +77,23 @@ namespace PsyEx.Forms
 
                     case "3":
                         TabPage tp3 = new TabPage();
+                        Task3Tab task3 = new Task3Tab();
+                        if (ex.SetFlag)
+                        {
+                            task3.config = new SettingConfig3();
+                            task3.config = ex.Config3;
+                            task3.defaultFlag = false;
+                        }
+                        else
+                        {
+                            task3.config = new SettingConfig3();
+                            task3.defaultFlag = true;
+                        }
+
                         tp3.Controls.Add(new Task3Tab());
                         tabPages.Add(tp3);
                         tp3.Text = "实验3";
                         this.tabControl1.Controls.Add(tp3);
-
 
                         break;
 
@@ -154,6 +166,23 @@ namespace PsyEx.Forms
                         config1.TestTime = DoFormIdentify.toInt(task1.textBox1.Text);
                         config1.TestNum = DoFormIdentify.toInt(task1.textBox2.Text);
                         config1.Particle = task1.comboBox2.Text;
+                        if (task1.radioButton1.Checked)
+                        {
+                            config1.Direction = 1;
+                        }
+                        else
+                        {
+                            config1.Direction = 0;
+                        }
+                        if (task1.radioButton8.Checked)
+                        {
+                            config1.CtrlDirection = 0;
+                        }
+                        else
+                        {
+                            config1.CtrlDirection = 1;
+                        }
+
                         if (task1.radioButton4.Checked)
                         {
                             config1.Pause = false;

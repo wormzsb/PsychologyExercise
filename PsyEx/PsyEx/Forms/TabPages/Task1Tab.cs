@@ -91,6 +91,15 @@ namespace PsyEx.Forms.TabPages
                 this.textBox2.Text = config.TestNum.ToString();
                 //运动方式
                 this.comboBox2.Text = config.Particle;
+                if (config.Direction == 1)
+                {
+                    radioButton1.Checked = true;
+                }
+                else
+                {
+                    radioButton2.Checked = true;
+                }
+
                 //暂停
                 this.textBox3.Text = config.PauseRate.ToString();
                 if (config.Pause == false)
@@ -129,6 +138,14 @@ namespace PsyEx.Forms.TabPages
 
 
                 //速度
+                if(config.CtrlDirection == 0)
+                {
+                    this.radioButton8.Checked = true;
+                }
+                else
+                {
+                    this.radioButton7.Checked = true;
+                }
                 this.textBox4.Text = config.Speed.ToString();
                 this.textBox5.Text = config.Speed.ToString();
 
