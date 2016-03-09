@@ -44,7 +44,7 @@
             this.当前配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.硬件配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.硬件校准ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.硬件设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HDConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.开始实验ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.结果分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开数据文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +72,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "硬件配置";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -177,7 +178,7 @@
             // 
             this.硬件配置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.硬件校准ToolStripMenuItem,
-            this.硬件设置ToolStripMenuItem});
+            this.HDConfigToolStripMenuItem});
             this.硬件配置ToolStripMenuItem.Name = "硬件配置ToolStripMenuItem";
             this.硬件配置ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.硬件配置ToolStripMenuItem.Text = "硬件配置";
@@ -185,14 +186,15 @@
             // 硬件校准ToolStripMenuItem
             // 
             this.硬件校准ToolStripMenuItem.Name = "硬件校准ToolStripMenuItem";
-            this.硬件校准ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.硬件校准ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.硬件校准ToolStripMenuItem.Text = "硬件校准";
             // 
-            // 硬件设置ToolStripMenuItem
+            // HDConfigToolStripMenuItem
             // 
-            this.硬件设置ToolStripMenuItem.Name = "硬件设置ToolStripMenuItem";
-            this.硬件设置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.硬件设置ToolStripMenuItem.Text = "硬件设置";
+            this.HDConfigToolStripMenuItem.Name = "HDConfigToolStripMenuItem";
+            this.HDConfigToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.HDConfigToolStripMenuItem.Text = "硬件设置";
+            this.HDConfigToolStripMenuItem.Click += new System.EventHandler(this.HDConfigToolStripMenuItem_Click);
             // 
             // 开始实验ToolStripMenuItem
             // 
@@ -283,13 +285,13 @@
         private System.Windows.Forms.ToolStripMenuItem 当前配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 硬件配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 硬件校准ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 硬件设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HDConfigToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 开始实验ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 结果分析ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 打开数据文件ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据批处理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }
 

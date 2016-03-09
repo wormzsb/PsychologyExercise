@@ -188,6 +188,12 @@ namespace PsyEx.Forms
 
         private void TesterInfo_FormClosed(object sender, FormClosedEventArgs e)
         {
+            List<string> strList = TextContribute.printMainInfo(MainForm.userFlag, MainForm.exFlag, MainForm.hwFlag);
+            Program.m.textBox1.Text = "";
+            foreach (string str in strList)
+            {
+                Program.m.textBox1.Text += Environment.NewLine + str;
+            }
             this.Dispose();
         }
     }
