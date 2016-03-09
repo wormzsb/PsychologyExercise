@@ -73,6 +73,12 @@
     <Compile Include="Forms\ExpSettingForm.Designer.cs">
       <DependentUpon>ExpSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HardwareSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HardwareSetting.Designer.cs">
+      <DependentUpon>HardwareSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TabPages\Task5Tab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +122,7 @@
       <DependentUpon>TesterInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Mapper\ExConfig.cs" />
+    <Compile Include="Mapper\HDConfig.cs" />
     <Compile Include="Mapper\SettingConfig2.cs" />
     <Compile Include="Mapper\SettingConfig3.cs" />
     <Compile Include="Mapper\SettingConfig5.cs" />
@@ -132,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExpSettingForm.resx">
       <DependentUpon>ExpSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HardwareSetting.resx">
+      <DependentUpon>HardwareSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TabPages\Task5Tab.resx">
       <DependentUpon>Task5Tab.cs</DependentUpon>
