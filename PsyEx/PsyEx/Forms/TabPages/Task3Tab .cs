@@ -68,11 +68,11 @@ namespace PsyEx.Forms.TabPages
 
                 if(config.Direction == 0)
                 {
-                    this.radioButton2.Checked = true;
+                    this.radioButton1.Checked = true;
                 }
                 else
                 {
-                    this.radioButton1.Checked = true;
+                    this.radioButton2.Checked = true;
                 }
 
                 //speed
@@ -186,6 +186,45 @@ namespace PsyEx.Forms.TabPages
                 this.textBox12.Text = config.MaxTimeSpace.ToString();
                 this.textBox13.Text = config.TestNum.ToString();
             }
+        }
+
+        private void radioButton9_CheckedChanged(object sender, EventArgs e)
+        {
+
+            this.textBox5.Enabled = true;
+            this.textBox7.Enabled = true;
+            this.textBox6.Enabled = true;
+            this.textBox8.Enabled = true;
+            this.textBox9.Enabled = true;
+            this.label14.Enabled = true;
+            this.label15.Enabled = true;
+            this.label16.Enabled = true;
+            this.label17.Enabled = true;
+            this.label18.Enabled = true;
+            this.label19.Enabled = true;
+
+            this.textBox4.Enabled = false;
+            this.label13.Enabled = false;
+            this.label12.Enabled = false;
+        }
+
+        private void radioButton10_CheckedChanged(object sender, EventArgs e)
+        {
+            this.textBox5.Enabled = false;
+            this.textBox7.Enabled = false;
+            this.textBox6.Enabled = false;
+            this.textBox8.Enabled = false;
+            this.textBox9.Enabled = false;
+            this.label14.Enabled = false;
+            this.label15.Enabled = false;
+            this.label16.Enabled = false;
+            this.label17.Enabled = false;
+            this.label18.Enabled = false;
+            this.label19.Enabled = false;
+
+            this.textBox4.Enabled = true;
+            this.label13.Enabled = true;
+            this.label12.Enabled = true;
         }
     }
 }

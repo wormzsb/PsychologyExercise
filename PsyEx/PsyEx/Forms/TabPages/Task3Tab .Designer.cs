@@ -367,6 +367,7 @@
             this.radioButton10.TabStop = true;
             this.radioButton10.Text = "匀速";
             this.radioButton10.UseVisualStyleBackColor = true;
+            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton10_CheckedChanged);
             // 
             // label13
             // 
@@ -430,6 +431,7 @@
             this.radioButton9.TabStop = true;
             this.radioButton9.Text = "变速";
             this.radioButton9.UseVisualStyleBackColor = true;
+            this.radioButton9.CheckedChanged += new System.EventHandler(this.radioButton9_CheckedChanged);
             // 
             // textBox5
             // 

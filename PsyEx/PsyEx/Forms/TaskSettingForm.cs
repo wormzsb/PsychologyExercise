@@ -90,7 +90,7 @@ namespace PsyEx.Forms
                             task3.defaultFlag = true;
                         }
 
-                        tp3.Controls.Add(new Task3Tab());
+                        tp3.Controls.Add(task3);
                         tabPages.Add(tp3);
                         tp3.Text = "实验3";
                         this.tabControl1.Controls.Add(tp3);
