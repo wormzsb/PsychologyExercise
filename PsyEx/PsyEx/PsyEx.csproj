@@ -62,6 +62,12 @@
     <Compile Include="Contexts\DefaultSettingConfig3.cs" />
     <Compile Include="Contexts\DefaultSettingConfig5.cs" />
     <Compile Include="Contexts\HDDefaultConfig.cs" />
+    <Compile Include="Dx2D\Task1Play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dx2D\Task1Play.Designer.cs">
+      <DependentUpon>Task1Play.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,9 +199,7 @@
     <Content Include="Scripts\json-serialize.js" />
     <Content Include="Scripts\json-serialize.min.js" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dx2D\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
