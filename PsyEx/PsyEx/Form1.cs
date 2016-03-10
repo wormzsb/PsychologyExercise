@@ -185,7 +185,6 @@ namespace PsyEx
         private void HDCalibrationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("RunDLL32.exe","Shell32.dll, Control_RunDLL joy.cpl,, 1");
-            //WinExec("RunDLL32.exe Shell32.dll,Control_RunDLL joy.cpl,,1", SW_SHOWNORMAL);
         }
     }
 }
