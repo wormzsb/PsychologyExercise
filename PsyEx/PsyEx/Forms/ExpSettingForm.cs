@@ -126,8 +126,6 @@ namespace PsyEx.Forms
             return false;
         }
 
-
-
         //向listbox2添加任务
         private void AddItem(object obj)
         {
@@ -136,7 +134,6 @@ namespace PsyEx.Forms
 
             //标记实验序号
             listBox2.Items.Add(SelectedItem + "[未设置]" + "(" + sortNum + ")");
-
             ExConfig setting = new ExConfig();
             setting.SortId = sortNum;
             setting.SetFlag = false;
@@ -146,7 +143,7 @@ namespace PsyEx.Forms
             expConfigMap.Add(setting.SortId, setting);
         }
 
-        //从listbox2删除任务 未考虑两位数
+        //从listbox2删除任务
         private void RemoveItem(object obj, int index)
         {
             string SelectedItem = obj.ToString();
@@ -159,15 +156,21 @@ namespace PsyEx.Forms
                 newstr = str.Replace((char)(i + 2 + '0'), (char)(i + 1 + '0'));
                 listBox2.Items[i] = newstr;
             }
-            //移除map
+            //移除旧项添加新项
+            int boxindex = index;
             expConfigMap.Remove(index+1);
             for(int i=index+2; i<=sortNum; i++)
             {
+                string tochange;
+                tochange = listBox2.Items[boxindex].ToString();
+                listBox2.Items.Remove(listBox2.Items[boxindex]);
+                tochange = tochange.Substring(0, tochange.IndexOf("]") + 1);
                 ExConfig t = new ExConfig();
                 expConfigMap.TryGetValue(i, out t);
                 expConfigMap.Remove(i);
                 t.SortId--;
                 expConfigMap.Add(t.SortId, t);
+                listBox2.Items.Add(tochange + "(" + t.SortId + ")");
             }
             sortNum--;
         }
@@ -205,12 +208,6 @@ namespace PsyEx.Forms
             this.Dispose();
         }
 
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //配置参数按钮
         private void button5_Click(object sender, EventArgs e)
         {
@@ -228,13 +225,12 @@ namespace PsyEx.Forms
             
         }
 
-
-
         //确认按钮
         private void button6_Click(object sender, EventArgs e)
         {
             if (CheckSetState())
             {
+                MainForm.exConfigList.Clear();
                 foreach(var i in expConfigMap)
                 {
                     MainForm.exConfigList.Add(i.Value);
@@ -252,6 +248,8 @@ namespace PsyEx.Forms
                     {
                         Program.m.textBox1.Text += Environment.NewLine + str;
                     }
+                    expConfigMap.Clear();
+                    sortNum = 0;
                     this.Dispose();
                     this.Close();
                 }
@@ -287,6 +285,14 @@ namespace PsyEx.Forms
             }
         }
 
+        //打开配置文件
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = DoFormIdentify.MakeDirectoy("TaskSetting");
+            openFileDialog1.FileName = "";
+            openFileDialog1.ShowDialog();
+        }
+
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
@@ -301,13 +307,6 @@ namespace PsyEx.Forms
             {
                 MessageBox.Show("保存失败", "提示");
             }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.InitialDirectory = DoFormIdentify.MakeDirectoy("TaskSetting");
-            openFileDialog1.FileName = "";
-            openFileDialog1.ShowDialog();
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
