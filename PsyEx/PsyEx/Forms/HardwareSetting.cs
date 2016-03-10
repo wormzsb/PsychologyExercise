@@ -28,6 +28,21 @@ namespace PsyEx.Forms
             MainForm.hdConfig.Angle = DoFormIdentify.toDouble(textBox4.Text);
             MainForm.hwFlag = true;
 
+            //保存成文件
+            List<string> savelist = new List<string>();
+            savelist.Add("Speed=" + textBox1.Text);
+            savelist.Add("Sensibility=" + textBox2.Text);
+            savelist.Add("Distance=" + textBox3.Text);
+            savelist.Add("Angle=" + textBox4.Text);
+
+            string directory, filename;
+            directory = DoFormIdentify.MakeDirectoy("HardwareSetting");
+            filename = MainForm.tester.Id + "_" + MainForm.tester.Name + "_" + "autosave" + ".hdset";
+            if(DoFile.doFileOutput(directory,filename,savelist))
+            {
+                MessageBox.Show("保存成功", "提示");
+            }
+
             //print
             List<string> strList = TextContribute.printMainInfo(MainForm.userFlag, MainForm.exFlag, MainForm.hwFlag);
             Program.m.textBox1.Text = "";
