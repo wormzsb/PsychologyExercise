@@ -68,7 +68,7 @@ namespace PsyEx.Forms
                             task2.defaultFlag = true;
                         }
 
-                        tp2.Controls.Add(new Task2Tab());
+                        tp2.Controls.Add(task2);
                         tabPages.Add(tp2);
                         tp2.Text = "实验2";
                         this.tabControl1.Controls.Add(tp2);
@@ -112,7 +112,7 @@ namespace PsyEx.Forms
                             task4.defaultFlag = true;
                         }
 
-                        tp4.Controls.Add(new Task4Tab());
+                        tp4.Controls.Add(task4);
                         tabPages.Add(tp4);
                         tp4.Text = "实验4";
                         this.tabControl1.Controls.Add(tp4);

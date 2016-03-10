@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Runtime.Serialization.Json;
+using System.Runtime.Serialization;
 
 namespace PsyEx.Util
 {
@@ -61,7 +63,6 @@ namespace PsyEx.Util
             {
                 fs = new FileStream(fileName, FileMode.Open);
                 sr = new StreamReader(fs);
-                //未实现读取实验设置部分
                 Dictionary<string, string> data = new Dictionary<String, String>();
                 while (sr.Peek()>= 0)
                 {
@@ -86,5 +87,43 @@ namespace PsyEx.Util
 
             return DataList;
         }
+
+        //打开json文件
+        public static string doFileJsonInput(string fileName)
+        {
+            string jsoninput = "";
+            FileStream fs = null;
+            StreamReader sr = null;
+
+            try
+            {
+                fs = new FileStream(fileName, FileMode.Open);
+                sr = new StreamReader(fs);
+
+                jsoninput = sr.ReadLine();
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                sr.BaseStream.Flush();
+                fs.Flush();
+                sr.Close();
+                fs.Close();
+            }
+            return jsoninput;
+        }
+
+        //解析json
+        public static T parse<T>(string jsonString)
+        {
+            using (var ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonString)))
+            {
+                return (T)new DataContractJsonSerializer(typeof(T)).ReadObject(ms);
+            }
+        }
+
+
     }
 }

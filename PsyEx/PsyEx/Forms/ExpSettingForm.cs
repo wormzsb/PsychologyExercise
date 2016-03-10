@@ -85,6 +85,21 @@ namespace PsyEx.Forms
             return szJson;
         }
 
+        //打开文件
+        private bool opendata(string directory)
+        {
+            string jsonstr;
+            jsonstr = DoFile.doFileJsonInput(directory);
+            List<ExConfig> jsondata = new List<ExConfig>();
+            jsondata = DoFile.parse<List<ExConfig>>(jsonstr);
+            expConfigMap.Clear();
+            for(int i=0; i<jsondata.Count; i++)
+            {
+                expConfigMap.Add(i + 1, jsondata[i]);
+            }
+            return true;
+        } 
+
         //保存数据
         private bool savedata(string directory, string filename)
         {
@@ -100,7 +115,7 @@ namespace PsyEx.Forms
 
                 if (DoFormIdentify.isEmpty(filename))
                 {
-                    filename = MainForm.tester.Id + "_" + MainForm.tester.Name + "_autosave" + ".json";
+                    filename = MainForm.tester.Id + "_" + MainForm.tester.Name + "_autosave" + ".set";
                 }
 
                 if (DoFile.doFileOutput(directory, filename, json_save))
@@ -110,6 +125,8 @@ namespace PsyEx.Forms
             }
             return false;
         }
+
+
 
         //向listbox2添加任务
         private void AddItem(object obj)
@@ -211,6 +228,8 @@ namespace PsyEx.Forms
             
         }
 
+
+
         //确认按钮
         private void button6_Click(object sender, EventArgs e)
         {
@@ -282,8 +301,39 @@ namespace PsyEx.Forms
             {
                 MessageBox.Show("保存失败", "提示");
             }
-
-
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = DoFormIdentify.MakeDirectoy("TaskSetting");
+            openFileDialog1.FileName = "";
+            openFileDialog1.ShowDialog();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            if(opendata(openFileDialog1.FileName))
+            {
+                MessageBox.Show("读取成功", "提示");
+
+                listBox2.Items.Clear();
+                
+                foreach(var item in expConfigMap)
+                {
+                    listBox2.Items.Add(item.Value.ExName + "[未设置](" + item.Value.SortId + ")");
+                    if (item.Value.SetFlag)
+                    {
+                        listBox2.Items[listBox2.Items.Count - 1] = ChangeSetState(listBox2.Items[listBox2.Items.Count - 1]);
+                    }                    
+                    if (item.Value.SortId >= sortNum)
+                    {
+                        sortNum = item.Value.SortId;
+                    }
+                }
+            }
+        }
+
+
+
     }
 }

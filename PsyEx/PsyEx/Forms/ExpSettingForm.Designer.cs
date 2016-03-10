@@ -121,6 +121,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "读入配置";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 
@@ -134,13 +135,14 @@
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "配置文件|*.json";
+            this.saveFileDialog1.Filter = "配置文件|*.set";
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "配置文件|*.json";
+            this.openFileDialog1.Filter = "配置文件|*.set";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // ExpSettingForm
             // 

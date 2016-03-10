@@ -41,7 +41,9 @@ namespace PsyEx.Forms.TabPages
                 checkBox2.Checked = DefaultSettingConfig2.mainTest;
                 comboBox2.Text = DefaultSettingConfig2.moveTrail;
                 radioButton1.Checked = (DefaultSettingConfig2.direction == 1 ? true : false);
+                radioButton2.Checked = (DefaultSettingConfig2.direction == 0 ? true : false);
                 radioButton10.Checked = (DefaultSettingConfig2.speedMode == 0 ? true : false);
+                radioButton9.Checked = (DefaultSettingConfig2.speedMode == 1 ? true : false);
                 textBox4.Text = DefaultSettingConfig2.speed.ToString();
                 textBox5.Text = DefaultSettingConfig2.fspeed.ToString();
                 textBox7.Text = DefaultSettingConfig2.minSpeed.ToString();
@@ -49,6 +51,7 @@ namespace PsyEx.Forms.TabPages
                 textBox8.Text = DefaultSettingConfig2.minASpeed.ToString();
                 textBox9.Text = DefaultSettingConfig2.maxASpeed.ToString();
                 radioButton8.Checked = (DefaultSettingConfig2.ctrlDirection == 0 ? true : false);
+                radioButton7.Checked = (DefaultSettingConfig2.ctrlDirection == 1 ? true : false);
                 comboBox1.Text = DefaultSettingConfig2.backgroundColor;
                 checkBox1.Checked = DefaultSettingConfig2.feedback;
                 comboBox3.Text = DefaultSettingConfig2.estimateNum.ToString();
@@ -73,7 +76,9 @@ namespace PsyEx.Forms.TabPages
                 checkBox2.Checked = config.MainTest;
                 comboBox2.Text = config.MoveTrail;
                 radioButton1.Checked = (config.Direction == 1 ? true : false);
+                radioButton2.Checked = (config.Direction == 0 ? true : false);
                 radioButton10.Checked = (config.SpeedMode == 0 ? true : false);
+                radioButton9.Checked = (config.SpeedMode == 1 ? true : false);
                 textBox4.Text = config.Speed.ToString();
                 textBox5.Text = config.Fspeed.ToString();
                 textBox7.Text = config.MinSpeed.ToString();
@@ -81,6 +86,7 @@ namespace PsyEx.Forms.TabPages
                 textBox8.Text = config.MinASpeed.ToString();
                 textBox9.Text = config.MaxASpeed.ToString();
                 radioButton8.Checked = (config.CtrlDirection == 0 ? true : false);
+                radioButton7.Checked = (config.CtrlDirection == 1 ? true : false);
                 comboBox1.Text = config.BackgroundColor;
                 checkBox1.Checked = config.Feedback;
                 comboBox3.Text = config.EstimateNum.ToString();
