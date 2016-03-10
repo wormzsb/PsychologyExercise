@@ -35,15 +35,15 @@
             this.button6 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.被试管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.新建被试ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.打开被试信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.当前被试信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewTesterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenTesterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PresentTeserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.实验设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.新建配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.打开配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.当前配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PresentSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.硬件配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.硬件校准ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HDCalibrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HDConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.开始实验ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.结果分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,73 +121,80 @@
             // 被试管理ToolStripMenuItem
             // 
             this.被试管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.新建被试ToolStripMenuItem,
-            this.打开被试信息ToolStripMenuItem,
-            this.当前被试信息ToolStripMenuItem});
+            this.NewTesterToolStripMenuItem,
+            this.OpenTesterToolStripMenuItem,
+            this.PresentTeserToolStripMenuItem});
             this.被试管理ToolStripMenuItem.Name = "被试管理ToolStripMenuItem";
             this.被试管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.被试管理ToolStripMenuItem.Text = "被试管理";
             // 
-            // 新建被试ToolStripMenuItem
+            // NewTesterToolStripMenuItem
             // 
-            this.新建被试ToolStripMenuItem.Name = "新建被试ToolStripMenuItem";
-            this.新建被试ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.新建被试ToolStripMenuItem.Text = "新建被试信息";
+            this.NewTesterToolStripMenuItem.Name = "NewTesterToolStripMenuItem";
+            this.NewTesterToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.NewTesterToolStripMenuItem.Text = "新建被试信息";
+            this.NewTesterToolStripMenuItem.Click += new System.EventHandler(this.NewTesterToolStripMenuItem_Click);
             // 
-            // 打开被试信息ToolStripMenuItem
+            // OpenTesterToolStripMenuItem
             // 
-            this.打开被试信息ToolStripMenuItem.Name = "打开被试信息ToolStripMenuItem";
-            this.打开被试信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.打开被试信息ToolStripMenuItem.Text = "打开被试信息";
+            this.OpenTesterToolStripMenuItem.Name = "OpenTesterToolStripMenuItem";
+            this.OpenTesterToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.OpenTesterToolStripMenuItem.Text = "打开被试信息";
+            this.OpenTesterToolStripMenuItem.Click += new System.EventHandler(this.OpenTesterToolStripMenuItem_Click);
             // 
-            // 当前被试信息ToolStripMenuItem
+            // PresentTeserToolStripMenuItem
             // 
-            this.当前被试信息ToolStripMenuItem.Name = "当前被试信息ToolStripMenuItem";
-            this.当前被试信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.当前被试信息ToolStripMenuItem.Text = "当前被试信息";
+            this.PresentTeserToolStripMenuItem.Name = "PresentTeserToolStripMenuItem";
+            this.PresentTeserToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.PresentTeserToolStripMenuItem.Text = "当前被试信息";
+            this.PresentTeserToolStripMenuItem.Click += new System.EventHandler(this.PresentTeserToolStripMenuItem_Click);
             // 
             // 实验设置ToolStripMenuItem
             // 
             this.实验设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.新建配置ToolStripMenuItem,
-            this.打开配置ToolStripMenuItem,
-            this.当前配置ToolStripMenuItem});
+            this.NewSettingToolStripMenuItem,
+            this.OpenSettingToolStripMenuItem,
+            this.PresentSettingToolStripMenuItem});
             this.实验设置ToolStripMenuItem.Name = "实验设置ToolStripMenuItem";
             this.实验设置ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.实验设置ToolStripMenuItem.Text = "实验设置";
             // 
-            // 新建配置ToolStripMenuItem
+            // NewSettingToolStripMenuItem
             // 
-            this.新建配置ToolStripMenuItem.Name = "新建配置ToolStripMenuItem";
-            this.新建配置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.新建配置ToolStripMenuItem.Text = "新建配置";
+            this.NewSettingToolStripMenuItem.Name = "NewSettingToolStripMenuItem";
+            this.NewSettingToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.NewSettingToolStripMenuItem.Text = "新建配置";
+            this.NewSettingToolStripMenuItem.Click += new System.EventHandler(this.NewSettingToolStripMenuItem_Click);
             // 
-            // 打开配置ToolStripMenuItem
+            // OpenSettingToolStripMenuItem
             // 
-            this.打开配置ToolStripMenuItem.Name = "打开配置ToolStripMenuItem";
-            this.打开配置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.打开配置ToolStripMenuItem.Text = "打开配置";
+            this.OpenSettingToolStripMenuItem.Name = "OpenSettingToolStripMenuItem";
+            this.OpenSettingToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.OpenSettingToolStripMenuItem.Text = "打开配置";
+            this.OpenSettingToolStripMenuItem.Click += new System.EventHandler(this.OpenSettingToolStripMenuItem_Click);
             // 
-            // 当前配置ToolStripMenuItem
+            // PresentSettingToolStripMenuItem
             // 
-            this.当前配置ToolStripMenuItem.Name = "当前配置ToolStripMenuItem";
-            this.当前配置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.当前配置ToolStripMenuItem.Text = "当前配置";
+            this.PresentSettingToolStripMenuItem.Name = "PresentSettingToolStripMenuItem";
+            this.PresentSettingToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.PresentSettingToolStripMenuItem.Text = "当前配置";
+            this.PresentSettingToolStripMenuItem.Click += new System.EventHandler(this.PresentSettingToolStripMenuItem_Click);
             // 
             // 硬件配置ToolStripMenuItem
             // 
             this.硬件配置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.硬件校准ToolStripMenuItem,
+            this.HDCalibrationToolStripMenuItem,
             this.HDConfigToolStripMenuItem});
             this.硬件配置ToolStripMenuItem.Name = "硬件配置ToolStripMenuItem";
             this.硬件配置ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.硬件配置ToolStripMenuItem.Text = "硬件配置";
             // 
-            // 硬件校准ToolStripMenuItem
+            // HDCalibrationToolStripMenuItem
             // 
-            this.硬件校准ToolStripMenuItem.Name = "硬件校准ToolStripMenuItem";
-            this.硬件校准ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.硬件校准ToolStripMenuItem.Text = "硬件校准";
+            this.HDCalibrationToolStripMenuItem.Name = "HDCalibrationToolStripMenuItem";
+            this.HDCalibrationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.HDCalibrationToolStripMenuItem.Text = "硬件校准";
+            this.HDCalibrationToolStripMenuItem.Click += new System.EventHandler(this.HDCalibrationToolStripMenuItem_Click);
             // 
             // HDConfigToolStripMenuItem
             // 
@@ -276,15 +283,15 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 被试管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 新建被试ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 打开被试信息ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 当前被试信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NewTesterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenTesterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PresentTeserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 实验设置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 新建配置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 打开配置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 当前配置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NewSettingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenSettingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PresentSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 硬件配置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 硬件校准ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HDCalibrationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem HDConfigToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 开始实验ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 结果分析ToolStripMenuItem;

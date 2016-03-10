@@ -184,6 +184,8 @@ namespace PsyEx.Forms
             textBox4.Text = str;
             DataList.TryGetValue("Count", out str);
             textBox5.Text = str;
+            MainForm.tester = new Tester();
+            MainForm.userFlag = false;
         }
 
         private void TesterInfo_FormClosed(object sender, FormClosedEventArgs e)

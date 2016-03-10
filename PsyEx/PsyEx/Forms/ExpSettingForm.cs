@@ -329,6 +329,8 @@ namespace PsyEx.Forms
                         sortNum = item.Value.SortId;
                     }
                 }
+                MainForm.exConfigList.Clear();
+                MainForm.exFlag = false;
             }
         }
 
