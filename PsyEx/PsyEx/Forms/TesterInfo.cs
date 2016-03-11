@@ -77,7 +77,7 @@ namespace PsyEx.Forms
             return true;
         }
 
-        private bool SaveData(string directory, string FileName)
+        public bool SaveData(string directory, string FileName)
         {
             if (CheckTesterData())
             { 
@@ -94,14 +94,13 @@ namespace PsyEx.Forms
                 }
              
                 if (DoFile.doFileOutput(directory, FileName, SaveList))
-                {
-
+                {                    
+                    string exedir, exefile;
+                    exedir = DoFormIdentify.MakeDirectoy("ExpRun");
+                    exefile = textBox1.Text + "_" + textBox2.Text + ".tester";
+                    DoFile.doFileOutput(exedir, exefile, SaveList);
                     return true;
                 }
-            }
-            else
-            {
-                //MessageBox.Show("被试信息不完整", "提示");
             }
             return false;
         }

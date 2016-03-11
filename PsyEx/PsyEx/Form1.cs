@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using PsyEx.Mapper;
 using System.Collections.Generic;
+using System.IO;
 using PsyEx.Forms;
 using PsyEx.Util;
 using System.Runtime.InteropServices;
@@ -185,6 +186,14 @@ namespace PsyEx
         private void HDCalibrationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("RunDLL32.exe","Shell32.dll, Control_RunDLL joy.cpl,, 1");
+        }
+
+        //开始试验
+        private void button4_Click(object sender, EventArgs e)
+        {            
+            string exePath;
+            exePath = "@" + Directory.GetCurrentDirectory() + "ExpRun.exe";
+            System.Diagnostics.Process.Start(exePath);
         }
     }
 }

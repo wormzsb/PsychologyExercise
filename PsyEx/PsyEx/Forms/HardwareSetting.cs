@@ -20,6 +20,26 @@ namespace PsyEx.Forms
         }
 
         //保存
+        public bool savedata(string directory, string filename)
+        {
+            List<string> savelist = new List<string>();
+            savelist.Add("Speed=" + textBox1.Text);
+            savelist.Add("Sensibility=" + textBox2.Text);
+            savelist.Add("Distance=" + textBox3.Text);
+            savelist.Add("Angle=" + textBox4.Text);
+            
+            if (DoFile.doFileOutput(directory, filename, savelist))
+            {
+
+                string exedir, exefile;
+                exedir = DoFormIdentify.MakeDirectoy("ExpRun");
+                exefile = MainForm.tester.Id + "_" + MainForm.tester.Name + ".hdset";
+                DoFile.doFileOutput(exedir, exefile, savelist);
+                return true;
+            }
+            return false;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             MainForm.hdConfig.Speed = DoFormIdentify.toDouble(textBox1.Text);
@@ -29,16 +49,10 @@ namespace PsyEx.Forms
             MainForm.hwFlag = true;
 
             //保存成文件
-            List<string> savelist = new List<string>();
-            savelist.Add("Speed=" + textBox1.Text);
-            savelist.Add("Sensibility=" + textBox2.Text);
-            savelist.Add("Distance=" + textBox3.Text);
-            savelist.Add("Angle=" + textBox4.Text);
-
             string directory, filename;
             directory = DoFormIdentify.MakeDirectoy("HardwareSetting");
             filename = MainForm.tester.Id + "_" + MainForm.tester.Name + "_" + "autosave" + ".hdset";
-            if(DoFile.doFileOutput(directory,filename,savelist))
+            if (savedata(directory, filename))
             {
                 MessageBox.Show("保存成功", "提示");
             }
