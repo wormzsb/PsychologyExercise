@@ -101,7 +101,7 @@ namespace PsyEx.Forms
         } 
 
         //保存数据
-        private bool savedata(string directory, string filename)
+        public bool savedata(string directory, string filename)
         {
             if (CheckSetState())
             {
@@ -120,6 +120,10 @@ namespace PsyEx.Forms
 
                 if (DoFile.doFileOutput(directory, filename, json_save))
                 {
+                    string exedir, exefile;
+                    exedir = DoFormIdentify.MakeDirectoy("ExpRun");
+                    exefile = MainForm.tester.Id + "_" + MainForm.tester.Name + ".set";
+                    DoFile.doFileOutput(exedir, exefile, json_save);
                     return true;
                 }
             }

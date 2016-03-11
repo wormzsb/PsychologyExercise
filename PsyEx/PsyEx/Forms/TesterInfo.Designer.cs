@@ -216,7 +216,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        public System.Windows.Forms.SaveFileDialog saveFileDialog1;
         public System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

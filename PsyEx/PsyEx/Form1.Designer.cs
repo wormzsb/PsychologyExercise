@@ -92,6 +92,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "开始实验";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 
@@ -162,21 +163,21 @@
             // NewSettingToolStripMenuItem
             // 
             this.NewSettingToolStripMenuItem.Name = "NewSettingToolStripMenuItem";
-            this.NewSettingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.NewSettingToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.NewSettingToolStripMenuItem.Text = "新建配置";
             this.NewSettingToolStripMenuItem.Click += new System.EventHandler(this.NewSettingToolStripMenuItem_Click);
             // 
             // OpenSettingToolStripMenuItem
             // 
             this.OpenSettingToolStripMenuItem.Name = "OpenSettingToolStripMenuItem";
-            this.OpenSettingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.OpenSettingToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.OpenSettingToolStripMenuItem.Text = "打开配置";
             this.OpenSettingToolStripMenuItem.Click += new System.EventHandler(this.OpenSettingToolStripMenuItem_Click);
             // 
             // PresentSettingToolStripMenuItem
             // 
             this.PresentSettingToolStripMenuItem.Name = "PresentSettingToolStripMenuItem";
-            this.PresentSettingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.PresentSettingToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.PresentSettingToolStripMenuItem.Text = "当前配置";
             this.PresentSettingToolStripMenuItem.Click += new System.EventHandler(this.PresentSettingToolStripMenuItem_Click);
             // 
@@ -192,14 +193,14 @@
             // HDCalibrationToolStripMenuItem
             // 
             this.HDCalibrationToolStripMenuItem.Name = "HDCalibrationToolStripMenuItem";
-            this.HDCalibrationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.HDCalibrationToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.HDCalibrationToolStripMenuItem.Text = "硬件校准";
             this.HDCalibrationToolStripMenuItem.Click += new System.EventHandler(this.HDCalibrationToolStripMenuItem_Click);
             // 
             // HDConfigToolStripMenuItem
             // 
             this.HDConfigToolStripMenuItem.Name = "HDConfigToolStripMenuItem";
-            this.HDConfigToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.HDConfigToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.HDConfigToolStripMenuItem.Text = "硬件设置";
             this.HDConfigToolStripMenuItem.Click += new System.EventHandler(this.HDConfigToolStripMenuItem_Click);
             // 
@@ -221,13 +222,13 @@
             // 打开数据文件ToolStripMenuItem
             // 
             this.打开数据文件ToolStripMenuItem.Name = "打开数据文件ToolStripMenuItem";
-            this.打开数据文件ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.打开数据文件ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.打开数据文件ToolStripMenuItem.Text = "打开数据文件";
             // 
             // 数据批处理ToolStripMenuItem
             // 
             this.数据批处理ToolStripMenuItem.Name = "数据批处理ToolStripMenuItem";
-            this.数据批处理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.数据批处理ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.数据批处理ToolStripMenuItem.Text = "数据批处理";
             // 
             // ExitToolStripMenuItem

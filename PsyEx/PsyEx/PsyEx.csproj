@@ -128,6 +128,7 @@
     <Compile Include="Forms\TesterInfo.Designer.cs">
       <DependentUpon>TesterInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapper\TaskResult1.cs" />
     <Compile Include="Mapper\ExConfig.cs" />
     <Compile Include="Mapper\HDConfig.cs" />
     <Compile Include="Mapper\SettingConfig2.cs" />
@@ -141,6 +142,9 @@
     <Compile Include="Util\DoFormIdentify.cs" />
     <Compile Include="Util\DoFile.cs" />
     <Compile Include="Util\TextContribute.cs" />
+    <EmbeddedResource Include="Dx2D\Task1Play.resx">
+      <DependentUpon>Task1Play.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
