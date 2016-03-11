@@ -97,7 +97,7 @@ namespace PsyEx.Forms
                 {                    
                     string exedir, exefile;
                     exedir = DoFormIdentify.MakeDirectoy("ExpRun");
-                    exefile = textBox1.Text + "_" + textBox2.Text + ".tester";
+                    exefile = "play.tester";
                     DoFile.doFileOutput(exedir, exefile, SaveList);
                     return true;
                 }

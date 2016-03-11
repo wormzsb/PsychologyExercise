@@ -122,7 +122,7 @@ namespace PsyEx.Forms
                 {
                     string exedir, exefile;
                     exedir = DoFormIdentify.MakeDirectoy("ExpRun");
-                    exefile = MainForm.tester.Id + "_" + MainForm.tester.Name + ".set";
+                    exefile = "play.set";
                     DoFile.doFileOutput(exedir, exefile, json_save);
                     return true;
                 }

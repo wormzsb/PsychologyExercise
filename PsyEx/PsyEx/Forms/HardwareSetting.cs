@@ -33,7 +33,7 @@ namespace PsyEx.Forms
 
                 string exedir, exefile;
                 exedir = DoFormIdentify.MakeDirectoy("ExpRun");
-                exefile = MainForm.tester.Id + "_" + MainForm.tester.Name + ".hdset";
+                exefile =  "play.hdset";
                 DoFile.doFileOutput(exedir, exefile, savelist);
                 return true;
             }
