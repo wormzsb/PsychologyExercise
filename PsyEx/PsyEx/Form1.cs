@@ -192,7 +192,7 @@ namespace PsyEx
         private void button4_Click(object sender, EventArgs e)
         {            
             string exePath;
-            exePath = "@" + Directory.GetCurrentDirectory() + "ExpRun.exe";
+            exePath = Directory.GetCurrentDirectory() + "\\ExpRun.exe";
             System.Diagnostics.Process.Start(exePath);
         }
     }
