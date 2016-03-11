@@ -382,8 +382,8 @@ namespace PsyEx.Forms
                         config4.BackgroundColorG = DoFormIdentify.toInt(task4.textBox8.Text);
                         config4.BackgroundColorB = DoFormIdentify.toInt(task4.textBox7.Text);
                         config4.ShelterColorR = DoFormIdentify.toInt(task4.textBox17.Text);
-                        config4.ShelterColorR = DoFormIdentify.toInt(task4.textBox16.Text);
-                        config4.ShelterColorR = DoFormIdentify.toInt(task4.textBox15.Text);
+                        config4.ShelterColorG = DoFormIdentify.toInt(task4.textBox16.Text);
+                        config4.ShelterColorB = DoFormIdentify.toInt(task4.textBox15.Text);
                         config4.BallRadius = DoFormIdentify.toInt(task4.textBox3.Text);
                         config4.ShelterRadius = DoFormIdentify.toInt(task4.textBox2.Text);
                         config4.BallCenterDis = DoFormIdentify.toInt(task4.textBox1.Text);
@@ -394,6 +394,7 @@ namespace PsyEx.Forms
                         config4.Right = task4.checkBox1.Checked;
                         config4.Up = task4.checkBox8.Checked;
                         config4.Down = task4.checkBox7.Checked;
+                        config4.Feedback = task4.checkBox6.Checked;
                         config4.RepeatNum = DoFormIdentify.toInt(task4.textBox10.Text);
                         config4.TimeInterval = DoFormIdentify.toInt(task4.textBox11.Text);
 
