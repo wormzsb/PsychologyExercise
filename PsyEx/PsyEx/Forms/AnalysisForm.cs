@@ -17,10 +17,5 @@ namespace PsyEx.Forms
             InitializeComponent();
         }
 
-        private void AnalysisForm_Load(object sender, EventArgs e)
-        {
-
-            this.reportViewer1.RefreshReport();
-        }
     }
 }
