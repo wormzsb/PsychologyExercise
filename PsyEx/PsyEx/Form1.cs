@@ -190,10 +190,17 @@ namespace PsyEx
 
         //开始试验
         private void button4_Click(object sender, EventArgs e)
-        {            
-            string exePath;
-            exePath = Directory.GetCurrentDirectory() + "\\ExpRun.exe";
-            System.Diagnostics.Process.Start(exePath);
+        {
+            if (userFlag && exFlag && hwFlag)
+            {
+                string exePath;
+                exePath = Directory.GetCurrentDirectory() + "\\ExpRun.exe";
+                System.Diagnostics.Process.Start(exePath);
+            }
+            else
+            {
+                MessageBox.Show("任务设置未完成", "提示");
+            }
         }
     }
 }
