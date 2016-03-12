@@ -37,6 +37,8 @@
       <HintPath>..\packages\JSON.1.0.1\lib\net40\Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -44,6 +46,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,23 +65,17 @@
     <Compile Include="Contexts\DefaultSettingConfig3.cs" />
     <Compile Include="Contexts\DefaultSettingConfig5.cs" />
     <Compile Include="Contexts\HDDefaultConfig.cs" />
-    <Compile Include="Dx2D\Task1Play.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dx2D\Task1Play.Designer.cs">
-      <DependentUpon>Task1Play.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dx2D\Task2Play.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dx2D\Task2Play.Designer.cs">
-      <DependentUpon>Task2Play.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AnalysisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnalysisForm.Designer.cs">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ExpSettingForm.cs">
       <SubType>Form</SubType>
@@ -150,6 +147,9 @@
     <Compile Include="Util\TextContribute.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnalysisForm.resx">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExpSettingForm.resx">
       <DependentUpon>ExpSettingForm.cs</DependentUpon>
