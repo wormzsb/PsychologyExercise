@@ -78,6 +78,7 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -484,6 +485,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label22);
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.textBox11);
             this.groupBox5.Controls.Add(this.label20);
@@ -548,6 +550,15 @@
             this.checkBox6.TabIndex = 15;
             this.checkBox6.Text = "反馈";
             this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(164, 192);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(11, 12);
+            this.label22.TabIndex = 42;
+            this.label22.Text = "s\r\n";
             // 
             // Task4Tab
             // 
@@ -631,5 +642,6 @@
         public System.Windows.Forms.Label label10;
         public System.Windows.Forms.CheckBox checkBox6;
         public System.Windows.Forms.Label label21;
+        public System.Windows.Forms.Label label22;
     }
 }
