@@ -7,35 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PsyEx.Mapper;
 
-namespace PsyEx.Dx2D
+namespace PsyEx.Forms
 {
-    public partial class Task1Play : Form
+    public partial class AnalysisForm : Form
     {
-
-        private TaskResult1 taskresult = new TaskResult1();
-
-        public Task1Play()
+        public AnalysisForm()
         {
             InitializeComponent();
         }
 
-        ~Task1Play()
+        private void AnalysisForm_Load(object sender, EventArgs e)
         {
 
+            this.reportViewer1.RefreshReport();
         }
-
-        private void SaveData()
-        {
-
-        }
-
-        private void Initial()
-        {
-
-        }
-
-
     }
 }
