@@ -264,5 +264,31 @@ namespace PsyEx.Mapper
                 postRotateSpeed = value;
             }
         }
+
+        public Tester Tester
+        {
+            get
+            {
+                return tester;
+            }
+
+            set
+            {
+                tester = value;
+            }
+        }
+
+        public SettingConfig1 Settingconfig1
+        {
+            get
+            {
+                return settingconfig1;
+            }
+
+            set
+            {
+                settingconfig1 = value;
+            }
+        }
     }
 }
