@@ -47,7 +47,7 @@
             this.HDConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.开始实验ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.结果分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.打开数据文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenDataFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据批处理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -213,7 +213,7 @@
             // 结果分析ToolStripMenuItem
             // 
             this.结果分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.打开数据文件ToolStripMenuItem,
+            this.OpenDataFileToolStripMenuItem,
             this.数据批处理ToolStripMenuItem});
             this.结果分析ToolStripMenuItem.Name = "结果分析ToolStripMenuItem";
             this.结果分析ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
@@ -221,14 +221,15 @@
             // 
             // 打开数据文件ToolStripMenuItem
             // 
-            this.打开数据文件ToolStripMenuItem.Name = "打开数据文件ToolStripMenuItem";
-            this.打开数据文件ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.打开数据文件ToolStripMenuItem.Text = "打开数据文件";
+            this.OpenDataFileToolStripMenuItem.Name = "打开数据文件ToolStripMenuItem";
+            this.OpenDataFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.OpenDataFileToolStripMenuItem.Text = "打开数据文件";
+            this.OpenDataFileToolStripMenuItem.Click += new System.EventHandler(this.OpenDataFileToolStripMenuItem_Click);
             // 
             // 数据批处理ToolStripMenuItem
             // 
             this.数据批处理ToolStripMenuItem.Name = "数据批处理ToolStripMenuItem";
-            this.数据批处理ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.数据批处理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.数据批处理ToolStripMenuItem.Text = "数据批处理";
             // 
             // ExitToolStripMenuItem
@@ -296,7 +297,7 @@
         private System.Windows.Forms.ToolStripMenuItem HDConfigToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 开始实验ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 结果分析ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 打开数据文件ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenDataFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据批处理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
         public System.Windows.Forms.TextBox textBox1;

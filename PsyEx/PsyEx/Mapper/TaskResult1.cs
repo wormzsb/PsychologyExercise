@@ -7,7 +7,7 @@ using System.Timers;
 
 namespace PsyEx.Mapper
 {
-    class TaskResult1
+    public class TaskResult1
     {
         private Tester tester;
         private SettingConfig1 settingconfig1;

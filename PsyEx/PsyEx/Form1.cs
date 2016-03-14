@@ -203,5 +203,25 @@ namespace PsyEx
                 MessageBox.Show("任务设置未完成", "提示");
             }
         }
+
+        private void OpenDataFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnalysisForm analysis = new AnalysisForm();
+            analysis.taskId = 1;
+            List<string> l = new List<string>();
+            l.Add("test");
+            l.Add("param");
+            l.Add("value");
+            analysis.values = new List<List<string>>();
+            analysis.values.Add(l);
+            List<string> l2 = new List<string>();
+            l2.Add("test2");
+            l2.Add("param2");
+            l2.Add("value2");
+            analysis.values.Add(l2);
+            analysis.columns = l;
+            analysis.ShowDialog();
+
+        }
     }
 }
