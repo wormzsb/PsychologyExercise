@@ -195,6 +195,7 @@ namespace PsyEx
             {
                 string exePath;
                 exePath = Directory.GetCurrentDirectory() + "\\ExpRun.exe";
+
                 System.Diagnostics.Process.Start(exePath);
             }
             else
