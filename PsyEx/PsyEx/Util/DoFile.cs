@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
+using PsyEx.Mapper;
 
 namespace PsyEx.Util
 {
@@ -86,6 +87,57 @@ namespace PsyEx.Util
             }
 
             return DataList;
+        }
+
+        //打开指定的结果文件
+        public static TaskResult doResultInput(string fileName)
+        {
+            TaskResult tr = new TaskResult();
+            FileStream fs = null;
+            StreamReader sr = null;
+
+            string[] info = fileName.Split("\\".ToArray());
+            tr.Task = info[info.Length - 1].Split("-".ToArray())[0];
+
+            try
+            {
+                fs = new FileStream(fileName, FileMode.Open);
+                sr = new StreamReader(fs);
+                //获取标题行
+                string[] cols = sr.ReadLine().Split(",".ToArray());
+                List<string> columns = new List<string>();
+                for(int i = 0; i < cols.Length; i++)
+                {
+                    columns.Add(cols[i]);
+                }
+
+                tr.Columns = columns;
+                //获取数据
+                List<List<string>> values = new List<List<string>>();
+                while (sr.Peek() >= 0)
+                {
+                    List<string> value = new List<string>();
+                    string[] str = sr.ReadLine().Split(",".ToArray());
+                    for (int i = 0; i < str.Length; i++)
+                    {
+                        value.Add(str[i]);
+                    }
+                    values.Add(value);
+
+                }
+
+                tr.Values = values;
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                sr.Close();
+                fs.Close();
+            }
+
+            return tr;
         }
 
         //打开json文件

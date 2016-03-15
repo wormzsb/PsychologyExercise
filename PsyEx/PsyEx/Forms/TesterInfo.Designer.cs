@@ -165,7 +165,6 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "被试设置文件(*.tester)|*.tester";
             this.openFileDialog1.Title = "打开被试文件";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);

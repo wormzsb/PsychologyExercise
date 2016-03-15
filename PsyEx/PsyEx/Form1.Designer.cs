@@ -51,6 +51,7 @@
             this.数据批处理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -219,17 +220,17 @@
             this.结果分析ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.结果分析ToolStripMenuItem.Text = "结果分析";
             // 
-            // 打开数据文件ToolStripMenuItem
+            // OpenDataFileToolStripMenuItem
             // 
-            this.OpenDataFileToolStripMenuItem.Name = "打开数据文件ToolStripMenuItem";
-            this.OpenDataFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.OpenDataFileToolStripMenuItem.Name = "OpenDataFileToolStripMenuItem";
+            this.OpenDataFileToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.OpenDataFileToolStripMenuItem.Text = "打开数据文件";
             this.OpenDataFileToolStripMenuItem.Click += new System.EventHandler(this.OpenDataFileToolStripMenuItem_Click);
             // 
             // 数据批处理ToolStripMenuItem
             // 
             this.数据批处理ToolStripMenuItem.Name = "数据批处理ToolStripMenuItem";
-            this.数据批处理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.数据批处理ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.数据批处理ToolStripMenuItem.Text = "数据批处理";
             // 
             // ExitToolStripMenuItem
@@ -249,6 +250,11 @@
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(469, 271);
             this.textBox1.TabIndex = 8;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "实验结果文件(*.csv)|*.csv";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // MainForm
             // 
@@ -301,6 +307,7 @@
         private System.Windows.Forms.ToolStripMenuItem 数据批处理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
         public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

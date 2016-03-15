@@ -13,7 +13,7 @@ namespace PsyEx.Forms
 {
     public partial class AnalysisForm : Form
     {
-        public int taskId = 0;
+        public string task = "0";
         public List<List<string>> values;
         public List<string> columns;
         int row = 0;
@@ -27,14 +27,14 @@ namespace PsyEx.Forms
         
         private void AnalysisForm_Load(object sender, EventArgs e)
         {
-            switch (taskId)
+            switch (task)
             {
-                case 0:
+                case "0":
                     MessageBox.Show("提示", "读取实验结果记录失败");
                     this.Text = "实验结果读取失败";
                     break;
 
-                case 1:
+                case "T4":
                     //移除tab
                     tabControl1.Controls.Remove(tabPage2);
 
@@ -64,9 +64,9 @@ namespace PsyEx.Forms
             view.Columns.Add(name, text);
         }
 
+        //增加行数据
         private void AddRow(DataGridView view,Object[] values)
         {
-            view.Rows.Add();
             view.Rows.Insert(row, values);
             row++;
         }

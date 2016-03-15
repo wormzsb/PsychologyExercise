@@ -199,6 +199,10 @@ namespace PsyEx.Forms.TabPages
             int ablecount;
             int.TryParse(comboBox3.Text, out ablecount);
             ablecount--;
+            if (ablecount < 0)
+            {
+                ablecount = 0;
+            }
             for (int i = 0; i < ablecount; i++)
             {
                 changeablestate[i](true);

@@ -206,21 +206,21 @@ namespace PsyEx
 
         private void OpenDataFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            openFileDialog1.InitialDirectory = DoFormIdentify.MakeDirectoy("Data");
+            openFileDialog1.ShowDialog();
+
+        }
+
+        //读取数据到统计分析界面
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            TaskResult tr = DoFile.doResultInput(openFileDialog1.FileName);
             AnalysisForm analysis = new AnalysisForm();
-            analysis.taskId = 1;
-            List<string> l = new List<string>();
-            l.Add("test");
-            l.Add("param");
-            l.Add("value");
-            analysis.values = new List<List<string>>();
-            analysis.values.Add(l);
-            List<string> l2 = new List<string>();
-            l2.Add("test2");
-            l2.Add("param2");
-            l2.Add("value2");
-            analysis.values.Add(l2);
-            analysis.columns = l;
-            analysis.ShowDialog();
+            analysis.columns = tr.Columns;
+            analysis.values = tr.Values;
+            analysis.task = tr.Task;
+            
+            analysis.Show();
 
         }
     }

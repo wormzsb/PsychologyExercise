@@ -131,7 +131,7 @@
     <Compile Include="Forms\TesterInfo.Designer.cs">
       <DependentUpon>TesterInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mapper\TaskResult1.cs" />
+    <Compile Include="Mapper\TaskResult.cs" />
     <Compile Include="Mapper\ExConfig.cs" />
     <Compile Include="Mapper\HDConfig.cs" />
     <Compile Include="Mapper\SettingConfig2.cs" />
