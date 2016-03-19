@@ -58,6 +58,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(481, 417);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -136,9 +137,15 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dataGridView3.Location = new System.Drawing.Point(-2, 0);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowTemplate.Height = 23;
             this.dataGridView3.Size = new System.Drawing.Size(477, 391);
             this.dataGridView3.TabIndex = 1;
@@ -171,6 +178,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AnalysisForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnalysisForm";
             this.Load += new System.EventHandler(this.AnalysisForm_Load);
             this.tabControl1.ResumeLayout(false);
