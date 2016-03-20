@@ -219,7 +219,8 @@ namespace PsyEx
             analysis.columns = tr.Columns;
             analysis.values = tr.Values;
             analysis.task = tr.Task;
-            
+
+            analysis.TopMost = true;
             analysis.Show();
 
         }

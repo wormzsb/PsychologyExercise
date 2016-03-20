@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PsyEx.Mapper;
 using PsyEx.Util;
+using PsyEx.Contexts;
 
 namespace PsyEx.Forms
 {
@@ -37,6 +38,7 @@ namespace PsyEx.Forms
                     break;
 
                 case "T4":
+                    this.Text = Exercise.EXERCISE_4_NAME;
                     //移除tab
                     tabControl1.Controls.Remove(tabPage2);
                     dataGridView1.AllowUserToOrderColumns = false;
@@ -101,6 +103,80 @@ namespace PsyEx.Forms
                     ys[0] = "实验用时(s)";
                     ys[1] = values[values.Count() - 1][16];
                     this.AddRowAnaysis(dataGridView3, ys.ToArray());
+
+                    break;
+
+                case "T5":
+                    this.Text = Exercise.EXERCISE_5_NAME;
+                    //移除tab
+                    tabControl1.Controls.Remove(tabPage2);
+                    dataGridView1.AllowUserToOrderColumns = false;
+                    dataGridView3.AllowUserToOrderColumns = false;
+
+                    //绘制表头
+                    int cIndex5 = 1;
+                    foreach (string column in columns)
+                    {
+                        this.AddColumn(dataGridView1, "column" + cIndex5, column);
+                        cIndex5++;
+                    }
+
+                    foreach (List<string> v in values)
+                    {
+                        this.AddRow(dataGridView1, v.ToArray());
+                    }
+
+
+                    //统计分析
+                    this.AddColumn(dataGridView3, "key", "指标");
+                    this.AddColumn(dataGridView3, "value", "指标值");
+
+                    string[] zql = new string[2];
+                    zql[0] = "正确率";
+                    int right = 0;//正确次数
+                    List<string> fys = new List<string>();//正确的反应时间
+                    foreach(List<string> v in values)
+                    {
+                        if (v[5].Equals("1"))
+                        {
+                            right++;
+                            fys.Add(v[6]);
+                        }
+                    }
+                    double rl = (double)right / values.Count();
+                    zql[1] = String.Format("{0:0.000}", rl);
+                    this.AddRowAnaysis(dataGridView3, zql);
+
+                    string[] fysAvg = new string[2];
+                    fysAvg[0] = "平均反应时（ms）";
+                    fysAvg[1] = DoMath.dataToAbsAvg(fys);
+                    this.AddRowAnaysis(dataGridView3, fysAvg);
+
+                    string[] bz = new string[2];
+                    bz[0] = "反应时与正确率比值";
+                    double fzbz = (double)DoFormIdentify.toDouble(fysAvg[1]) / rl;
+                    bz[1] = String.Format("{0:0.000}", fzbz);
+                    this.AddRowAnaysis(dataGridView3, bz);
+
+                    string[] fysbzc = new string[2];
+                    fysbzc[0] = "反应时标准差（ms）";
+                    fysbzc[1] = DoMath.dataToSD(fys);
+                    this.AddRowAnaysis(dataGridView3, fysbzc);
+
+                    string[] kssj5 = new string[2];
+                    kssj5[0] = "实验开始时间";
+                    kssj5[1] = values[values.Count() - 1][7];
+                    this.AddRowAnaysis(dataGridView3, kssj5.ToArray());
+
+                    string[] jssj5 = new string[2];
+                    jssj5[0] = "实验结束时间";
+                    jssj5[1] = values[values.Count() - 1][8];
+                    this.AddRowAnaysis(dataGridView3, jssj5.ToArray());
+
+                    string[] ys5 = new string[2];
+                    ys5[0] = "实验用时(s)";
+                    ys5[1] = values[values.Count() - 1][9];
+                    this.AddRowAnaysis(dataGridView3, ys5.ToArray());
 
                     break;
 

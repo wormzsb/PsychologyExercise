@@ -20,7 +20,7 @@ namespace PsyEx.Util
                 all += Math.Abs(DoFormIdentify.toDouble(item));
             }
             
-            result = String.Format("0:0.000", all / size);
+            result = String.Format("{0:0.000}", all / size);
 
             return result;
         }
@@ -35,9 +35,9 @@ namespace PsyEx.Util
             {
                 variance += Math.Pow(DoFormIdentify.toDouble(item) - avg, 2);
             }
-            double sd = Math.Pow(variance, 0.5);            
+            double sd = Math.Pow(variance, 0.5);         
 
-            return String.Format("0:0.000", sd);
+            return String.Format("{0:0.000}", sd);
         }
 
     }
