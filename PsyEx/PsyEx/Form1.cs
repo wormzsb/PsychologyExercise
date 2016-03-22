@@ -214,11 +214,36 @@ namespace PsyEx
         //读取数据到统计分析界面
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            //修改文件名
+            if (openFileDialog1.FileName.Contains("Hold"))
+            {
+                openFileDialog1.FileName = openFileDialog1.FileName.Replace("Hold", "Trace");
+            }
+
+            if (openFileDialog1.FileName.Contains("Event"))
+            {
+                openFileDialog1.FileName = openFileDialog1.FileName.Replace("Event", "Trace");
+            }
+
             TaskResult tr = DoFile.doResultInput(openFileDialog1.FileName);
             AnalysisForm analysis = new AnalysisForm();
             analysis.columns = tr.Columns;
             analysis.values = tr.Values;
             analysis.task = tr.Task;
+
+            if (tr.Task.Equals("T2"))
+            {
+                TaskResult sub = DoFile.doResultInput(openFileDialog1.FileName.Replace("Trace", "Hold"));
+                analysis.subColumns = sub.Columns;
+                analysis.subValues = sub.Values;
+            }
+
+            if (tr.Task.Equals("T3"))
+            {
+                TaskResult sub = DoFile.doResultInput(openFileDialog1.FileName.Replace("Trace", "Event"));
+                analysis.subColumns = sub.Columns;
+                analysis.subValues = sub.Values;
+            }
 
             analysis.TopMost = true;
             analysis.Show();

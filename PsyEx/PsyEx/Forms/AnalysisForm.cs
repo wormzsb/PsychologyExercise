@@ -18,8 +18,11 @@ namespace PsyEx.Forms
         public string task = "0";
         public List<List<string>> values;
         public List<string> columns;
+        public List<List<string>> subValues;
+        public List<string> subColumns;
         int row = 0;
         int rowA = 0;
+        int rowS = 0;
 
 
         public AnalysisForm()
@@ -30,11 +33,107 @@ namespace PsyEx.Forms
         
         private void AnalysisForm_Load(object sender, EventArgs e)
         {
+            
             switch (task)
             {
                 case "0":
                     MessageBox.Show("提示", "读取实验结果记录失败");
                     this.Text = "实验结果读取失败";
+                    break;
+
+                case "T1":
+                    this.Text = Exercise.EXERCISE_1_NAME;
+                    //移除tab
+                    tabControl1.Controls.Remove(tabPage2);
+                    dataGridView1.AllowUserToOrderColumns = false;
+                    dataGridView3.AllowUserToOrderColumns = false;
+
+
+                    //绘制表头
+                    int cIndex1 = 1;
+                    foreach (string column in columns)
+                    {
+                        this.AddColumn(dataGridView1, "column" + cIndex1, column);
+                        cIndex1++;
+                    }
+
+
+                    foreach (List<string> v in values)
+                    {
+                        this.AddRow(dataGridView1, v.ToArray());
+                    }
+
+
+                    break;
+
+                case "T2":
+                    this.Text = Exercise.EXERCISE_2_NAME;
+                    //移除tab
+                    dataGridView1.AllowUserToOrderColumns = false;
+                    dataGridView2.AllowUserToOrderColumns = false;
+                    dataGridView3.AllowUserToOrderColumns = false;
+
+
+                    //绘制表头
+                    int cIndex2 = 1;
+                    foreach (string column in columns)
+                    {
+                        this.AddColumn(dataGridView1, "column" + cIndex2, column);
+                        cIndex2++;
+                    }
+
+                    int cIndex2S = 1;
+                    foreach (string column in subColumns)
+                    {
+                        this.AddColumn(dataGridView2, "column" + cIndex2S, column);
+                        cIndex2S++;
+                    }
+
+                    foreach (List<string> v in values)
+                    {
+                        this.AddRow(dataGridView1, v.ToArray());
+                    }
+
+                    foreach(List<string> v in subValues)
+                    {
+                        this.AddRowSub(dataGridView2, v.ToArray());
+                    }
+
+                    break;
+
+                case "T3":
+                    this.Text = Exercise.EXERCISE_3_NAME;
+                    //移除tab
+                    dataGridView1.AllowUserToOrderColumns = false;
+                    dataGridView2.AllowUserToOrderColumns = false;
+                    dataGridView3.AllowUserToOrderColumns = false;
+
+
+                    //绘制表头
+                    int cIndex3 = 1;
+                    foreach (string column in columns)
+                    {
+                        this.AddColumn(dataGridView1, "column" + cIndex3, column);
+                        cIndex3++;
+                    }
+
+                    int cIndex3S = 1;
+                    foreach (string column in subColumns)
+                    {
+                        this.AddColumn(dataGridView2, "column" + cIndex3S, column);
+                        cIndex3S++;
+                    }
+
+                    foreach (List<string> v in values)
+                    {
+                        this.AddRow(dataGridView1, v.ToArray());
+                    }
+
+                    foreach (List<string> v in subValues)
+                    {
+                        this.AddRowSub(dataGridView2, v.ToArray());
+                    }
+
                     break;
 
                 case "T4":
@@ -196,6 +295,14 @@ namespace PsyEx.Forms
         {
             view.Rows.Insert(row, values);
             row++;
+        }
+
+
+        //增加sub行数据
+        private void AddRowSub(DataGridView view, Object[] values)
+        {
+            view.Rows.Insert(rowS, values);
+            rowS++;
         }
 
         //增加行数据统计数据

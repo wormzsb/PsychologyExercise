@@ -38,5 +38,10 @@ namespace PsyEx.Forms.TabPages
                 this.textBox17.Text = config.LastTime.ToString();
             }
         }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

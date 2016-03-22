@@ -154,7 +154,7 @@ namespace PsyEx.Forms.TabPages
 
                 this.textBox8.Text = config.MinASpeed.ToString();
                 this.textBox9.Text = config.MaxASpeed.ToString();
-                if (config.Speed == 0)
+                if (config.SpeedMode == 0)
                 {
                     this.textBox5.Enabled = false;
                     this.label14.Enabled = false;

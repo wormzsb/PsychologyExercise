@@ -127,15 +127,13 @@ namespace PsyEx.Util
                 }
 
                 tr.Values = values;
+                sr.Close();
+                fs.Close();
             }
             catch (Exception)
             {
             }
-            finally
-            {
-                sr.Close();
-                fs.Close();
-            }
+            
 
             return tr;
         }

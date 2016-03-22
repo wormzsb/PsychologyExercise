@@ -31,9 +31,12 @@
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,9 +62,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox17);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.textBox9);
             this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
@@ -72,6 +78,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "颜色设定";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(174, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(11, 12);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "s";
+            // 
             // textBox17
             // 
             this.textBox17.Location = new System.Drawing.Point(111, 123);
@@ -79,12 +94,22 @@
             this.textBox17.Size = new System.Drawing.Size(57, 21);
             this.textBox17.TabIndex = 23;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(174, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 12);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "s";
+            // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(111, 84);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(57, 21);
             this.textBox9.TabIndex = 20;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // textBox4
             // 
@@ -92,6 +117,15 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(57, 21);
             this.textBox4.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(174, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 12);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "s";
             // 
             // label11
             // 
@@ -149,5 +183,8 @@
         public  System.Windows.Forms.Label label11;
         public  System.Windows.Forms.Label label6;
         public  System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label3;
     }
 }

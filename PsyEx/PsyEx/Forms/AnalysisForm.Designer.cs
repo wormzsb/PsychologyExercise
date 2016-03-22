@@ -39,6 +39,7 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.图示数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -120,10 +121,21 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dataGridView2.Location = new System.Drawing.Point(-2, 0);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 10;
             this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.ShowCellErrors = false;
+            this.dataGridView2.ShowCellToolTips = false;
+            this.dataGridView2.ShowEditingIcon = false;
+            this.dataGridView2.ShowRowErrors = false;
             this.dataGridView2.Size = new System.Drawing.Size(477, 391);
             this.dataGridView2.TabIndex = 1;
             // 
@@ -171,9 +183,17 @@
             // 
             // 图示数据ToolStripMenuItem
             // 
+            this.图示数据ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ChartToolStripMenuItem});
             this.图示数据ToolStripMenuItem.Name = "图示数据ToolStripMenuItem";
             this.图示数据ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.图示数据ToolStripMenuItem.Text = "图示数据";
+            // 
+            // ChartToolStripMenuItem
+            // 
+            this.ChartToolStripMenuItem.Name = "ChartToolStripMenuItem";
+            this.ChartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ChartToolStripMenuItem.Text = "生成图表";
             // 
             // AnalysisForm
             // 
@@ -215,5 +235,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.ToolStripMenuItem ChartToolStripMenuItem;
     }
 }
