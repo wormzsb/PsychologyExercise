@@ -672,6 +672,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "简单反应时";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton4
             // 
@@ -682,6 +683,7 @@
             this.radioButton4.TabIndex = 9;
             this.radioButton4.Text = "选择反应时";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // label2
             // 

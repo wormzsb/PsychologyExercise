@@ -43,5 +43,25 @@ namespace PsyEx.Forms.TabPages
         {
             
         }
+
+        private void textBox17_TextChanged(object sender, EventArgs e)
+        {
+            CheckAble();
+        }
+
+        private void CheckAble()
+        {
+            int presentTime = 0;
+            int countDown = 0;
+
+            int.TryParse(textBox9.Text, out presentTime);
+            int.TryParse(textBox17.Text, out countDown);
+
+            if (countDown > presentTime)
+            {
+                MessageBox.Show("输入数据有效性有问题", "提示");
+                textBox17.Text = "";
+            }
+        }
     }
 }

@@ -153,13 +153,13 @@ namespace PsyEx.Forms
             string SelectedItem = obj.ToString();
             listBox2.Items.Remove(obj);
             //调整实验序号
-            for(int i=index; i<listBox2.Items.Count; i++)
+            /*for(int i=index; i<listBox2.Items.Count; i++)
             {
                 string str = listBox2.Items[i].ToString();
                 string newstr;
                 newstr = str.Replace((char)(i + 2 + '0'), (char)(i + 1 + '0'));
                 listBox2.Items[i] = newstr;
-            }
+            }*/
             //移除旧项添加新项
             int boxindex = index;
             expConfigMap.Remove(index+1);

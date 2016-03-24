@@ -51,6 +51,9 @@ namespace PsyEx.Forms.TabPages
                 this.label18.Enabled = false;
                 this.label19.Enabled = false;
 
+                this.textBox1.Enabled = false;
+                this.textBox2.Enabled = false;
+
                 this.textBox1.Text = DefaultSettingConfig3.plane.ToString();
                 this.textBox1.Enabled = false;
                 this.textBox2.Text = DefaultSettingConfig3.copter.ToString();
@@ -229,6 +232,18 @@ namespace PsyEx.Forms.TabPages
             this.textBox4.Enabled = true;
             this.label13.Enabled = true;
             this.label12.Enabled = true;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            this.textBox1.Enabled = false;
+            this.textBox2.Enabled = false;
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            this.textBox1.Enabled = true;
+            this.textBox2.Enabled = true;
         }
     }
 }
