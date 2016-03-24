@@ -193,10 +193,27 @@ namespace PsyEx
         {
             if (userFlag && exFlag && hwFlag)
             {
+                /*String sourcePath = "c:\\源文件目录\\原文件名称.txt";
+String targetPath = "d:\\目标文件目录\\新的文件名称.aspx";
+bool isrewrite=true; // true=覆盖已存在的同名文件,false则反之
+System.IO.File.Copy(sourcePath, targetPath, isrewrite); */
                 string exePath;
+                string testerFolderPath;
+                string testerExePath;
                 exePath = Directory.GetCurrentDirectory() + "\\ExpRun.exe";
+                testerFolderPath = DoFormIdentify.MakeDirectoy(tester.Id + "_" + tester.Name);
+                testerExePath = testerFolderPath + "\\" + tester.Id + "_" + tester.Name + ".exe";
 
-                System.Diagnostics.Process.Start(exePath);
+                string sourcePath;
+                sourcePath = Directory.GetCurrentDirectory() + "\\ExpRun_Data";
+                DoFormIdentify.copyDirectory(sourcePath, testerFolderPath + "\\" + tester.Id + "_" + tester.Name + "_Data");
+                sourcePath = Directory.GetCurrentDirectory() + "\\ExpRun";
+                DoFormIdentify.copyDirectory(sourcePath, testerFolderPath + "\\" + "ExpRun");
+
+                bool isReWrite = true;
+                File.Copy(exePath, testerExePath, isReWrite);
+                
+                System.Diagnostics.Process.Start(testerExePath);
             }
             else
             {
