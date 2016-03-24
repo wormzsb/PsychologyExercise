@@ -63,6 +63,58 @@ namespace PsyEx.Forms
                         this.AddRow(dataGridView1, v.ToArray());
                     }
 
+                    //统计分析
+                    this.AddColumn(dataGridView3, "key", "指标");
+                    this.AddColumn(dataGridView3, "value", "指标值");
+
+                    List<string> disList = new List<string>();
+                    List<string> reList = new List<string>();
+                    int count = 0;
+                    int hit = 0;
+                    foreach(List<string> v in values)
+                    {
+                        if (v[14].Equals("1"))
+                        {
+                            hit++;
+                        }
+                        count++;
+                        if(count >= 156)
+                        {
+                            disList.Add(v[12]);
+                            reList.Add(v[13]);
+                        }
+
+                    }
+
+                    string[] da = new string[2];
+                    da[0] = "位移误差平均值（DistanceAve）";
+                    da[1] = DoMath.dataToAbsAvgForOne(disList);
+                    this.AddRowAnaysis(dataGridView3, da);
+
+                    string[] ds = new string[2];
+                    ds[0] = "位移误差标准差（DistanceSqt）";
+                    ds[1] = DoMath.dataToSDForOne(disList);
+                    this.AddRowAnaysis(dataGridView3, ds);
+
+                    string[] rea = new string[2];
+                    rea[0] = "角度误差平均值（RotateErrorAve）";
+                    rea[1] = DoMath.dataToAbsAvgForOne(reList);
+                    this.AddRowAnaysis(dataGridView3, rea);
+
+                    string[] res = new string[2];
+                    res[0] = "角度误差标准差（RotateErrorAve）";
+                    res[1] = DoMath.dataToSDForOne(reList);
+                    this.AddRowAnaysis(dataGridView3, res);
+
+                    string[] htt = new string[2];
+                    htt[0] = "击中总时间（HitTimeTotal）";
+                    htt[1] = hit * 40 + "";
+                    this.AddRowAnaysis(dataGridView3, htt);
+
+                    string[] htr = new string[2];
+                    htr[0] = "击中时间比（HitTimeRate）";
+                    htr[1] = String.Format("{0:0.00}",(double)hit/(double)values.Count());
+                    this.AddRowAnaysis(dataGridView3, htr);
 
                     break;
 
@@ -98,6 +150,48 @@ namespace PsyEx.Forms
                     {
                         this.AddRowSub(dataGridView2, v.ToArray());
                     }
+
+
+                    //统计分析
+                    this.AddColumn(dataGridView3, "key", "指标");
+                    this.AddColumn(dataGridView3, "value", "指标值");
+
+                    List<string> disList2 = new List<string>();
+                    int count2 = 0;
+                    int hit2 = 0;
+                    foreach (List<string> v in values)
+                    {
+                        if (v[14].Equals("1"))
+                        {
+                            hit2++;
+                        }
+                        count2++;
+                        if (count2 >= 156)
+                        {
+                            disList2.Add(v[12]);
+                        }
+
+                    }
+
+                    string[] da2 = new string[2];
+                    da2[0] = "位移误差平均值（DistanceAve）";
+                    da2[1] = DoMath.dataToAbsAvgForOne(disList2);
+                    this.AddRowAnaysis(dataGridView3, da2);
+
+                    string[] ds2 = new string[2];
+                    ds2[0] = "位移误差标准差（DistanceSqt）";
+                    ds2[1] = DoMath.dataToSDForOne(disList2);
+                    this.AddRowAnaysis(dataGridView3, ds2);
+
+                    string[] htt2 = new string[2];
+                    htt2[0] = "击中总时间（HitTimeTotal）";
+                    htt2[1] = hit2 * 40 + "";
+                    this.AddRowAnaysis(dataGridView3, htt2);
+
+                    string[] htr2 = new string[2];
+                    htr2[0] = "击中时间比（HitTimeRate）";
+                    htr2[1] = String.Format("{0:0.00}", (double)hit2 / (double)values.Count());
+                    this.AddRowAnaysis(dataGridView3, htr2);
 
                     break;
 

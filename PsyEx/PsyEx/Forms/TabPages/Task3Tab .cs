@@ -52,7 +52,9 @@ namespace PsyEx.Forms.TabPages
                 this.label19.Enabled = false;
 
                 this.textBox1.Text = DefaultSettingConfig3.plane.ToString();
+                this.textBox1.Enabled = false;
                 this.textBox2.Text = DefaultSettingConfig3.copter.ToString();
+                this.textBox2.Enabled = false;
                 this.textBox3.Text = DefaultSettingConfig3.viewTime.ToString();
 
                 this.textBox10.Text = DefaultSettingConfig3.waitTime.ToString();
@@ -126,6 +128,8 @@ namespace PsyEx.Forms.TabPages
                 if (config.SecTestMode == 0)
                 {
                     this.radioButton3.Checked = true;
+                    this.textBox1.Enabled = false;
+                    this.textBox2.Enabled = false;
                 }
                 else
                 {
