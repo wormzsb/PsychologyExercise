@@ -193,10 +193,6 @@ namespace PsyEx
         {
             if (userFlag && exFlag && hwFlag)
             {
-                /*String sourcePath = "c:\\源文件目录\\原文件名称.txt";
-String targetPath = "d:\\目标文件目录\\新的文件名称.aspx";
-bool isrewrite=true; // true=覆盖已存在的同名文件,false则反之
-System.IO.File.Copy(sourcePath, targetPath, isrewrite); */
                 string exePath;
                 string testerFolderPath;
                 string testerExePath;
