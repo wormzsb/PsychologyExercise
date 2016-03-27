@@ -78,7 +78,7 @@ namespace PsyEx.Forms
                             hit++;
                         }
                         count++;
-                        if(count >= 156)
+                        if(count > 156)
                         {
                             disList.Add(v[12]);
                             reList.Add(v[13]);
@@ -166,7 +166,7 @@ namespace PsyEx.Forms
                             hit2++;
                         }
                         count2++;
-                        if (count2 >= 156)
+                        if (count2 > 156)
                         {
                             disList2.Add(v[12]);
                         }
@@ -328,6 +328,12 @@ namespace PsyEx.Forms
                     zql[0] = "正确率";
                     int right = 0;//正确次数
                     List<string> fys = new List<string>();//正确的反应时间
+
+                    //删除练习模式
+                    for (int i = 0; i < 4; i++)
+                    {
+                        values.Remove(values[i]);
+                    }
                     foreach(List<string> v in values)
                     {
                         if (v[5].Equals("1"))

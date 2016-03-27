@@ -149,7 +149,8 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "灰黑色"});
+            "灰黑色",
+            "蓝黑色"});
             this.comboBox1.Location = new System.Drawing.Point(125, 28);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
@@ -193,7 +194,6 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "圆形",
-            "椭圆形",
             "横8字形"});
             this.comboBox2.Location = new System.Drawing.Point(125, 31);
             this.comboBox2.Name = "comboBox2";
