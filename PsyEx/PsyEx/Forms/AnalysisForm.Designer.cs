@@ -194,6 +194,7 @@
             this.ChartToolStripMenuItem.Name = "ChartToolStripMenuItem";
             this.ChartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ChartToolStripMenuItem.Text = "生成图表";
+            this.ChartToolStripMenuItem.Click += new System.EventHandler(this.ChartToolStripMenuItem_Click);
             // 
             // AnalysisForm
             // 

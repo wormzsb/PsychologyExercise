@@ -193,6 +193,11 @@ namespace PsyEx.Forms
                     htr2[1] = String.Format("{0:0.00}", (double)hit2 / (double)values.Count());
                     this.AddRowAnaysis(dataGridView3, htr2);
 
+                    foreach(List<string> v in subValues)
+                    {
+
+                    }
+
                     break;
 
                 case "T3":
@@ -412,7 +417,13 @@ namespace PsyEx.Forms
             rowA++;
         }
 
-
-
+        private void ChartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChartForm cf = new ChartForm();
+            cf.task = task;
+            cf.values = values;
+            cf.TopMost = true;
+            cf.ShowDialog();
+        }
     }
 }
