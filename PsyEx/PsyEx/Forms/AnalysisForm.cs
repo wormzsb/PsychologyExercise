@@ -161,14 +161,14 @@ namespace PsyEx.Forms
                     int hit2 = 0;
                     foreach (List<string> v in values)
                     {
-                        if (v[14].Equals("1"))
+                        if (v[11].Equals("1"))
                         {
                             hit2++;
                         }
                         count2++;
                         if (count2 > 156)
                         {
-                            disList2.Add(v[12]);
+                            disList2.Add(v[10]);
                         }
 
                     }
