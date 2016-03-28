@@ -233,6 +233,47 @@ namespace PsyEx.Forms
                         this.AddRowSub(dataGridView2, v.ToArray());
                     }
 
+                    //统计分析
+                    this.AddColumn(dataGridView3, "key", "指标");
+                    this.AddColumn(dataGridView3, "value", "指标值");
+
+                    List<string> disList3 = new List<string>();
+                    int count3 = 0;
+                    int hit3 = 0;
+                    foreach (List<string> v in values)
+                    {
+                        if (v[11].Equals("1"))
+                        {
+                            hit3++;
+                        }
+                        count3++;
+                        if (count3 > 156)
+                        {
+                            disList3.Add(v[10]);
+                        }
+
+                    }
+
+                    string[] da3 = new string[2];
+                    da3[0] = "位移误差平均值（DistanceAve）";
+                    da3[1] = DoMath.dataToAbsAvgForOne(disList3);
+                    this.AddRowAnaysis(dataGridView3, da3);
+
+                    string[] ds3 = new string[2];
+                    ds3[0] = "位移误差标准差（DistanceSqt）";
+                    ds3[1] = DoMath.dataToSDForOne(disList3);
+                    this.AddRowAnaysis(dataGridView3, ds3);
+
+                    string[] htt3 = new string[2];
+                    htt3[0] = "击中总时间（HitTimeTotal）";
+                    htt3[1] = hit3 * 40 + "";
+                    this.AddRowAnaysis(dataGridView3, htt3);
+
+                    string[] htr3 = new string[2];
+                    htr3[0] = "击中时间比（HitTimeRate）";
+                    htr3[1] = String.Format("{0:0.00}", (double)hit3 / (double)values.Count());
+                    this.AddRowAnaysis(dataGridView3, htr3);
+
                     break;
 
                 case "T4":
