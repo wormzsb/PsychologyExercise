@@ -471,8 +471,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "灰黑色",
-            "蓝黑色",
-            "飞跃星空"});
+            "蓝黑色"});
             this.comboBox1.Location = new System.Drawing.Point(123, 41);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);

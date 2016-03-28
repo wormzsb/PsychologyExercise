@@ -115,8 +115,8 @@ namespace PsyEx.Forms
                     double time3 = 0;
                     foreach (List<string> v in values)
                     {
-                        chart4.Series[0].Points.AddXY(time2, DoFormIdentify.toDouble(v[19]));
-                        chart4.Series[1].Points.AddXY(time2, DoFormIdentify.toDouble(v[20]));
+                        chart4.Series[0].Points.AddXY(time3, DoFormIdentify.toDouble(v[19]));
+                        chart4.Series[1].Points.AddXY(time3, DoFormIdentify.toDouble(v[20]));
                         time3 += 0.040d;
                     }
 

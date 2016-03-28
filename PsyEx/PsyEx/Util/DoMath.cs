@@ -20,6 +20,11 @@ namespace PsyEx.Util
                 all += Math.Abs(DoFormIdentify.toDouble(item));
             }
             
+            if(size == 0)
+            {
+                return "0";
+            }
+
             result = String.Format("{0:0.000}", all / size);
 
             return result;
@@ -37,6 +42,11 @@ namespace PsyEx.Util
                 all += Math.Abs(DoFormIdentify.toDouble(item));
             }
 
+            if (size == 0)
+            {
+                return "0";
+            }
+
             result = String.Format("{0:0.0}", all / size);
 
             return result;
@@ -48,11 +58,18 @@ namespace PsyEx.Util
             double avg = DoFormIdentify.toDouble(dataToAbsAvg(data));
 
             double variance = 0;
+            double size = data.Count();
             foreach (string item in data)
             {
                 variance += Math.Pow(DoFormIdentify.toDouble(item) - avg, 2);
             }
-            double sd = Math.Pow(variance, 0.5);         
+            if (size == 0)
+            {
+                return "0";
+            }
+
+
+            double sd = Math.Pow(variance / size, 0.5);         
 
             return String.Format("{0:0.000}", sd);
         }
@@ -63,11 +80,18 @@ namespace PsyEx.Util
             double avg = DoFormIdentify.toDouble(dataToAbsAvg(data));
 
             double variance = 0;
+            double size = data.Count();
             foreach (string item in data)
             {
                 variance += Math.Pow(DoFormIdentify.toDouble(item) - avg, 2);
             }
-            double sd = Math.Pow(variance, 0.5);
+
+            if (size == 0)
+            {
+                return "0";
+            }
+
+            double sd = Math.Pow(variance / size, 0.5);
 
             return String.Format("{0:0.0}", sd);
         }
