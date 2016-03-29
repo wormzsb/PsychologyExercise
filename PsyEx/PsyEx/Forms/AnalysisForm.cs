@@ -196,7 +196,42 @@ namespace PsyEx.Forms
                     htr2[1] = String.Format("{0:0.00}", (double)hit2 / (double)values.Count());
                     this.AddRowAnaysis(dataGridView3, htr2);
 
+                    int holdCount = 0;
+                    int loopCount = 1;
+                    int[] holdTime = new int[12];
+                    double[] totalError = new double[12];
+
+                    holdCount = DoFormIdentify.toInt(subValues[0][7]);
                     
+                    for(int i=0; i< holdCount; i++)
+                    {
+                        holdTime[i] = DoFormIdentify.toInt(subValues[0][8 + i]);
+                    }
+
+                    foreach (List<string> v in subValues)
+                    {
+                        for (int i = 0; i < holdCount; i++)
+                        {
+                            if (DoFormIdentify.toInt(v[1]) == (holdTime[i] * 1000))
+                            {
+                                if (totalError[i]!=0)
+                                {
+                                    loopCount++;
+                                }
+                                totalError[i] += Math.Abs(DoFormIdentify.toInt(v[5]));
+                                break;
+                            }
+                        }
+                    }
+
+                    for(int i=0; i<holdCount; i++)
+                    {
+                        string[] holdError = new string[2];
+                        holdError[0] = "保持时间" + (i + 1).ToString() + "误差率(HoldTimeRate" + (i + 1).ToString() + ")";
+                        holdError[1] = ((double)totalError[i] / (double)loopCount).ToString("f2");
+                        this.AddRowAnaysis(dataGridView3, holdError);
+                    }
+
 
                     break;
 
