@@ -304,11 +304,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(211, 143);
+            this.label9.Location = new System.Drawing.Point(227, 143);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 12);
+            this.label9.Size = new System.Drawing.Size(17, 12);
             this.label9.TabIndex = 16;
-            this.label9.Text = "次/分";
+            this.label9.Text = "次";
             // 
             // textBox3
             // 
@@ -324,7 +324,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 12);
             this.label10.TabIndex = 14;
-            this.label10.Text = "暂停频率";
+            this.label10.Text = "暂停次数";
             // 
             // radioButton5
             // 
