@@ -40,8 +40,9 @@ namespace PsyEx.Forms
             listBox1.Items.Add("任务5-三维心理旋转测试");
             if(MainForm.exFlag)
             {
-                foreach(var item in MainForm.exConfigList)
+                for(int i=0; i<MainForm.exConfigList.Count; i++)
                 {
+                    var item = MainForm.exConfigList[i];
                     listBox2.Items.Add(item.ExName + "[未设置](" + item.SortId + ")");
                     if (item.SetFlag)
                     {
@@ -235,9 +236,9 @@ namespace PsyEx.Forms
             if (CheckSetState())
             {
                 MainForm.exConfigList.Clear();
-                foreach(var i in expConfigMap)
+                for(int i=1; i<=expConfigMap.Count; i++)
                 {
-                    MainForm.exConfigList.Add(i.Value);
+                    MainForm.exConfigList.Add(expConfigMap[i]);
                 }
                 if (savedata(DoFormIdentify.MakeDirectoy("TaskSetting"),""))
                 {
@@ -317,7 +318,7 @@ namespace PsyEx.Forms
         {
             if(opendata(openFileDialog1.FileName))
             {
-                MessageBox.Show("读取成功", "提示");
+                //MessageBox.Show("读取成功", "提示");
 
                 listBox2.Items.Clear();
                 
