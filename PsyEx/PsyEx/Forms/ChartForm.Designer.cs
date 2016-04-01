@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -43,6 +43,8 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,8 +85,8 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea7.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea7);
             this.chart1.Location = new System.Drawing.Point(5, 5);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(750, 515);
@@ -104,8 +106,8 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
+            chartArea8.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea8);
             this.chart2.Location = new System.Drawing.Point(6, 5);
             this.chart2.Name = "chart2";
             this.chart2.Size = new System.Drawing.Size(750, 515);
@@ -124,8 +126,8 @@
             // 
             // chart3
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea3);
+            chartArea9.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea9);
             this.chart3.Location = new System.Drawing.Point(6, 5);
             this.chart3.Name = "chart3";
             this.chart3.Size = new System.Drawing.Size(750, 515);
@@ -144,8 +146,8 @@
             // 
             // chart4
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea4);
+            chartArea10.Name = "ChartArea1";
+            this.chart4.ChartAreas.Add(chartArea10);
             this.chart4.Location = new System.Drawing.Point(6, 5);
             this.chart4.Name = "chart4";
             this.chart4.Size = new System.Drawing.Size(750, 515);
@@ -154,6 +156,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label2);
+            this.tabPage5.Controls.Add(this.label1);
             this.tabPage5.Controls.Add(this.chart5);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -162,10 +166,28 @@
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(102, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(102, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
+            // 
             // chart5
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart5.ChartAreas.Add(chartArea5);
+            chartArea6.Name = "ChartArea1";
+            this.chart5.ChartAreas.Add(chartArea6);
             this.chart5.Location = new System.Drawing.Point(6, 5);
             this.chart5.Name = "chart5";
             this.chart5.Size = new System.Drawing.Size(750, 515);
@@ -194,6 +216,7 @@
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
             this.ResumeLayout(false);
 
@@ -212,5 +235,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -131,10 +131,13 @@ namespace PsyEx.Forms
                     chart5.Legends.Add("追踪轨迹");
                     chart5.Legends[0].DockedToChartArea = "ChartArea1";
                     chart5.Legends[1].DockedToChartArea = "ChartArea1";
+
                     chart5.Series[0].Legend = "目标运动轨迹";
                     chart5.Series[1].Legend = "追踪轨迹";
                     chart5.ChartAreas[0].AxisX.Interval = 50;
                     chart5.ChartAreas[0].AxisY.Interval = 50;
+                    label1.Text = "运动方向：" + values[0][21];
+                    label2.Text = "控制方向：" + values[0][22];
 
                     foreach (List<string> v in values)
                     {
@@ -146,7 +149,7 @@ namespace PsyEx.Forms
 
                 case "T2":
                     tabControl1.TabPages.Remove(tabPage4);
-                    tabControl1.TabPages.Remove(tabPage5);
+                    tabControl1.TabPages.Remove(tabPage3);
 
                     tabPage1.Text = "位移误差随时间变化的曲线";
                     chart1.Series.Clear();
@@ -200,32 +203,34 @@ namespace PsyEx.Forms
                         time2 += 0.040d;
                     }
 
-                    tabPage3.Text = "轨迹图";
-                    chart3.Series.Clear();
+                    tabPage5.Text = "轨迹图";
+                    chart5.Series.Clear();
 
-                    chart3.Series.Add("目标运动轨迹");
-                    chart3.Series.Add("追踪轨迹");
-                    chart3.Series[0].ChartType = SeriesChartType.Line;
-                    chart3.Series[1].ChartType = SeriesChartType.Line;
-                    chart3.Legends.Add("目标运动轨迹");
-                    chart3.Legends.Add("追踪轨迹");
-                    chart3.Legends[0].DockedToChartArea = "ChartArea1";
-                    chart3.Legends[1].DockedToChartArea = "ChartArea1";
-                    chart3.Series[0].Legend = "目标运动轨迹";
-                    chart3.Series[1].Legend = "追踪轨迹";
-                    chart3.ChartAreas[0].AxisX.Interval = 50;
-                    chart3.ChartAreas[0].AxisY.Interval = 50;
+                    chart5.Series.Add("目标运动轨迹");
+                    chart5.Series.Add("追踪轨迹");
+                    chart5.Series[0].ChartType = SeriesChartType.Line;
+                    chart5.Series[1].ChartType = SeriesChartType.Line;
+                    chart5.Legends.Add("目标运动轨迹");
+                    chart5.Legends.Add("追踪轨迹");
+                    chart5.Legends[0].DockedToChartArea = "ChartArea1";
+                    chart5.Legends[1].DockedToChartArea = "ChartArea1";
+                    chart5.Series[0].Legend = "目标运动轨迹";
+                    chart5.Series[1].Legend = "追踪轨迹";
+                    chart5.ChartAreas[0].AxisX.Interval = 50;
+                    chart5.ChartAreas[0].AxisY.Interval = 50;
+                    label1.Text = "运动方向：" + values[0][16];
+                    label2.Text = "控制方向：" + values[0][17];
 
                     foreach (List<string> v in values)
                     {
-                        chart3.Series[0].Points.AddXY(DoFormIdentify.toDouble(v[6]), DoFormIdentify.toDouble(v[7]));
-                        chart3.Series[1].Points.AddXY(DoFormIdentify.toDouble(v[8]), DoFormIdentify.toDouble(v[9]));
+                        chart5.Series[0].Points.AddXY(DoFormIdentify.toDouble(v[6]), DoFormIdentify.toDouble(v[7]));
+                        chart5.Series[1].Points.AddXY(DoFormIdentify.toDouble(v[8]), DoFormIdentify.toDouble(v[9]));
                     }
                     break;
 
-                case "3":
+                case "T3":
                     tabControl1.TabPages.Remove(tabPage4);
-                    tabControl1.TabPages.Remove(tabPage5);
+                    tabControl1.TabPages.Remove(tabPage3);
 
                     tabPage1.Text = "位移误差随时间变化的曲线";
                     chart1.Series.Clear();
@@ -279,26 +284,28 @@ namespace PsyEx.Forms
                         time2 += 0.040d;
                     }
 
-                    tabPage3.Text = "轨迹图";
-                    chart3.Series.Clear();
+                    tabPage5.Text = "轨迹图";
+                    chart5.Series.Clear();
 
-                    chart3.Series.Add("目标运动轨迹");
-                    chart3.Series.Add("追踪轨迹");
-                    chart3.Series[0].ChartType = SeriesChartType.Line;
-                    chart3.Series[1].ChartType = SeriesChartType.Line;
-                    chart3.Legends.Add("目标运动轨迹");
-                    chart3.Legends.Add("追踪轨迹");
-                    chart3.Legends[0].DockedToChartArea = "ChartArea1";
-                    chart3.Legends[1].DockedToChartArea = "ChartArea1";
-                    chart3.Series[0].Legend = "目标运动轨迹";
-                    chart3.Series[1].Legend = "追踪轨迹";
-                    chart3.ChartAreas[0].AxisX.Interval = 50;
-                    chart3.ChartAreas[0].AxisY.Interval = 50;
+                    chart5.Series.Add("目标运动轨迹");
+                    chart5.Series.Add("追踪轨迹");
+                    chart5.Series[0].ChartType = SeriesChartType.Line;
+                    chart5.Series[1].ChartType = SeriesChartType.Line;
+                    chart5.Legends.Add("目标运动轨迹");
+                    chart5.Legends.Add("追踪轨迹");
+                    chart5.Legends[0].DockedToChartArea = "ChartArea1";
+                    chart5.Legends[1].DockedToChartArea = "ChartArea1";
+                    chart5.Series[0].Legend = "目标运动轨迹";
+                    chart5.Series[1].Legend = "追踪轨迹";
+                    chart5.ChartAreas[0].AxisX.Interval = 50;
+                    chart5.ChartAreas[0].AxisY.Interval = 50;
+                    label1.Text = "运动方向：" + values[0][16];
+                    label2.Text = "控制方向：" + values[0][17];
 
                     foreach (List<string> v in values)
                     {
-                        chart3.Series[0].Points.AddXY(DoFormIdentify.toDouble(v[6]), DoFormIdentify.toDouble(v[7]));
-                        chart3.Series[1].Points.AddXY(DoFormIdentify.toDouble(v[8]), DoFormIdentify.toDouble(v[9]));
+                        chart5.Series[0].Points.AddXY(DoFormIdentify.toDouble(v[6]), DoFormIdentify.toDouble(v[7]));
+                        chart5.Series[1].Points.AddXY(DoFormIdentify.toDouble(v[8]), DoFormIdentify.toDouble(v[9]));
                     }
                     break;
 
