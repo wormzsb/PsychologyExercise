@@ -95,5 +95,44 @@ namespace PsyEx.Util
 
             return String.Format("{0:0.0}", sd);
         }
+
+        //中位数
+        public static string dataToMiddle(List<string> data)
+        {
+            List<double> sortData = new List<double>();
+            double middle = 0;
+
+            foreach(string i in data)
+            {
+                sortData.Add(DoFormIdentify.toDouble(i));
+            }
+
+            int count = sortData.Count;
+            for(int i=0; i<count; i++)
+            {
+                for(int j= i; j<count; j++)
+                {
+                    if(sortData[i]>sortData[j])
+                    {
+                        double t = sortData[i];
+                        sortData[i] = sortData[j];
+                        sortData[j] = t;
+                    }
+                }
+            }
+
+            if (count % 2 == 1)
+            {
+                middle = sortData[(count - 1) / 2];
+            }
+            else
+            {
+                middle = sortData[count / 2] + sortData[count / 2 - 1];
+                middle /= 2;
+            }
+
+            return string.Format("{0:0.000}", middle);
+
+        }
     }
 }

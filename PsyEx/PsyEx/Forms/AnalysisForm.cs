@@ -509,6 +509,11 @@ namespace PsyEx.Forms
                     bzc[1] = DoMath.dataToSD(pclData);
                     this.AddRowAnaysis(dataGridView3, bzc.ToArray());
 
+                    string[] zws = new string[2];
+                    zws[0] = "偏差率中位数";
+                    zws[1] = DoMath.dataToMiddle(pclData);
+                    this.AddRowAnaysis(dataGridView3, zws.ToArray());
+
                     string[] csfy = new string[2];
                     csfy[0] = "未反应次数";
                     csfy[1] = (values.Count() - pclData.Count()).ToString();
