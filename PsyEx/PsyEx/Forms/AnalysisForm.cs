@@ -218,7 +218,7 @@ namespace PsyEx.Forms
                                 {
                                     loopCount++;
                                 }
-                                totalError[i] += Math.Abs(DoFormIdentify.toInt(v[5]));
+                                totalError[i] += Math.Abs(DoFormIdentify.toDouble(v[6]));
                                 break;
                             }
                         }
