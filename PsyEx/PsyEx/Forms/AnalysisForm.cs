@@ -570,7 +570,7 @@ namespace PsyEx.Forms
                     //删除练习模式
                     for (int i = 0; i < 4; i++)
                     {
-                        values.Remove(values[i]);
+                        values.Remove(values[0]);
                     }
                     foreach(List<string> v in values)
                     {
