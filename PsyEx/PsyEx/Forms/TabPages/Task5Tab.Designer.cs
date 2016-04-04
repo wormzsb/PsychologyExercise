@@ -76,7 +76,7 @@
             this.groupBox2.Size = new System.Drawing.Size(202, 168);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "颜色设定";
+            this.groupBox2.Text = "参数设置";
             // 
             // label4
             // 

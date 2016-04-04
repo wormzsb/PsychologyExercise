@@ -47,7 +47,7 @@ namespace PsyEx.Forms
 
                         tp1.Controls.Add(task1);
                         tabPages.Add(tp1);
-                        tp1.Text = "实验1";
+                        tp1.Text = "任务" + ex.SortId;
                         this.tabControl1.Controls.Add(tp1);
 
 
@@ -70,7 +70,7 @@ namespace PsyEx.Forms
 
                         tp2.Controls.Add(task2);
                         tabPages.Add(tp2);
-                        tp2.Text = "实验2";
+                        tp2.Text = "任务" + ex.SortId;
                         this.tabControl1.Controls.Add(tp2);
 
                         break;
@@ -92,7 +92,7 @@ namespace PsyEx.Forms
 
                         tp3.Controls.Add(task3);
                         tabPages.Add(tp3);
-                        tp3.Text = "实验3";
+                        tp3.Text = "任务" + ex.SortId;
                         this.tabControl1.Controls.Add(tp3);
 
                         break;
@@ -114,7 +114,7 @@ namespace PsyEx.Forms
 
                         tp4.Controls.Add(task4);
                         tabPages.Add(tp4);
-                        tp4.Text = "实验4";
+                        tp4.Text = "任务" + ex.SortId;
                         this.tabControl1.Controls.Add(tp4);
 
                         break;
@@ -138,7 +138,7 @@ namespace PsyEx.Forms
 
                         tp5.Controls.Add(task5);
                         tabPages.Add(tp5);
-                        tp5.Text = "实验5";
+                        tp5.Text = "任务" + ex.SortId;
                         this.tabControl1.Controls.Add(tp5);
 
 

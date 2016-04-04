@@ -115,7 +115,8 @@ namespace PsyEx.Forms
 
                     string[] htr = new string[2];
                     htr[0] = "击中时间比（HitTimeRate）";
-                    htr[1] = String.Format("{0:0.00}",(double)hit/(double)values.Count());
+                    htr[1] = String.Format("{0:0.00}", (double)hit / ((double)values.Count() - 156));
+           
                     this.AddRowAnaysis(dataGridView3, htr);
 
                     break;

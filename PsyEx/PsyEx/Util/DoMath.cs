@@ -39,7 +39,7 @@ namespace PsyEx.Util
             string result = "";
             foreach (string item in data)
             {
-                all += Math.Abs(DoFormIdentify.toDouble(item));
+                all += DoFormIdentify.toDouble(item);
             }
 
             if (size == 0)
@@ -77,7 +77,7 @@ namespace PsyEx.Util
         //绝对值标准差
         public static string dataToSDForOne(List<string> data)
         {
-            double avg = DoFormIdentify.toDouble(dataToAbsAvg(data));
+            double avg = DoFormIdentify.toDouble(dataToAbsAvgForOne(data));
 
             double variance = 0;
             double size = data.Count()-1;
@@ -104,7 +104,7 @@ namespace PsyEx.Util
 
             foreach(string i in data)
             {
-                sortData.Add(DoFormIdentify.toDouble(i));
+                sortData.Add(Math.Abs(DoFormIdentify.toDouble(i)));
             }
 
             int count = sortData.Count;
