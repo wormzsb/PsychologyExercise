@@ -61,7 +61,7 @@ namespace PsyEx.Util
             double size = data.Count()-1;
             foreach (string item in data)
             {
-                variance += Math.Pow(DoFormIdentify.toDouble(item) - avg, 2);
+                variance += Math.Pow(Math.Abs(DoFormIdentify.toDouble(item)) - avg, 2);
             }
             if (size == 0)
             {
