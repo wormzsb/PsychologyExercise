@@ -18,7 +18,7 @@ namespace PsyEx.Forms
     public partial class ExpSettingForm : Form
     {
 
-        //实验配置窗口的记录map
+        //任务配置窗口的记录map
         public static Dictionary<int, ExConfig> expConfigMap = new Dictionary<int, ExConfig>();
 
         //计数
@@ -33,11 +33,11 @@ namespace PsyEx.Forms
 
         private void ExpSettingForm_Load(object sender, EventArgs e)
         {
-            listBox1.Items.Add("实验1-目标跟踪能力测试");
-            listBox1.Items.Add("实验2-操作力保持及时间知觉能力测试");
-            listBox1.Items.Add("实验3-双任务模式突发事件反应时测试");
-            listBox1.Items.Add("实验4-速度知觉能力测试");
-            listBox1.Items.Add("实验5-三维心理旋转测试");
+            listBox1.Items.Add("任务1-目标跟踪能力测试");
+            listBox1.Items.Add("任务2-操作力保持及时间知觉能力测试");
+            listBox1.Items.Add("任务3-双任务模式突发事件反应时测试");
+            listBox1.Items.Add("任务4-速度知觉能力测试");
+            listBox1.Items.Add("任务5-三维心理旋转测试");
             if(MainForm.exFlag)
             {
                 for(int i=0; i<MainForm.exConfigList.Count; i++)
@@ -137,7 +137,7 @@ namespace PsyEx.Forms
             string SelectedItem = obj.ToString();
             sortNum++;
 
-            //标记实验序号
+            //标记任务序号
             listBox2.Items.Add(SelectedItem + "[未设置]" + "(" + sortNum + ")");
             ExConfig setting = new ExConfig();
             setting.SortId = sortNum;
@@ -153,7 +153,7 @@ namespace PsyEx.Forms
         {
             string SelectedItem = obj.ToString();
             listBox2.Items.Remove(obj);
-            //调整实验序号
+            //调整任务序号
             /*for(int i=index; i<listBox2.Items.Count; i++)
             {
                 string str = listBox2.Items[i].ToString();

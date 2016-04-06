@@ -194,7 +194,7 @@ namespace PsyEx.Forms
 
                     string[] htr2 = new string[2];
                     htr2[0] = "击中时间比（HitTimeRate）";
-                    htr2[1] = String.Format("{0:0.00}", (double)hit2 / (double)values.Count());
+                    htr2[1] = String.Format("{0:0.00}", (double)hit2 / ((double)values.Count() - 156));
                     this.AddRowAnaysis(dataGridView3, htr2);
 
                     int holdCount = 0;
@@ -304,7 +304,7 @@ namespace PsyEx.Forms
 
                     string[] htr3 = new string[2];
                     htr3[0] = "击中时间比（HitTimeRate）";
-                    htr3[1] = String.Format("{0:0.00}", (double)hit3 / (double)values.Count());
+                    htr3[1] = String.Format("{0:0.00}", (double)hit3 / ((double)values.Count() - 156));
                     this.AddRowAnaysis(dataGridView3, htr3);
 
                     int T3Type = 0;//简单反应时
