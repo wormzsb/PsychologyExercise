@@ -224,8 +224,17 @@ namespace PsyEx.Forms
                     for(int i=0; i<holdCount; i++)
                     {
                         string[] holdError = new string[2];
+                        string singleHoldError;
                         holdError[0] = "保持时间" + (i + 1).ToString() + "误差率(HoldTimeRate" + (i + 1).ToString() + ")";
-                        holdError[1] = (totalError[i, 0] / totalError[i, 1]).ToString("f2");
+                        if (totalError[i,1]!=0)
+                        {
+                            singleHoldError = (totalError[i, 0] / totalError[i, 1]).ToString("f2");
+                        }
+                        else
+                        {
+                            singleHoldError = "-1";
+                        }
+                        holdError[1] = singleHoldError;
                         this.AddRowAnaysis(dataGridView3, holdError);
                     }
 
