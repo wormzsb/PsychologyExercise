@@ -77,5 +77,6 @@ namespace PsyEx.Forms.TabPages
                 textBox11.Text = config.TimeInterval.ToString();
             }
         }
+
     }
 }

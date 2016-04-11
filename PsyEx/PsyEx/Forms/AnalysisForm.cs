@@ -232,7 +232,7 @@ namespace PsyEx.Forms
                         }
                         else
                         {
-                            singleHoldError = "-1";
+                            singleHoldError = "反应超时";
                         }
                         holdError[1] = singleHoldError;
                         this.AddRowAnaysis(dataGridView3, holdError);

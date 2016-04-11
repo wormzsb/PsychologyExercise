@@ -66,24 +66,25 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox14
@@ -430,59 +431,6 @@
             this.label9.TabIndex = 33;
             this.label9.Text = "小球半径";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.checkBox1);
-            this.groupBox4.Controls.Add(this.checkBox2);
-            this.groupBox4.Controls.Add(this.checkBox7);
-            this.groupBox4.Controls.Add(this.checkBox8);
-            this.groupBox4.Location = new System.Drawing.Point(242, 254);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(187, 241);
-            this.groupBox4.TabIndex = 21;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "小球初始位置";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(125, 87);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(36, 16);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "右";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(125, 50);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(36, 16);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "左";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(27, 87);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(36, 16);
-            this.checkBox7.TabIndex = 16;
-            this.checkBox7.Text = "下";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(27, 50);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(36, 16);
-            this.checkBox8.TabIndex = 15;
-            this.checkBox8.Text = "上";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label22);
@@ -498,6 +446,15 @@
             this.groupBox5.TabIndex = 22;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "任务设置";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(164, 192);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(11, 12);
+            this.label22.TabIndex = 42;
+            this.label22.Text = "s\r\n";
             // 
             // label21
             // 
@@ -551,14 +508,68 @@
             this.checkBox6.Text = "反馈";
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
-            // label22
+            // checkBox8
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(164, 192);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(11, 12);
-            this.label22.TabIndex = 42;
-            this.label22.Text = "s\r\n";
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(27, 50);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(36, 16);
+            this.checkBox8.TabIndex = 15;
+            this.checkBox8.Text = "上";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(27, 87);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(36, 16);
+            this.checkBox7.TabIndex = 16;
+            this.checkBox7.Text = "下";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(125, 50);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(36, 16);
+            this.checkBox2.TabIndex = 17;
+            this.checkBox2.Text = "左";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(125, 87);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(36, 16);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "右";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.checkBox1);
+            this.groupBox4.Controls.Add(this.checkBox2);
+            this.groupBox4.Controls.Add(this.checkBox7);
+            this.groupBox4.Controls.Add(this.checkBox8);
+            this.groupBox4.Location = new System.Drawing.Point(242, 254);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(187, 241);
+            this.groupBox4.TabIndex = 21;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "小球初始位置";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(25, 125);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(113, 12);
+            this.label23.TabIndex = 43;
+            this.label23.Text = "请至少选择一个位置";
             // 
             // Task4Tab
             // 
@@ -581,10 +592,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -618,14 +629,9 @@
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label15;
         public System.Windows.Forms.Label label16;
-        public System.Windows.Forms.GroupBox groupBox4;
         public System.Windows.Forms.Label label19;
         public System.Windows.Forms.Label label18;
         public System.Windows.Forms.Label label17;
-        public System.Windows.Forms.CheckBox checkBox1;
-        public System.Windows.Forms.CheckBox checkBox2;
-        public System.Windows.Forms.CheckBox checkBox7;
-        public System.Windows.Forms.CheckBox checkBox8;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label4;
@@ -643,5 +649,11 @@
         public System.Windows.Forms.CheckBox checkBox6;
         public System.Windows.Forms.Label label21;
         public System.Windows.Forms.Label label22;
+        public System.Windows.Forms.CheckBox checkBox8;
+        public System.Windows.Forms.CheckBox checkBox7;
+        public System.Windows.Forms.CheckBox checkBox2;
+        public System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.GroupBox groupBox4;
+        public System.Windows.Forms.Label label23;
     }
 }
