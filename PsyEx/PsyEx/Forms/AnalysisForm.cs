@@ -43,6 +43,7 @@ namespace PsyEx.Forms
 
                 case "T1":
                     this.Text = Exercise.EXERCISE_1_NAME;
+                    tabPage1.Text = "目标追踪结果";
                     //移除tab
                     tabControl1.Controls.Remove(tabPage2);
                     dataGridView1.AllowUserToOrderColumns = false;
