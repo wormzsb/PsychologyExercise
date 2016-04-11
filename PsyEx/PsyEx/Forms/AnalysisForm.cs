@@ -123,6 +123,8 @@ namespace PsyEx.Forms
 
                 case "T2":
                     this.Text = Exercise.EXERCISE_2_NAME;
+                    tabPage1.Text = "目标追踪结果";
+                    tabPage2.Text = "时间保持结果";
                     //移除tab
                     dataGridView1.AllowUserToOrderColumns = false;
                     dataGridView2.AllowUserToOrderColumns = false;
@@ -243,6 +245,8 @@ namespace PsyEx.Forms
 
                 case "T3":
                     this.Text = Exercise.EXERCISE_3_NAME;
+                    tabPage1.Text = "目标追踪结果";
+                    tabPage2.Text = "突发事件结果";
                     //移除tab
                     dataGridView1.AllowUserToOrderColumns = false;
                     dataGridView2.AllowUserToOrderColumns = false;
@@ -470,6 +474,7 @@ namespace PsyEx.Forms
 
                 case "T4":
                     this.Text = Exercise.EXERCISE_4_NAME;
+                    tabPage1.Text = "速度知觉结果";
                     //移除tab
                     tabControl1.Controls.Remove(tabPage2);
                     dataGridView1.AllowUserToOrderColumns = false;
@@ -544,6 +549,7 @@ namespace PsyEx.Forms
 
                 case "T5":
                     this.Text = Exercise.EXERCISE_5_NAME;
+                    tabPage1.Text = "三维心理旋转结果";
                     //移除tab
                     tabControl1.Controls.Remove(tabPage2);
                     dataGridView1.AllowUserToOrderColumns = false;
