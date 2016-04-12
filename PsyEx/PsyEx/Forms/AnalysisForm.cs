@@ -204,20 +204,20 @@ namespace PsyEx.Forms
                     int[] holdTime = new int[12];
                     double[,] totalError = new double[12, 2];
 
-                    holdCount = DoFormIdentify.toInt(subValues[0][7]);
+                    holdCount = DoFormIdentify.toInt(subValues[0][11]);
                     
                     for(int i=0; i< holdCount; i++)
                     {
-                        holdTime[i] = DoFormIdentify.toInt(subValues[0][8 + i]);
+                        holdTime[i] = DoFormIdentify.toInt(subValues[0][12 + i]);
                     }
 
                     foreach (List<string> v in subValues)
                     {
                         for (int i = 0; i < holdCount; i++)
                         {
-                            if ( (DoFormIdentify.toInt(v[1]) == (holdTime[i] * 1000)) && (v[4] != "-1"))
+                            if ( (DoFormIdentify.toInt(v[5]) == (holdTime[i] * 1000)) && (v[8] != "-1"))
                             {
-                                totalError[i, 0] += Math.Abs(DoFormIdentify.toDouble(v[6]));
+                                totalError[i, 0] += Math.Abs(DoFormIdentify.toDouble(v[10]));
                                 totalError[i, 1]++;
                                 break;
                             }
@@ -325,7 +325,7 @@ namespace PsyEx.Forms
 
                     foreach (List<string> v in subValues)
                     {
-                        if (v[1].Equals("1"))
+                        if (v[5].Equals("1"))
                         {
                             T3Type = 1;//1代表有直升机，选择
                         }
@@ -339,22 +339,22 @@ namespace PsyEx.Forms
                         List<string> eventRt = new List<string>();
                         foreach (List<string> v in subValues)
                         {
-                            if (v[1].Equals("0") && v[5].Equals("0"))
+                            if (v[5].Equals("0") && v[9].Equals("0"))
                             {
                                 subHit3++;
                             }
-                            else if (v[1].Equals("0") && (v[5].Equals("1") || v[5].Equals("-1")))
+                            else if (v[5].Equals("0") && (v[9].Equals("1") || v[9].Equals("-1")))
                             {
                                 subUnHit3++;
                             }
-                            else if (v[1].Equals("2"))
+                            else if (v[5].Equals("2"))
                             {
                                 errorHit++;
                             }
 
-                            if (v[6].Equals("1"))
+                            if (v[10].Equals("1"))
                             {
-                                eventRt.Add(v[4]);
+                                eventRt.Add(v[8]);
                             }
 
                         }
@@ -406,30 +406,30 @@ namespace PsyEx.Forms
                         List<string> eventRt = new List<string>();
                         foreach (List<string> v in subValues)
                         {
-                            if (v[1].Equals("0") && v[5].Equals("0"))
+                            if (v[5].Equals("0") && v[9].Equals("0"))
                             {
                                 subHit3++;
                             }
-                            else if (v[1].Equals("0") && (v[5].Equals("1") || v[5].Equals("-1")))
+                            else if (v[5].Equals("0") && (v[9].Equals("1") || v[9].Equals("-1")))
                             {
                                 subUnHit3++;
                             }
-                            else if (v[1].Equals("2"))
+                            else if (v[5].Equals("2"))
                             {
                                 errorHit++;
                             }
-                            else if (v[1].Equals("1") && v[5].Equals("1"))
+                            else if (v[5].Equals("1") && v[9].Equals("1"))
                             {
                                 crHit++;
                             }
-                            else if (v[1].Equals("1") && v[5].Equals("0"))
+                            else if (v[5].Equals("1") && v[9].Equals("0"))
                             {
                                 faHit++;
                             }
 
-                            if (v[6].Equals("1"))
+                            if (v[10].Equals("1"))
                             {
-                                eventRt.Add(v[4]);
+                                eventRt.Add(v[8]);
                             }
 
                         }
@@ -669,6 +669,19 @@ namespace PsyEx.Forms
             cf.values = values;
             cf.TopMost = true;
             cf.ShowDialog();
+        }
+
+        private void tabPageRefresh()
+        {
+            foreach(TabPage obj in tabControl1.TabPages)
+            {
+                obj.Refresh();
+            }
+        }
+
+        private void AnalysisForm_Resize(object sender, EventArgs e)
+        {
+            tabPageRefresh();
         }
     }
 }
