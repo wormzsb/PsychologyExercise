@@ -64,6 +64,12 @@ namespace PsyEx.Forms
                         this.AddRow(dataGridView1, v.ToArray());
                     }
 
+                    //空文件判断
+                    if (values.Count==0)
+                    {
+                        break;
+                    }
+
                     //统计分析
                     this.AddColumn(dataGridView3, "key", "指标");
                     this.AddColumn(dataGridView3, "value", "指标值");
@@ -157,6 +163,11 @@ namespace PsyEx.Forms
                         this.AddRowSub(dataGridView2, v.ToArray());
                     }
 
+                    //空文件判断
+                    if (values.Count == 0)
+                    {
+                        break;
+                    }
 
                     //统计分析
                     this.AddColumn(dataGridView3, "key", "指标");
@@ -199,6 +210,12 @@ namespace PsyEx.Forms
                     htr2[0] = "击中时间比（HitTimeRate）";
                     htr2[1] = String.Format("{0:0.00}", (double)hit2 / ((double)values.Count() - 156));
                     this.AddRowAnaysis(dataGridView3, htr2);
+
+                    //空文件判断
+                    if (subValues.Count == 0)
+                    {
+                        break;
+                    }
 
                     int holdCount = 0;
                     int[] holdTime = new int[12];
@@ -279,6 +296,12 @@ namespace PsyEx.Forms
                         this.AddRowSub(dataGridView2, v.ToArray());
                     }
 
+                    //空文件判断
+                    if (values.Count == 0)
+                    {
+                        break;
+                    }
+
                     //统计分析
                     this.AddColumn(dataGridView3, "key", "指标");
                     this.AddColumn(dataGridView3, "value", "指标值");
@@ -320,6 +343,12 @@ namespace PsyEx.Forms
                     htr3[0] = "击中时间比（HitTimeRate）";
                     htr3[1] = String.Format("{0:0.00}", (double)hit3 / ((double)values.Count() - 156));
                     this.AddRowAnaysis(dataGridView3, htr3);
+
+                    //空文件判断
+                    if (subValues.Count == 0)
+                    {
+                        break;
+                    }
 
                     int T3Type = 0;//简单反应时
 
@@ -494,6 +523,12 @@ namespace PsyEx.Forms
                         this.AddRow(dataGridView1, v.ToArray());
                     }
 
+                    //空文件判断
+                    if (values.Count == 0)
+                    {
+                        break;
+                    }
+
                     //统计分析
                     this.AddColumn(dataGridView3, "key", "指标");
                     this.AddColumn(dataGridView3, "value", "指标值");
@@ -531,20 +566,27 @@ namespace PsyEx.Forms
                     csfy[1] = (values.Count() - pclData.Count()).ToString();
                     this.AddRowAnaysis(dataGridView3, csfy.ToArray());
 
-                    string[] kssj = new string[2];
-                    kssj[0] = "实验开始时间";
-                    kssj[1] = values[values.Count() - 1][14];
-                    this.AddRowAnaysis(dataGridView3, kssj.ToArray());
+                    if (values[values.Count - 1].Count == 17)
+                    {
+                        string[] kssj = new string[2];
+                        kssj[0] = "实验开始时间";
+                        kssj[1] = values[values.Count() - 1][14];
+                        this.AddRowAnaysis(dataGridView3, kssj.ToArray());
 
-                    string[] jssj = new string[2];
-                    jssj[0] = "实验结束时间";
-                    jssj[1] = values[values.Count() - 1][15];
-                    this.AddRowAnaysis(dataGridView3,jssj.ToArray());
+                        string[] jssj = new string[2];
+                        jssj[0] = "实验结束时间";
+                        jssj[1] = values[values.Count() - 1][15];
+                        this.AddRowAnaysis(dataGridView3, jssj.ToArray());
 
-                    string[] ys = new string[2];
-                    ys[0] = "实验用时(s)";
-                    ys[1] = values[values.Count() - 1][16];
-                    this.AddRowAnaysis(dataGridView3, ys.ToArray());
+                        string[] ys = new string[2];
+                        ys[0] = "实验用时(s)";
+                        ys[1] = values[values.Count() - 1][16];
+                        this.AddRowAnaysis(dataGridView3, ys.ToArray());
+                    }
+                    else
+                    {
+                        MessageBox.Show("文件不完整，无实验时间信息", "提示");
+                    }
 
                     break;
 
@@ -569,6 +611,11 @@ namespace PsyEx.Forms
                         this.AddRow(dataGridView1, v.ToArray());
                     }
 
+                    //空文件判断
+                    if (values.Count == 0)
+                    {
+                        break;
+                    }
 
                     //统计分析
                     this.AddColumn(dataGridView3, "key", "指标");
@@ -612,20 +659,27 @@ namespace PsyEx.Forms
                     fysbzc[1] = DoMath.dataToSD(fys);
                     this.AddRowAnaysis(dataGridView3, fysbzc);
 
-                    string[] kssj5 = new string[2];
-                    kssj5[0] = "实验开始时间";
-                    kssj5[1] = values[values.Count() - 1][7];
-                    this.AddRowAnaysis(dataGridView3, kssj5.ToArray());
+                    if (values[values.Count - 1].Count == 10)
+                    {
+                        string[] kssj5 = new string[2];
+                        kssj5[0] = "实验开始时间";
+                        kssj5[1] = values[values.Count() - 1][7];
+                        this.AddRowAnaysis(dataGridView3, kssj5.ToArray());
 
-                    string[] jssj5 = new string[2];
-                    jssj5[0] = "实验结束时间";
-                    jssj5[1] = values[values.Count() - 1][8];
-                    this.AddRowAnaysis(dataGridView3, jssj5.ToArray());
+                        string[] jssj5 = new string[2];
+                        jssj5[0] = "实验结束时间";
+                        jssj5[1] = values[values.Count() - 1][8];
+                        this.AddRowAnaysis(dataGridView3, jssj5.ToArray());
 
-                    string[] ys5 = new string[2];
-                    ys5[0] = "实验用时(s)";
-                    ys5[1] = values[values.Count() - 1][9];
-                    this.AddRowAnaysis(dataGridView3, ys5.ToArray());
+                        string[] ys5 = new string[2];
+                        ys5[0] = "实验用时(s)";
+                        ys5[1] = values[values.Count() - 1][9];
+                        this.AddRowAnaysis(dataGridView3, ys5.ToArray());
+                    }
+                    else
+                    {
+                        MessageBox.Show("文件不完整，无实验时间信息","提示");
+                    }
 
                     break;
 
