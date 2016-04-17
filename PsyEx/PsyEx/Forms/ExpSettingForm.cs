@@ -12,6 +12,7 @@ using PsyEx.Mapper;
 using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
 using PsyEx.Util;
+using PsyEx.Contexts;
 
 namespace PsyEx.Forms
 {
@@ -33,11 +34,11 @@ namespace PsyEx.Forms
 
         private void ExpSettingForm_Load(object sender, EventArgs e)
         {
-            listBox1.Items.Add("任务1-目标跟踪能力测试");
-            listBox1.Items.Add("任务2-操作力保持及时间知觉能力测试");
-            listBox1.Items.Add("任务3-双任务模式突发事件反应时测试");
-            listBox1.Items.Add("任务4-速度知觉能力测试");
-            listBox1.Items.Add("任务5-三维心理旋转测试");
+            listBox1.Items.Add("任务1-" + Exercise.EXERCISE_1_NAME);
+            listBox1.Items.Add("任务2-" + Exercise.EXERCISE_2_NAME);
+            listBox1.Items.Add("任务3-" + Exercise.EXERCISE_3_NAME);
+            listBox1.Items.Add("任务4-" + Exercise.EXERCISE_4_NAME);
+            listBox1.Items.Add("任务5-" + Exercise.EXERCISE_5_NAME);
             if(MainForm.exFlag)
             {
                 for(int i=0; i<MainForm.exConfigList.Count; i++)
