@@ -163,101 +163,121 @@ namespace PsyEx.Forms
                         this.AddRowSub(dataGridView2, v.ToArray());
                     }
 
-                    //空文件判断
-                    if (values.Count == 0)
-                    {
-                        break;
-                    }
 
                     //统计分析
                     this.AddColumn(dataGridView3, "key", "指标");
                     this.AddColumn(dataGridView3, "value", "指标值");
 
-                    List<string> disList2 = new List<string>();
-                    int count2 = 0;
-                    int hit2 = 0;
-                    foreach (List<string> v in values)
+                    //空文件判断
+                    if (values.Count != 0)
                     {
-
-                        count2++;
-                        if (count2 > 156)
+                        List<string> disList2 = new List<string>();
+                        int count2 = 0;
+                        int hit2 = 0;
+                        foreach (List<string> v in values)
                         {
-                            if (v[11].Equals("1"))
+
+                            count2++;
+                            if (count2 > 156)
                             {
-                                hit2++;
+                                if (v[11].Equals("1"))
+                                {
+                                    hit2++;
+                                }
+                                disList2.Add(v[10]);
                             }
-                            disList2.Add(v[10]);
+
                         }
 
+                        string[] da2 = new string[2];
+                        da2[0] = "位移误差平均值（DistanceAve）";
+                        da2[1] = DoMath.dataToAbsAvgForOne(disList2);
+                        this.AddRowAnaysis(dataGridView3, da2);
+
+                        string[] ds2 = new string[2];
+                        ds2[0] = "位移误差标准差（DistanceSqt）";
+                        ds2[1] = DoMath.dataToSDForOne(disList2);
+                        this.AddRowAnaysis(dataGridView3, ds2);
+
+                        string[] htt2 = new string[2];
+                        htt2[0] = "击中总时间（HitTimeTotal）";
+                        htt2[1] = hit2 * 40 + "";
+                        this.AddRowAnaysis(dataGridView3, htt2);
+
+                        string[] htr2 = new string[2];
+                        htr2[0] = "击中时间比（HitTimeRate）";
+                        htr2[1] = String.Format("{0:0.00}", (double)hit2 / ((double)values.Count() - 156));
+                        this.AddRowAnaysis(dataGridView3, htr2);
                     }
+                    else
+                    {
+                        string[] da2 = new string[2];
+                        da2[0] = "位移误差平均值（DistanceAve）";
+                        da2[1] = "";
+                        this.AddRowAnaysis(dataGridView3, da2);
 
-                    string[] da2 = new string[2];
-                    da2[0] = "位移误差平均值（DistanceAve）";
-                    da2[1] = DoMath.dataToAbsAvgForOne(disList2);
-                    this.AddRowAnaysis(dataGridView3, da2);
+                        string[] ds2 = new string[2];
+                        ds2[0] = "位移误差标准差（DistanceSqt）";
+                        ds2[1] = "";
+                        this.AddRowAnaysis(dataGridView3, ds2);
 
-                    string[] ds2 = new string[2];
-                    ds2[0] = "位移误差标准差（DistanceSqt）";
-                    ds2[1] = DoMath.dataToSDForOne(disList2);
-                    this.AddRowAnaysis(dataGridView3, ds2);
+                        string[] htt2 = new string[2];
+                        htt2[0] = "击中总时间（HitTimeTotal）";
+                        htt2[1] = "";
+                        this.AddRowAnaysis(dataGridView3, htt2);
 
-                    string[] htt2 = new string[2];
-                    htt2[0] = "击中总时间（HitTimeTotal）";
-                    htt2[1] = hit2 * 40 + "";
-                    this.AddRowAnaysis(dataGridView3, htt2);
-
-                    string[] htr2 = new string[2];
-                    htr2[0] = "击中时间比（HitTimeRate）";
-                    htr2[1] = String.Format("{0:0.00}", (double)hit2 / ((double)values.Count() - 156));
-                    this.AddRowAnaysis(dataGridView3, htr2);
+                        string[] htr2 = new string[2];
+                        htr2[0] = "击中时间比（HitTimeRate）";
+                        htr2[1] = "";
+                        this.AddRowAnaysis(dataGridView3, htr2);
+                    }
 
                     //空文件判断
-                    if (subValues.Count == 0)
+                    if (subValues.Count != 0)
                     {
-                        break;
-                    }
 
-                    int holdCount = 0;
-                    int[] holdTime = new int[12];
-                    double[,] totalError = new double[12, 2];
 
-                    holdCount = DoFormIdentify.toInt(subValues[0][11]);
-                    
-                    for(int i=0; i< holdCount; i++)
-                    {
-                        holdTime[i] = DoFormIdentify.toInt(subValues[0][12 + i]);
-                    }
+                        int holdCount = 0;
+                        int[] holdTime = new int[12];
+                        double[,] totalError = new double[12, 2];
 
-                    foreach (List<string> v in subValues)
-                    {
+                        holdCount = DoFormIdentify.toInt(subValues[0][11]);
+
                         for (int i = 0; i < holdCount; i++)
                         {
-                            if ( (DoFormIdentify.toInt(v[5]) == (holdTime[i] * 1000)) && (v[8] != "-1"))
+                            holdTime[i] = DoFormIdentify.toInt(subValues[0][12 + i]);
+                        }
+
+                        foreach (List<string> v in subValues)
+                        {
+                            for (int i = 0; i < holdCount; i++)
                             {
-                                totalError[i, 0] += Math.Abs(DoFormIdentify.toDouble(v[10]));
-                                totalError[i, 1]++;
-                                break;
+                                if ((DoFormIdentify.toInt(v[5]) == (holdTime[i] * 1000)) && (v[8] != "-1"))
+                                {
+                                    totalError[i, 0] += Math.Abs(DoFormIdentify.toDouble(v[10]));
+                                    totalError[i, 1]++;
+                                    break;
+                                }
                             }
                         }
-                    }
 
-                    for(int i=0; i<holdCount; i++)
-                    {
-                        string[] holdError = new string[2];
-                        string singleHoldError;
-                        holdError[0] = "保持时间" + (i + 1).ToString() + "误差率(HoldTimeRate" + (i + 1).ToString() + ")";
-                        if (totalError[i,1]!=0)
+                        for (int i = 0; i < holdCount; i++)
                         {
-                            singleHoldError = (totalError[i, 0] / totalError[i, 1]).ToString("f2");
+                            string[] holdError = new string[2];
+                            string singleHoldError;
+                            holdError[0] = "保持时间" + (i + 1).ToString() + "误差率(HoldTimeRate" + (i + 1).ToString() + ")";
+                            if (totalError[i, 1] != 0)
+                            {
+                                singleHoldError = (totalError[i, 0] / totalError[i, 1]).ToString("f2");
+                            }
+                            else
+                            {
+                                singleHoldError = "反应超时";
+                            }
+                            holdError[1] = singleHoldError;
+                            this.AddRowAnaysis(dataGridView3, holdError);
                         }
-                        else
-                        {
-                            singleHoldError = "反应超时";
-                        }
-                        holdError[1] = singleHoldError;
-                        this.AddRowAnaysis(dataGridView3, holdError);
                     }
-
 
                     break;
 
@@ -296,210 +316,230 @@ namespace PsyEx.Forms
                         this.AddRowSub(dataGridView2, v.ToArray());
                     }
 
-                    //空文件判断
-                    if (values.Count == 0)
-                    {
-                        break;
-                    }
-
                     //统计分析
                     this.AddColumn(dataGridView3, "key", "指标");
                     this.AddColumn(dataGridView3, "value", "指标值");
 
-                    List<string> disList3 = new List<string>();
-                    int count3 = 0;
-                    int hit3 = 0;
-                    foreach (List<string> v in values)
-                    {
-
-                        count3++;
-                        if (count3 > 156)
-                        {
-                            if (v[11].Equals("1"))
-                            {
-                                hit3++;
-                            }
-                            disList3.Add(v[10]);
-                        }
-
-                    }
-
-                    string[] da3 = new string[2];
-                    da3[0] = "位移误差平均值（DistanceAve）";
-                    da3[1] = DoMath.dataToAbsAvgForOne(disList3);
-                    this.AddRowAnaysis(dataGridView3, da3);
-
-                    string[] ds3 = new string[2];
-                    ds3[0] = "位移误差标准差（DistanceSqt）";
-                    ds3[1] = DoMath.dataToSDForOne(disList3);
-                    this.AddRowAnaysis(dataGridView3, ds3);
-
-                    string[] htt3 = new string[2];
-                    htt3[0] = "击中总时间（HitTimeTotal）";
-                    htt3[1] = hit3 * 40 + "";
-                    this.AddRowAnaysis(dataGridView3, htt3);
-
-                    string[] htr3 = new string[2];
-                    htr3[0] = "击中时间比（HitTimeRate）";
-                    htr3[1] = String.Format("{0:0.00}", (double)hit3 / ((double)values.Count() - 156));
-                    this.AddRowAnaysis(dataGridView3, htr3);
-
                     //空文件判断
-                    if (subValues.Count == 0)
+                    if (values.Count != 0)
                     {
-                        break;
-                    }
 
-                    int T3Type = 0;//简单反应时
-
-                    foreach (List<string> v in subValues)
-                    {
-                        if (v[5].Equals("1"))
+                        List<string> disList3 = new List<string>();
+                        int count3 = 0;
+                        int hit3 = 0;
+                        foreach (List<string> v in values)
                         {
-                            T3Type = 1;//1代表有直升机，选择
-                        }
-                    }
 
-                    if (T3Type == 0)
-                    {
-                        int subHit3 = 0;
-                        int subUnHit3 = 0;
-                        int errorHit = 0;
-                        List<string> eventRt = new List<string>();
-                        foreach (List<string> v in subValues)
-                        {
-                            if (v[5].Equals("0") && v[9].Equals("0"))
+                            count3++;
+                            if (count3 > 156)
                             {
-                                subHit3++;
-                            }
-                            else if (v[5].Equals("0") && (v[9].Equals("1") || v[9].Equals("-1")))
-                            {
-                                subUnHit3++;
-                            }
-                            else if (v[5].Equals("2"))
-                            {
-                                errorHit++;
-                            }
-
-                            if (v[10].Equals("1"))
-                            {
-                                eventRt.Add(v[8]);
+                                if (v[11].Equals("1"))
+                                {
+                                    hit3++;
+                                }
+                                disList3.Add(v[10]);
                             }
 
                         }
 
-                        string[] jzs = new string[2];
-                        jzs[0] = "击中数（HIT）";
-                        jzs[1] = subHit3.ToString();
-                        this.AddRowAnaysis(dataGridView3, jzs);
+                        string[] da3 = new string[2];
+                        da3[0] = "位移误差平均值（DistanceAve）";
+                        da3[1] = DoMath.dataToAbsAvgForOne(disList3);
+                        this.AddRowAnaysis(dataGridView3, da3);
 
-                        string[] lbs = new string[2];
-                        lbs[0] = "漏报数（MISS）";
-                        lbs[1] = subUnHit3.ToString();
-                        this.AddRowAnaysis(dataGridView3, lbs);
+                        string[] ds3 = new string[2];
+                        ds3[0] = "位移误差标准差（DistanceSqt）";
+                        ds3[1] = DoMath.dataToSDForOne(disList3);
+                        this.AddRowAnaysis(dataGridView3, ds3);
 
-                        string[] cr = new string[2];
-                        cr[0] = "正确拒斥数（CR）";
-                        cr[1] = "0";
-                        this.AddRowAnaysis(dataGridView3, cr);
+                        string[] htt3 = new string[2];
+                        htt3[0] = "击中总时间（HitTimeTotal）";
+                        htt3[1] = hit3 * 40 + "";
+                        this.AddRowAnaysis(dataGridView3, htt3);
 
-                        string[] fa = new string[2];
-                        fa[0] = "虚报数（FA）";
-                        fa[1] = "0";
-                        this.AddRowAnaysis(dataGridView3, fa);
-
-                        string[] fia = new string[2];
-                        fia[0] = "事件未发生错误按键数（FIA）";
-                        fia[1] = errorHit.ToString();
-                        this.AddRowAnaysis(dataGridView3, fia);
-
-                        string[] rtavg = new string[2];
-                        rtavg[0] = "突发事件反应时间平均值（RTAvg）";
-                        rtavg[1] = DoMath.dataToAbsAvg(eventRt);
-                        this.AddRowAnaysis(dataGridView3, rtavg);
-
-                        string[] rtsqr = new string[2];
-                        rtsqr[0] = "突发事件反应时间标准差（RTSqr）";
-                        rtsqr[1] = DoMath.dataToSD(eventRt);
-                        this.AddRowAnaysis(dataGridView3, rtsqr);
-
-
+                        string[] htr3 = new string[2];
+                        htr3[0] = "击中时间比（HitTimeRate）";
+                        htr3[1] = String.Format("{0:0.00}", (double)hit3 / ((double)values.Count() - 156));
+                        this.AddRowAnaysis(dataGridView3, htr3);
                     }
                     else
                     {
-                        int subHit3 = 0;
-                        int subUnHit3 = 0;
-                        int errorHit = 0;
-                        int crHit = 0;
-                        int faHit = 0;
-                        List<string> eventRt = new List<string>();
-                        foreach (List<string> v in subValues)
-                        {
-                            if (v[5].Equals("0") && v[9].Equals("0"))
-                            {
-                                subHit3++;
-                            }
-                            else if (v[5].Equals("0") && (v[9].Equals("1") || v[9].Equals("-1")))
-                            {
-                                subUnHit3++;
-                            }
-                            else if (v[5].Equals("2"))
-                            {
-                                errorHit++;
-                            }
-                            else if (v[5].Equals("1") && v[9].Equals("1"))
-                            {
-                                crHit++;
-                            }
-                            else if (v[5].Equals("1") && v[9].Equals("0"))
-                            {
-                                faHit++;
-                            }
+                        string[] da3 = new string[2];
+                        da3[0] = "位移误差平均值（DistanceAve）";
+                        da3[1] = "";
+                        this.AddRowAnaysis(dataGridView3, da3);
 
-                            if (v[10].Equals("1"))
-                            {
-                                eventRt.Add(v[8]);
-                            }
+                        string[] ds3 = new string[2];
+                        ds3[0] = "位移误差标准差（DistanceSqt）";
+                        ds3[1] = "";
+                        this.AddRowAnaysis(dataGridView3, ds3);
 
-                        }
+                        string[] htt3 = new string[2];
+                        htt3[0] = "击中总时间（HitTimeTotal）";
+                        htt3[1] = "";
+                        this.AddRowAnaysis(dataGridView3, htt3);
 
-                        string[] jzs = new string[2];
-                        jzs[0] = "击中数（HIT）";
-                        jzs[1] = subHit3.ToString();
-                        this.AddRowAnaysis(dataGridView3, jzs);
-
-                        string[] lbs = new string[2];
-                        lbs[0] = "漏报数（MISS）";
-                        lbs[1] = subUnHit3.ToString();
-                        this.AddRowAnaysis(dataGridView3, lbs);
-
-                        string[] cr = new string[2];
-                        cr[0] = "正确拒斥数（CR）";
-                        cr[1] = crHit.ToString();
-                        this.AddRowAnaysis(dataGridView3, cr);
-
-                        string[] fa = new string[2];
-                        fa[0] = "虚报数（FA）";
-                        fa[1] = faHit.ToString();
-                        this.AddRowAnaysis(dataGridView3, fa);
-
-                        string[] fia = new string[2];
-                        fia[0] = "事件未发生错误按键数（FIA）";
-                        fia[1] = errorHit.ToString();
-                        this.AddRowAnaysis(dataGridView3, fia);
-
-                        string[] rtavg = new string[2];
-                        rtavg[0] = "突发事件反应时间平均值（RTAvg）";
-                        rtavg[1] = DoMath.dataToAbsAvg(eventRt);
-                        this.AddRowAnaysis(dataGridView3, rtavg);
-
-                        string[] rtsqr = new string[2];
-                        rtsqr[0] = "突发事件反应时间标准差（RTSqr）";
-                        rtsqr[1] = DoMath.dataToSD(eventRt);
-                        this.AddRowAnaysis(dataGridView3, rtsqr);
-
+                        string[] htr3 = new string[2];
+                        htr3[0] = "击中时间比（HitTimeRate）";
+                        htr3[1] = "";
+                        this.AddRowAnaysis(dataGridView3, htr3);
                     }
 
+                    //空文件判断
+                    if (subValues.Count != 0)
+                    {
+
+
+                        int T3Type = 0;//简单反应时
+
+                        foreach (List<string> v in subValues)
+                        {
+                            if (v[5].Equals("1"))
+                            {
+                                T3Type = 1;//1代表有直升机，选择
+                            }
+                        }
+
+                        if (T3Type == 0)
+                        {
+                            int subHit3 = 0;
+                            int subUnHit3 = 0;
+                            int errorHit = 0;
+                            List<string> eventRt = new List<string>();
+                            foreach (List<string> v in subValues)
+                            {
+                                if (v[5].Equals("0") && v[9].Equals("0"))
+                                {
+                                    subHit3++;
+                                }
+                                else if (v[5].Equals("0") && (v[9].Equals("1") || v[9].Equals("-1")))
+                                {
+                                    subUnHit3++;
+                                }
+                                else if (v[5].Equals("2"))
+                                {
+                                    errorHit++;
+                                }
+
+                                if (v[10].Equals("1"))
+                                {
+                                    eventRt.Add(v[8]);
+                                }
+
+                            }
+
+                            string[] jzs = new string[2];
+                            jzs[0] = "击中数（HIT）";
+                            jzs[1] = subHit3.ToString();
+                            this.AddRowAnaysis(dataGridView3, jzs);
+
+                            string[] lbs = new string[2];
+                            lbs[0] = "漏报数（MISS）";
+                            lbs[1] = subUnHit3.ToString();
+                            this.AddRowAnaysis(dataGridView3, lbs);
+
+                            string[] cr = new string[2];
+                            cr[0] = "正确拒斥数（CR）";
+                            cr[1] = "0";
+                            this.AddRowAnaysis(dataGridView3, cr);
+
+                            string[] fa = new string[2];
+                            fa[0] = "虚报数（FA）";
+                            fa[1] = "0";
+                            this.AddRowAnaysis(dataGridView3, fa);
+
+                            string[] fia = new string[2];
+                            fia[0] = "事件未发生错误按键数（FIA）";
+                            fia[1] = errorHit.ToString();
+                            this.AddRowAnaysis(dataGridView3, fia);
+
+                            string[] rtavg = new string[2];
+                            rtavg[0] = "突发事件反应时间平均值（RTAvg）";
+                            rtavg[1] = DoMath.dataToAbsAvg(eventRt);
+                            this.AddRowAnaysis(dataGridView3, rtavg);
+
+                            string[] rtsqr = new string[2];
+                            rtsqr[0] = "突发事件反应时间标准差（RTSqr）";
+                            rtsqr[1] = DoMath.dataToSD(eventRt);
+                            this.AddRowAnaysis(dataGridView3, rtsqr);
+
+
+                        }
+                        else
+                        {
+                            int subHit3 = 0;
+                            int subUnHit3 = 0;
+                            int errorHit = 0;
+                            int crHit = 0;
+                            int faHit = 0;
+                            List<string> eventRt = new List<string>();
+                            foreach (List<string> v in subValues)
+                            {
+                                if (v[5].Equals("0") && v[9].Equals("0"))
+                                {
+                                    subHit3++;
+                                }
+                                else if (v[5].Equals("0") && (v[9].Equals("1") || v[9].Equals("-1")))
+                                {
+                                    subUnHit3++;
+                                }
+                                else if (v[5].Equals("2"))
+                                {
+                                    errorHit++;
+                                }
+                                else if (v[5].Equals("1") && v[9].Equals("1"))
+                                {
+                                    crHit++;
+                                }
+                                else if (v[5].Equals("1") && v[9].Equals("0"))
+                                {
+                                    faHit++;
+                                }
+
+                                if (v[10].Equals("1"))
+                                {
+                                    eventRt.Add(v[8]);
+                                }
+
+                            }
+
+                            string[] jzs = new string[2];
+                            jzs[0] = "击中数（HIT）";
+                            jzs[1] = subHit3.ToString();
+                            this.AddRowAnaysis(dataGridView3, jzs);
+
+                            string[] lbs = new string[2];
+                            lbs[0] = "漏报数（MISS）";
+                            lbs[1] = subUnHit3.ToString();
+                            this.AddRowAnaysis(dataGridView3, lbs);
+
+                            string[] cr = new string[2];
+                            cr[0] = "正确拒斥数（CR）";
+                            cr[1] = crHit.ToString();
+                            this.AddRowAnaysis(dataGridView3, cr);
+
+                            string[] fa = new string[2];
+                            fa[0] = "虚报数（FA）";
+                            fa[1] = faHit.ToString();
+                            this.AddRowAnaysis(dataGridView3, fa);
+
+                            string[] fia = new string[2];
+                            fia[0] = "事件未发生错误按键数（FIA）";
+                            fia[1] = errorHit.ToString();
+                            this.AddRowAnaysis(dataGridView3, fia);
+
+                            string[] rtavg = new string[2];
+                            rtavg[0] = "突发事件反应时间平均值（RTAvg）";
+                            rtavg[1] = DoMath.dataToAbsAvg(eventRt);
+                            this.AddRowAnaysis(dataGridView3, rtavg);
+
+                            string[] rtsqr = new string[2];
+                            rtsqr[0] = "突发事件反应时间标准差（RTSqr）";
+                            rtsqr[1] = DoMath.dataToSD(eventRt);
+                            this.AddRowAnaysis(dataGridView3, rtsqr);
+
+                        }
+                    }
                     break;
 
                 case "T4":
